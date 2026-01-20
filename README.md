@@ -85,9 +85,10 @@ Ad hoc tutorial enablement sessions on:
 | Document | Description |
 |----------|-------------|
 | [Goals](docs/goals.md) | Detailed program goals and success criteria |
+| [Project Planning Guide](docs/project-planning-guide.md) | Feature coverage strategy and project design guidance |
 | [Project Assessment Criteria](docs/project-assessment-criteria.md) | How projects are evaluated for the program |
-| [Team Development Guide](docs/team-development-guide.md) | How to use fragments to work independently on shared robots |
-| [Projects](projects/) | Project ideas and backlogs |
+| [Team Development Guide](docs/team-development-guide.md) | Configuration architecture and development workflow |
+| [Projects](projects/) | Project definitions and backlogs |
 | [Submission Guidelines](docs/submission-guidelines.md) | How to propose a new project |
 | [Best Practices](docs/best-practices.md) | Guidelines for teams building on Viam |
 | [Project Template](templates/project-template.md) | Template for defining new projects |

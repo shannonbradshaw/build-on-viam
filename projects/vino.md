@@ -18,13 +18,16 @@ This project demonstrates manipulation capabilities, vision-based detection, and
 
 - [x] Motion / Arm Control
 - [x] Gripper Manipulation
-- [ ] Vision / ML
-- [ ] Data Management
+- [x] Vision / ML (pour level detection, glass detection)
+- [x] Data Management (pour analytics)
 - [ ] Fleet Management
-- [ ] Remote Operation
-- [ ] Modular Resources
+- [x] Remote Operation
+- [x] Modular Resources
 - [ ] Multi-machine Coordination
-- [ ] Cloud Integration
+- [x] Cloud Integration
+- [x] Customer Delivery ← **Primary customer-facing demo**
+- [x] Triggers ← **Glass placement, bottle empty**
+- [x] Scheduled Tasks ← **Cleaning cycles**
 
 ## Hardware Requirements
 
@@ -97,6 +100,25 @@ Select 3-5 items for post-hackathon development:
 - [ ] **Multi-station fleet** - Multiple Vino units in different locations
 - [ ] **Centralized inventory** - Unified wine inventory across stations
 
+### Customer Delivery (Gap Feature)
+- [ ] **Web ordering interface** - TypeScript SDK web app for ordering pours
+- [ ] **Guest authentication** - Simple login for tracking preferences
+- [ ] **Order queue display** - Show pending orders on screen
+- [ ] **Pour history** - Track what each guest has ordered
+- [ ] **Event mode** - Pre-configured for specific events/tastings
+- [ ] **Billing demo** - Demonstrate per-pour billing capability
+
+### Triggers (Gap Feature)
+- [ ] **Glass placement trigger** - Weight sensor detects glass, starts pour sequence
+- [ ] **Bottle empty alert** - Trigger alert when bottle weight indicates empty
+- [ ] **Temperature alert** - Alert if wine storage temp out of range
+- [ ] **Order received trigger** - Start pour sequence when order placed via app
+
+### Scheduled Tasks (Gap Feature)
+- [ ] **End-of-day cleaning** - Scheduled cleaning cycle for gripper/pour area
+- [ ] **Inventory check** - Daily inventory snapshot for tracking
+- [ ] **Temperature log** - Periodic temperature readings to cloud
+
 ---
 
 ## Stretch Goals
@@ -141,3 +163,18 @@ Select 3-5 items for post-hackathon development:
 - **GitHub Repo:** [TBD]
 - **Viam Organization:** [TBD]
 - **Hardware BOM:** [TBD]
+
+---
+
+## Notes
+
+**Gap Features This Project Addresses:**
+- **Customer Delivery** - Primary demo of customer-facing SDK (TypeScript web app for ordering)
+- **Triggers** - Glass placement sensor, bottle empty alerts, order-received triggers
+- **Scheduled Tasks** - End-of-day cleaning, inventory snapshots
+
+**Why customer delivery fits here:**
+- Vino has natural guest appeal - visitors want to interact
+- Web ordering interface demonstrates TypeScript SDK
+- Per-pour billing demonstrates Viam's billing capabilities
+- Event mode shows configuration for specific use cases

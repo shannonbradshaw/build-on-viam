@@ -19,13 +19,15 @@ Extended functionality includes loading dirty dishes from the sink and coordinat
 - [x] Motion / Arm Control
 - [x] Gripper Manipulation
 - [x] Vision / ML
-- [ ] Data Management
+- [x] Data Management (dish tracking)
 - [ ] Fleet Management
 - [x] Remote Operation
 - [ ] Modular Resources
 - [ ] Multi-machine Coordination (stretch: sink handoff)
-- [ ] Cloud Integration
-- [ ] Configuration Management (cabinet positions)
+- [x] Cloud Integration
+- [x] Configuration Management (cabinet positions)
+- [x] Data Pipeline ← **Dish image capture for classifier training**
+- [x] Triggers ← **Dishwasher cycle complete trigger**
 
 ## Hardware Requirements
 
@@ -103,6 +105,18 @@ Select 3-5 items for post-hackathon development:
 - [ ] **Cycle counting** - Track loads processed
 - [ ] **Error logging** - Record drops, misses, jams
 
+### Data Pipeline / ML Training (Gap Feature)
+- [ ] **Dish image capture** - Capture images of each dish before handling
+- [ ] **Dish type labeling** - Label images with dish type (plate, bowl, cup, etc.)
+- [ ] **Grasp success tracking** - Record successful vs failed grasps with images
+- [ ] **Train improved classifier** - Use captured data to train better dish detector
+- [ ] **Deploy updated model** - Push improved model via Registry
+
+### Triggers (Gap Feature)
+- [ ] **Cycle complete trigger** - Smart dishwasher signals cycle done, robot starts unloading
+- [ ] **Cabinet full trigger** - Detect when cabinet location is full, alert or use alternate
+- [ ] **Drop detection trigger** - If dish dropped, alert and pause for inspection
+
 ---
 
 ## Stretch Goals
@@ -158,3 +172,7 @@ Select 3-5 items for post-hackathon development:
 - Kitchen installation requires coordination with facilities
 - Dishwasher model may affect approach (rack design varies)
 - Could start with dish rack on counter (not actual dishwasher) for hackathon
+
+**Gap Features This Project Addresses:**
+- **Data Pipeline** - Dish image capture, grasp success tracking, classifier training
+- **Triggers** - Dishwasher cycle complete, cabinet full alerts, drop detection

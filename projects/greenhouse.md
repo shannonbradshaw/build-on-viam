@@ -19,13 +19,16 @@ This project naturally exercises the full robotics lifecycle - from prototype th
 - [ ] Motion / Arm Control (stretch: harvesting)
 - [ ] Vision / ML (ripeness detection)
 - [x] Data Management
-- [x] Fleet Management (multi-station)
+- [x] Fleet Management (multi-station) ← **Primary fleet demo**
 - [x] Remote Operation
 - [ ] Modular Resources
-- [ ] Multi-machine Coordination
+- [x] Multi-machine Coordination ← **Multiple sensor stations**
 - [x] Cloud Integration
-- [x] Alerting/Triggers
+- [x] Triggers ← **Threshold-based automation**
 - [x] Fragments (environment recipes)
+- [x] Monitoring/Alerting ← **Environmental alerts**
+- [x] Data Pipeline ← **Capture → Train → Deploy cycle**
+- [x] Scheduled Tasks ← **Periodic readings, daily reports**
 
 ## Hardware Requirements
 
@@ -103,6 +106,25 @@ Select 3-5 items for post-hackathon development:
 - [ ] **Cross-station comparison** - Compare growth across different setups
 - [ ] **Centralized recipes** - Push environment profiles to all stations
 
+### Triggers (Gap Feature)
+- [ ] **Humidity trigger** - When humidity < 40%, activate mister automatically
+- [ ] **Temperature trigger** - When temp > 85°F, activate fans and send alert
+- [ ] **Soil moisture trigger** - When soil dry, trigger watering cycle
+- [ ] **Light trigger** - Adjust grow lights based on ambient light sensor
+
+### Data Pipeline / ML Training (Gap Feature)
+- [ ] **Automated data capture** - Capture images on schedule for training data
+- [ ] **Growth stage labeling** - Label images with growth stage for ML training
+- [ ] **Train ripeness model** - Use captured data to train harvest-ready detector
+- [ ] **Deploy trained model** - Push updated model to all stations via Registry
+- [ ] **Model performance tracking** - Compare model accuracy across versions
+
+### Monitoring & Alerting (Gap Feature)
+- [ ] **Threshold alerts** - Configure alerts for out-of-range conditions
+- [ ] **Fleet health dashboard** - Single view of all station statuses
+- [ ] **Daily digest** - Scheduled summary of all station metrics
+- [ ] **Anomaly detection** - Alert on unusual patterns (sensor drift, failures)
+
 ---
 
 ## Stretch Goals
@@ -161,3 +183,10 @@ Select 3-5 items for post-hackathon development:
 - Tangible output (actual vegetables/herbs)
 - Great content potential (time-lapses, growth data)
 - Easy to scale from 1 station to many (fleet demo)
+
+**Gap Features This Project Addresses:**
+- **Fleet Management** - Primary demo of multi-machine coordination with 2-3 sensor stations
+- **Triggers** - Threshold-based automation (humidity, temperature, soil moisture)
+- **Data Pipeline** - End-to-end capture → label → train → deploy workflow
+- **Monitoring/Alerting** - Environmental alerts and fleet health dashboard
+- **Scheduled Tasks** - Periodic sensor readings, daily reports, time-lapse capture

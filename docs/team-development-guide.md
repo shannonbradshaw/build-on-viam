@@ -1,292 +1,544 @@
-# Team Development Guide: Working Together on Shared Robots
+# Team Development Guide: Building Applications on Shared Robots
 
-This guide explains how teams can develop independently on shared hardware without stepping on each other's configurations.
+This guide explains the recommended architecture and workflow for Build on Viam projects. It's based on the patterns used in [viam-chess](https://github.com/erh/viam-chess), which enables rapid iteration on application code while sharing hardware across team members.
 
-## The Core Problem
+## The Core Architecture: Two Layers
 
-Multiple engineers working on the same robot will create configuration conflicts if everyone edits the same machine config directly. Viam's **fragments** solve this.
-
-## What Are Fragments?
-
-Fragments are reusable configuration blocks. Instead of one monolithic config per robot, you compose a machine from multiple fragments:
+Separate your robot configuration into two distinct layers:
 
 ```
-Machine: research-robot-001
-├── Fragment: base-drivetrain (motors, wheels, encoders)
-├── Fragment: vision-pipeline (camera, detector, classifier)
-├── Fragment: arm-control (arm, gripper, motion service)
-└── Machine-specific overwrites (USB ports, calibration values)
+┌─────────────────────────────────────────────────────────────────┐
+│  Layer 2: APPLICATION (machine config + local development)      │
+│  - Application services and modules                             │
+│  - Game logic, behavior, business rules                         │
+│  - Iterated locally via CLI during development                  │
+│  - Packaged as modules for production                           │
+└─────────────────────────────────────────────────────────────────┘
+                              │
+                              │ depends on
+                              ▼
+┌─────────────────────────────────────────────────────────────────┐
+│  Layer 1: HARDWARE/INTRINSICS (fragment)                        │
+│  - Physical components (arm, gripper, camera, motors, sensors)  │
+│  - Hardware driver modules                                      │
+│  - Frame system and spatial transforms                          │
+│  - Rarely changes once hardware is set up                       │
+└─────────────────────────────────────────────────────────────────┘
 ```
 
-Each team owns their fragment. No conflicts.
+### Why This Separation?
 
-## How Teams Avoid Conflicts
+1. **Hardware is stable** - Once your arm, camera, and sensors are working, that configuration rarely changes
+2. **Application code iterates rapidly** - Game logic, behaviors, and algorithms change constantly during development
+3. **Local development is fast** - Run application code on your laptop against remote hardware, no deploy cycle
+4. **Production is clean** - Package working code as a module, deploy to machine config
 
-### Strategy 1: Fragment Ownership
+## Layer 1: Hardware/Intrinsics Fragment
 
-Each team owns specific fragments:
+Create a fragment containing all physical hardware configuration.
 
-| Team | Fragment | Contains |
-|------|----------|----------|
-| Navigation | `nav-system-v1` | SLAM service, motion planning, obstacle detection |
-| Vision | `vision-pipeline-v1` | Camera, ML models, vision service |
-| Manipulation | `arm-control-v1` | Arm, gripper, poses |
-| Data | `data-capture-v1` | Data management, sync config |
+### What Goes in the Hardware Fragment
 
-Teams edit only their fragments. When applied to a machine, all fragments combine.
+| Include | Examples |
+|---------|----------|
+| Physical components | arm, gripper, camera, motors, sensors, boards |
+| Hardware driver modules | ufactory, intel-realsense, gpio drivers |
+| Frame system | Component positions, transforms, spatial relationships |
+| Motion service config | Joint limits, planning parameters |
+| Variables | IP addresses, serial numbers, USB paths |
 
-### Strategy 2: Prefixes for Namespace Isolation
-
-When multiple fragments are on the same machine, use prefixes to avoid naming collisions:
+### Example Hardware Fragment
 
 ```json
 {
-  "fragments": [
+  "components": [
     {
-      "id": "vision-pipeline-fragment-id",
-      "prefix": "vision"
+      "name": "arm",
+      "api": "rdk:component:arm",
+      "model": "ufactory:xarm:xarm6",
+      "attributes": {
+        "host": { "$variable": { "name": "arm-ip-address" } },
+        "speed": 100
+      },
+      "frame": {
+        "parent": "world",
+        "translation": { "x": 0, "y": 0, "z": 0 }
+      }
     },
     {
-      "id": "arm-control-fragment-id",
-      "prefix": "arm"
+      "name": "gripper",
+      "api": "rdk:component:gripper",
+      "model": "ufactory:xarm:gripper",
+      "attributes": {
+        "arm": "arm"
+      }
+    },
+    {
+      "name": "cam",
+      "api": "rdk:component:camera",
+      "model": "intel:realsense:realsense",
+      "attributes": {
+        "serial_number": { "$variable": { "name": "cam-serial-number" } }
+      },
+      "frame": {
+        "parent": "arm",
+        "translation": { "x": 0, "y": 0, "z": 100 }
+      }
+    }
+  ],
+  "modules": [
+    {
+      "type": "registry",
+      "name": "viam_ufactory",
+      "module_id": "viam:ufactory",
+      "version": "latest"
+    },
+    {
+      "type": "registry",
+      "name": "viam_realsense",
+      "module_id": "viam:realsense",
+      "version": "latest"
+    }
+  ],
+  "services": [
+    {
+      "name": "builtin",
+      "api": "rdk:service:motion",
+      "model": "rdk:builtin:builtin"
     }
   ]
 }
 ```
 
-Result:
-- Vision team's `camera` becomes `vision-camera`
-- Arm team's `camera` (if they have one) becomes `arm-camera`
-- No collision
+### Fragment Variables
 
-**Rule:** Always use prefixes when combining fragments from different teams.
-
-### Strategy 3: Overwrites for Machine-Specific Differences
-
-Don't modify a shared fragment for one machine's quirks. Use **overwrites** instead:
+Use variables for anything that differs between physical machines:
 
 ```json
 {
+  "host": { "$variable": { "name": "arm-ip-address" } }
+}
+```
+
+Common variables:
+- `arm-ip-address` - Network address of robot arm
+- `cam-serial-number` - Camera serial number
+- `board-name` - GPIO board identifier
+- `usb-path` - USB device path
+
+## Layer 2: Application Layer
+
+The application layer lives in the machine config and includes your custom services and modules.
+
+### What Goes in the Machine Config
+
+| Include | Examples |
+|---------|----------|
+| Hardware fragment reference | With variables for this specific machine |
+| Fragment mods | Machine-specific overrides |
+| Application services | Your custom vision services, game logic, etc. |
+| Application modules | Your packaged code |
+| UI components | StreamDeck buttons, web interfaces |
+| Helper components | Pose savers, calibration tools |
+
+### Example Machine Config
+
+```json
+{
+  "fragments": [
+    {
+      "id": "your-hardware-fragment-uuid",
+      "variables": {
+        "arm-ip-address": "10.1.1.50",
+        "cam-serial-number": "327122073698"
+      }
+    }
+  ],
   "fragment_mods": [
     {
-      "fragment_id": "base-drivetrain-id",
+      "fragment_id": "your-hardware-fragment-uuid",
       "mods": [
         {
           "$set": {
-            "components.left_motor.attributes.pins.a": 15,
-            "components.right_motor.attributes.max_rpm": 1500
+            "components.arm.frame.translation.z": -10
           }
         }
       ]
     }
+  ],
+  "components": [
+    {
+      "name": "pose-home",
+      "api": "rdk:component:switch",
+      "model": "erh:vmodutils:arm-position-saver",
+      "attributes": {
+        "arm": "arm",
+        "joints": [-0.07, -0.20, -1.57, 0, 1.74, 3.07]
+      }
+    }
+  ],
+  "services": [
+    {
+      "name": "piece-finder",
+      "api": "rdk:service:vision",
+      "model": "erh:viam-chess:piece-finder",
+      "attributes": {
+        "input": "cam"
+      }
+    },
+    {
+      "name": "chess",
+      "api": "rdk:service:generic",
+      "model": "erh:viam-chess:chess",
+      "attributes": {
+        "piece-finder": "piece-finder",
+        "arm": "arm",
+        "gripper": "gripper",
+        "pose-start": "pose-home"
+      }
+    }
+  ],
+  "modules": [
+    {
+      "type": "registry",
+      "name": "erh_viam-chess",
+      "module_id": "erh:viam-chess",
+      "version": "latest"
+    }
   ]
 }
 ```
 
-Benefits:
-- Fragment stays clean for all machines
-- Machine-specific tweaks don't affect others
-- When fragment updates, overwrites persist
+## The CLI Development Pattern
 
-### Strategy 4: Variables for Common Variations
+The key to rapid iteration is developing application code locally while using remote hardware. This is done with a CLI tool that connects to the robot.
 
-Use template variables for things that vary predictably (USB paths, IP addresses):
+### How It Works
 
-In fragment definition:
+```
+┌─────────────────────────────────────────────────────────────────┐
+│  ROBOT (running viam-server)                                     │
+│  ┌─────────────────────────────────────────────────────────────┐│
+│  │  Hardware fragment applied                                   ││
+│  │  - arm, gripper, camera components running                  ││
+│  │  - Motion service available                                  ││
+│  │  - Frame system configured                                   ││
+│  └─────────────────────────────────────────────────────────────┘│
+└─────────────────────────────────────────────────────────────────┘
+                              ▲
+                              │ WebRTC connection (through NAT/firewalls)
+                              │
+┌─────────────────────────────┴───────────────────────────────────┐
+│  DEVELOPER LAPTOP                                                │
+│  ┌─────────────────────────────────────────────────────────────┐│
+│  │  CLI Tool                                                    ││
+│  │  1. Connect to remote machine                                ││
+│  │  2. Get hardware components as dependencies                  ││
+│  │  3. Instantiate application service locally                  ││
+│  │  4. Run commands, see results instantly                      ││
+│  └─────────────────────────────────────────────────────────────┘│
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Example CLI Tool (Go)
+
+```go
+package main
+
+import (
+    "context"
+    "flag"
+
+    "github.com/erh/vmodutils"
+    "go.viam.com/rdk/logging"
+    generic "go.viam.com/rdk/services/generic"
+
+    "yourproject"
+)
+
+func main() {
+    host := flag.String("host", "", "robot hostname or IP")
+    cmd := flag.String("cmd", "", "command to run")
+    flag.Parse()
+
+    ctx := context.Background()
+    logger := logging.NewLogger("cli")
+
+    // 1. Connect to remote machine
+    machine, err := vmodutils.ConnectToHostFromCLIToken(ctx, *host, logger)
+    if err != nil {
+        panic(err)
+    }
+    defer machine.Close(ctx)
+
+    // 2. Get hardware as local dependencies
+    deps, err := vmodutils.MachineToDependencies(machine)
+    if err != nil {
+        panic(err)
+    }
+
+    // 3. Configure your service (references hardware by name)
+    cfg := yourproject.Config{
+        Arm:     "arm",
+        Gripper: "gripper",
+        Camera:  "cam",
+    }
+
+    // 4. Instantiate your service locally with remote hardware
+    svc, err := yourproject.New(ctx, deps, generic.Named("cli"), &cfg, logger)
+    if err != nil {
+        panic(err)
+    }
+    defer svc.Close(ctx)
+
+    // 5. Run commands
+    switch *cmd {
+    case "pick":
+        svc.DoCommand(ctx, map[string]interface{}{"pick": true})
+    case "place":
+        svc.DoCommand(ctx, map[string]interface{}{"place": true})
+    }
+}
+```
+
+### Development Iteration Loop
+
+```
+1. Edit application code on your laptop
+2. Build CLI: `go build -o mycli cmd/cli/main.go`
+3. Run against robot: `./mycli -host robot.local -cmd pick`
+4. See results immediately
+5. Repeat
+```
+
+No module packaging, no deployment, no waiting. Just edit → build → run.
+
+### The vmodutils Helper
+
+The `vmodutils` package (github.com/erh/vmodutils) provides:
+
+- `ConnectToHostFromCLIToken()` - Connect to a Viam machine using CLI credentials
+- `MachineToDependencies()` - Convert machine resources to local dependencies
+
+This bridges the gap between cloud-managed hardware and local development.
+
+## Project Structure
+
+Organize your project like viam-chess:
+
+```
+your-project/
+├── cmd/
+│   ├── cli/
+│   │   └── main.go           # CLI for local development
+│   └── module/
+│       └── main.go           # Module entry point for production
+├── your_service.go           # Main application logic
+├── helper.go                 # Additional application code
+├── your_service_test.go      # Tests
+├── meta.json                 # Module metadata
+├── Makefile                  # Build automation
+├── go.mod
+└── README.md
+```
+
+### meta.json
+
 ```json
 {
-  "name": "main-camera",
-  "attributes": {
-    "video_path": {
-      "$variable": { "name": "camera_usb_path" }
+  "module_id": "your-org:your-project",
+  "visibility": "public",
+  "models": [
+    {
+      "api": "rdk:service:generic",
+      "model": "your-org:your-project:main-service"
     }
+  ],
+  "entrypoint": "bin/your-project",
+  "build": {
+    "build": "make module.tar.gz",
+    "path": "module.tar.gz",
+    "arch": ["linux/amd64", "linux/arm64", "darwin/arm64"]
   }
 }
 ```
 
-When adding to machine:
-```json
-{
-  "camera_usb_path": "/dev/video0"
-}
+### Makefile
+
+```makefile
+MODULE_BINARY := bin/your-project
+
+all: $(MODULE_BINARY) cli
+
+cli: *.go cmd/cli/*.go
+	go build -o ./mycli cmd/cli/*.go
+
+$(MODULE_BINARY): *.go cmd/module/*.go
+	go build -o $(MODULE_BINARY) cmd/module/main.go
+
+test:
+	go test ./...
+
+module.tar.gz: meta.json $(MODULE_BINARY)
+	strip $(MODULE_BINARY)
+	tar czf $@ meta.json $(MODULE_BINARY)
+
+module: test module.tar.gz
 ```
 
-Different machine:
-```json
-{
-  "camera_usb_path": "/dev/video2"
-}
-```
+## Multi-Developer Workflow
 
-Same fragment, different configs. No overwrites needed.
+### How Multiple Developers Share One Robot
 
-## Recommended Team Structure
+With this architecture, conflicts are minimized:
 
-### Fragment Organization
+1. **Hardware fragment is stable** - Rarely edited, owned by project lead
+2. **Application code is local** - Each developer runs their own version
+3. **No config conflicts** - Developers don't edit the same files simultaneously
 
-```
-Organization: Build on Viam
-
-Fragments (owned centrally):
-├── base-hardware-v1        # Common board, power config
-├── camera-standard-v1      # Standard camera setup
-└── data-capture-standard-v1  # Common data sync config
-
-Project-Specific Fragments:
-├── chess-vision-v1         # Chess piece detection
-├── chess-arm-v1            # Chess arm movements
-├── vino-pour-v1            # Wine pouring logic
-├── greenhouse-sensors-v1   # Environmental sensors
-└── cleaning-nav-v1         # Office navigation
-```
-
-### Machine Organization
+### Workflow for a Team
 
 ```
-Locations:
-├── Chess Project
-│   ├── chess-dev     (development - latest fragments)
-│   ├── chess-qa      (testing - beta tag)
-│   └── chess-prod    (demo - stable tag)
-├── Vino Project
-│   ├── vino-dev
-│   └── vino-prod
-└── Shared Hardware
-    └── dev-arm-station  (shared across projects)
+┌─────────────────────────────────────────────────────────────────┐
+│  Developer A                    Developer B                      │
+│  ┌───────────────────┐         ┌───────────────────┐            │
+│  │ Working on vision │         │ Working on motion │            │
+│  │ piece_finder.go   │         │ movement.go       │            │
+│  └─────────┬─────────┘         └─────────┬─────────┘            │
+│            │                             │                       │
+│            │    ┌───────────────────┐    │                       │
+│            └───►│  Shared Robot     │◄───┘                       │
+│                 │  (hardware only)  │                            │
+│                 └───────────────────┘                            │
+│                                                                  │
+│  Each developer:                                                 │
+│  - Edits code locally                                           │
+│  - Runs CLI against shared hardware                             │
+│  - Commits to shared repo when ready                            │
+└─────────────────────────────────────────────────────────────────┘
 ```
 
-### Role Assignments
+### Coordination Points
 
-| Role | Can Do | Assign To |
-|------|--------|-----------|
-| Org Owner | Create/edit fragments | Project leads |
-| Location Owner | Apply fragments, create overwrites | Team members |
-| Machine Operator | Control robots, view logs | Everyone |
+| Situation | Solution |
+|-----------|----------|
+| Two developers need robot simultaneously | Time-share or use separate test rigs |
+| Hardware fragment needs update | Project lead coordinates change |
+| Application module ready for production | PR review → merge → publish module |
+| Testing a colleague's changes | Pull their branch, build CLI, test |
 
-## Development Workflow
+## From Development to Production
 
-### Daily Development
+### Development Phase
 
-1. **Work on your team's fragment** - Edit freely, changes auto-version
-2. **Test on dev machine** - Dev machines use `latest` version
-3. **Don't touch other teams' fragments** - Use overwrites if you need to adjust their resources temporarily
+1. Hardware fragment deployed to robot (one-time setup)
+2. Developers iterate using CLI against remote hardware
+3. Code lives in git repository
+4. Changes reviewed via pull requests
 
-### Releasing Updates
+### Production Deployment
 
-```
-1. Make changes to fragment (new version created automatically)
-2. Test on dev machine (uses latest)
-3. Tag as "beta" when ready for broader testing
-4. Test on QA machines (pinned to beta)
-5. Tag as "stable" when validated
-6. Update production machines to stable tag
-```
+1. Build module: `make module`
+2. Publish to registry: `viam module upload`
+3. Update machine config to reference published module
+4. Robot pulls module automatically
 
-### Handling Shared Hardware
+### Stable vs Development
 
-When multiple teams need the same robot:
+With this pattern, "stable" simply means:
+- The module version currently deployed to the machine config
+- Developers test locally before publishing new versions
+- Rollback = change module version in config
 
-**Option A: Time-based sharing**
-- Team A uses robot 9am-12pm
-- Team B uses robot 1pm-5pm
-- Each team has their own machine config pointing to same hardware
+No complex fragment tagging needed for application code.
 
-**Option B: Fragment composition**
-- Both teams add their fragments to same machine
-- Use prefixes to avoid collisions
-- Coordinate on shared resources (e.g., one camera)
+## Fragment Management
 
-**Option C: Separate machines for separate concerns**
-- Team A configures `robot-vision-dev` (only their components)
-- Team B configures `robot-arm-dev` (only their components)
-- Integration testing uses `robot-full-dev` (all fragments)
+### When to Update the Hardware Fragment
 
-## Rules for Build on Viam Projects
+- Adding new hardware (camera, sensor, etc.)
+- Changing frame relationships
+- Updating hardware driver versions
+- Fixing calibration values
 
-### Do
+### Fragment Version Tags
 
-- Create fragments for your project's subsystems
-- Use prefixes when adding fragments to shared machines
-- Use overwrites for machine-specific adjustments
-- Use variables for USB paths, IP addresses, credentials
-- Test on dev machines before tagging stable
-- Document what your fragment configures
+For hardware fragments, use tags to control rollout:
 
-### Don't
-
-- Edit another team's fragment without asking
-- Hardcode machine-specific values in fragments
-- Skip the dev → beta → stable progression
-- Apply fragments without prefixes on shared hardware
-- Modify machine configs directly when a fragment should change
-
-## Example: Two Teams on One Robot
-
-**Scenario:** Vision team and Arm team both need `research-robot-001`
-
-**Vision team creates:** `vision-pipeline-v1`
-```json
-{
-  "components": [
-    { "name": "camera", "type": "camera", ... },
-    { "name": "detector", "type": "vision", ... }
-  ]
-}
-```
-
-**Arm team creates:** `arm-control-v1`
-```json
-{
-  "components": [
-    { "name": "arm", "type": "arm", ... },
-    { "name": "gripper", "type": "gripper", ... }
-  ]
-}
-```
-
-**Machine config for `research-robot-001`:**
 ```json
 {
   "fragments": [
-    { "id": "vision-pipeline-v1-id", "prefix": "vis" },
-    { "id": "arm-control-v1-id", "prefix": "manip" }
+    {
+      "id": "hardware-fragment-uuid",
+      "_tag": "stable"
+    }
   ]
 }
 ```
 
-**Result on machine:**
-- `vis-camera`
-- `vis-detector`
-- `manip-arm`
-- `manip-gripper`
+- `stable` - Known-working hardware config
+- `dev` - Testing hardware changes
 
-Both teams work independently. No conflicts.
+### Fragment Variables vs Mods
+
+| Use Variables For | Use Mods For |
+|-------------------|--------------|
+| IP addresses | Calibration adjustments |
+| Serial numbers | Frame translation tweaks |
+| USB paths | Joint limit overrides |
+| Predictable per-machine differences | One-off fixes for specific machines |
 
 ## Quick Reference
 
-| I want to... | Use... |
-|--------------|--------|
-| Share config across machines | Fragment |
-| Avoid naming collisions | Prefix |
-| Adjust one machine differently | Overwrite (`fragment_mods`) |
-| Handle varying USB paths/IPs | Variables (`$variable`) |
-| Control who edits what | Locations + RBAC |
-| Safely roll out updates | Version tags (dev → beta → stable) |
+### Setting Up a New Project
 
-## Troubleshooting
+1. Create hardware fragment with physical components
+2. Create machine in Viam app, apply fragment with variables
+3. Set up project structure (see above)
+4. Build CLI tool using vmodutils pattern
+5. Iterate on application code locally
 
-**"Component name already exists"**
-- Add a prefix to your fragment
+### Daily Development
 
-**"My changes aren't showing up"**
-- Check if machine is pinned to old version
-- Check if overwrites are reverting your changes
+1. `git pull` latest code
+2. `make cli` build CLI tool
+3. `./mycli -host robot.local -cmd test` run against hardware
+4. Edit code, repeat
+5. `git commit` when feature complete
 
-**"Fragment update broke other machines"**
-- Roll back to previous version tag
-- Test on dev machine first next time
+### Deploying to Production
 
-**"I need to change another team's fragment"**
-- Talk to them first
-- Use overwrites for temporary/machine-specific changes
-- Request they add a variable if it's a common need
+1. `make test` run tests
+2. `make module` build module tarball
+3. `viam module upload` publish to registry
+4. Update machine config with new module version
+
+### Troubleshooting
+
+**"Can't connect to robot"**
+- Verify robot is online in Viam app
+- Check you're authenticated (`viam login`)
+- Verify hostname/IP is correct
+
+**"Component not found"**
+- Hardware fragment might not be applied
+- Check component names match your config
+- Verify fragment variables are set
+
+**"Module not loading"**
+- Check module is published to registry
+- Verify version in machine config
+- Check robot logs for errors
+
+## Example: Chess Project
+
+See [viam-chess](https://github.com/erh/viam-chess) for a complete reference implementation:
+
+- `cmd/cli/main.go` - CLI development tool
+- `cmd/module/main.go` - Module entry point
+- `chess.go` - Main application service
+- `piece_finder.go` - Vision service
+- `examples/config1.json` - Machine config example
+- `Makefile` - Build automation
+
+This project demonstrates all the patterns described in this guide.

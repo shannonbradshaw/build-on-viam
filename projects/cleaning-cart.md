@@ -23,9 +23,10 @@ This project demonstrates navigation, SLAM, vision detection, and multi-robot co
 - [x] Remote Operation
 - [ ] Modular Resources
 - [x] Multi-machine Coordination
-- [ ] Cloud Integration
+- [x] Cloud Integration
 - [x] Navigation / SLAM
-- [x] Scheduling
+- [x] Scheduled Tasks ← **Primary scheduled tasks demo**
+- [x] Triggers ← **Motion-based pause, schedule triggers**
 
 ## Hardware Requirements
 
@@ -106,6 +107,20 @@ Select 3-5 items for post-hackathon development:
 - [ ] **Remote monitoring** - Live view of patrol status
 - [ ] **Patrol reports** - Summary of items found/collected
 
+### Scheduled Tasks (Gap Feature)
+- [ ] **Morning patrol** - 8am sweep before employees arrive
+- [ ] **Post-lunch patrol** - 1pm sweep after lunch rush
+- [ ] **End-of-day patrol** - 6pm comprehensive sweep
+- [ ] **Weekly deep clean** - Saturday full-office patrol
+- [ ] **Meeting room check** - Scheduled check after calendar meetings end
+
+### Triggers (Gap Feature)
+- [ ] **Motion sensor pause** - When person detected nearby, pause and wait
+- [ ] **Low battery return** - Trigger return to charger when battery < 20%
+- [ ] **Tray full alert** - When tray capacity reached, alert and return to kitchen
+- [ ] **Spill detection alert** - Trigger alert to facilities when spill detected
+- [ ] **Calendar integration** - Trigger patrol when meeting ends (calendar API)
+
 ---
 
 ## Stretch Goals
@@ -172,3 +187,8 @@ Select 3-5 items for post-hackathon development:
 - Focus on navigation + detection only
 - Mount camera and tray, no arm
 - Human places items on tray, robot transports
+
+**Gap Features This Project Addresses:**
+- **Scheduled Tasks** - Primary demo of Viam's scheduling capabilities with multiple daily patrols
+- **Triggers** - Motion-based pause, battery triggers, capacity alerts
+- **Fleet** - Potential for multiple carts in larger facility (stretch)

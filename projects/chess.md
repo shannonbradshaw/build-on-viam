@@ -19,12 +19,14 @@ This project demonstrates vision-based detection, ML for piece classification, p
 - [x] Motion / Arm Control
 - [x] Gripper Manipulation
 - [x] Vision / ML
-- [ ] Data Management
+- [x] Data Management (game recording)
 - [ ] Fleet Management
 - [x] Remote Operation
 - [x] Modular Resources (chess service)
 - [ ] Multi-machine Coordination
-- [ ] Cloud Integration
+- [x] Cloud Integration
+- [x] Data Pipeline ← **Capture → Train → Deploy for piece detection**
+- [x] Triggers ← **Game end detection, board state changes**
 
 ## Hardware Requirements
 
@@ -102,6 +104,20 @@ Select 3-5 items for post-hackathon development:
 - [ ] **Online integration** - Integration with chess.com or Lichess for ratings
 - [ ] **Robot vs robot** - Two robots play each other
 
+### Data Pipeline / ML Training (Gap Feature)
+- [ ] **Automated board capture** - Capture board images during every game
+- [ ] **Piece position labeling** - Auto-label images with known game state
+- [ ] **Training data export** - Export labeled dataset for model training
+- [ ] **Train improved detector** - Use captured data to train better piece-finder
+- [ ] **Deploy updated model** - Push improved model via Registry
+- [ ] **A/B model comparison** - Compare detection accuracy between model versions
+
+### Triggers (Gap Feature)
+- [ ] **Game end trigger** - Detect checkmate/stalemate, auto-save game and offer reset
+- [ ] **Human move trigger** - Detect when human has moved, robot responds
+- [ ] **Illegal move alert** - Trigger alert if detected position is impossible
+- [ ] **Timeout trigger** - If no move detected for X minutes, prompt player
+
 ---
 
 ## Stretch Goals
@@ -146,3 +162,17 @@ Select 3-5 items for post-hackathon development:
 - **Setup Photos:** https://photos.app.goo.gl/GDuryUgFtMPufmRD7
 - **Jira Epic:** [TBD]
 - **Viam Organization:** [TBD]
+
+---
+
+## Notes
+
+**Gap Features This Project Addresses:**
+- **Data Pipeline** - Excellent example of capture → label → train → deploy cycle (board images auto-labeled with game state)
+- **Triggers** - Game end detection, human move detection, timeout handling
+
+**Why data pipeline fits here:**
+- Chess has automatic ground truth - the game state IS the label
+- Every game generates labeled training data for free
+- Clear metric for model improvement (detection accuracy)
+- Natural A/B testing opportunity (old model vs new model)

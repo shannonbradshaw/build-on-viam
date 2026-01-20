@@ -6,37 +6,44 @@ This directory contains all projects for the Build on Viam program.
 
 | Project | Status | Primary Capabilities | MVP Options |
 |---------|--------|---------------------|-------------|
-| [Vino](vino.md) | Existing | Arm, gripper, manipulation | Pour on demand, glass detection |
-| [Chess](chess.md) | Existing | Arm, vision, ML, game logic | Full game play, move execution |
-| [Greenhouse](greenhouse.md) | New | Data, ML, fleet, remote monitoring | Monitor + auto-water |
-| [Box Bot](box-bot.md) | New | Vision, arm, manipulation | Flatten only |
-| [Dishwasher](dishwasher.md) | New | Arm, vision, motion planning | Single dish type |
-| [Cleaning Cart](cleaning-cart.md) | New | Navigation, SLAM, vision | Patrol + detect |
+| [Vino](vino.md) | Existing | Arm, gripper, **customer delivery** | Pour on demand, glass detection |
+| [Chess](chess.md) | Existing | Arm, vision, ML, **data pipeline** | Full game play, move execution |
+| [Greenhouse](greenhouse.md) | New | Data, ML, **fleet**, **triggers** | Monitor + auto-water |
+| [Box Bot](box-bot.md) | New | Vision, arm, **triggers** | Flatten only |
+| [Dishwasher](dishwasher.md) | New | Arm, vision, **data pipeline** | Single dish type |
+| [Cleaning Cart](cleaning-cart.md) | New | Navigation, SLAM, **scheduled tasks** | Patrol + detect |
+| [Barista](barista.md) | Proposed | Arm, **customer delivery**, **fleet**, **triggers** | Espresso only |
 
 ## Project Comparison
 
 | Project | Platform Coverage | Feasibility | Cool Factor | Assessment Score |
 |---------|------------------|-------------|-------------|------------------|
 | Greenhouse | 5 | 3 | 5 | **4.6** |
+| Barista | 5 | 3 | 5 | **4.5** |
 | Box Bot | 4 | 4 | 5 | **4.0** |
 | Cleaning Cart | 5 | 2 | 5 | **4.0** |
 | Dishwasher | 4 | 3 | 5 | **3.8** |
-| Vino | TBD | TBD | TBD | **TBD** |
-| Chess | TBD | TBD | TBD | **TBD** |
+| Vino | 4 | 4 | 5 | **4.0** |
+| Chess | 4 | 4 | 5 | **4.0** |
 
 ## Viam Capabilities by Project
 
-| Capability | Vino | Chess | Greenhouse | Box Bot | Dishwasher | Cleaning Cart |
-|------------|------|-------|------------|---------|------------|---------------|
-| Arm Control | x | x | | x | x | |
-| Gripper | x | x | | x | x | |
-| Vision/ML | | x | x | x | x | x |
-| Navigation/SLAM | | | | | | x |
-| Data Capture | | | x | x | | x |
-| Fleet Management | | | x | | | x |
-| Remote Operation | x | x | x | x | x | x |
-| Multi-robot Coordination | | | | | x | x |
-| Fragments | | | x | | | |
+| Capability | Vino | Chess | Greenhouse | Box Bot | Dishwasher | Cleaning Cart | Barista |
+|------------|------|-------|------------|---------|------------|---------------|---------|
+| Arm Control | x | x | | x | x | | x |
+| Gripper | x | x | | x | x | | x |
+| Vision/ML | x | x | x | x | x | x | x |
+| Navigation/SLAM | | | | | | x | |
+| Data Capture | x | x | x | x | x | x | x |
+| Remote Operation | x | x | x | x | x | x | x |
+| Multi-robot Coordination | | | x | | x | x | |
+| Fragments | | | x | | | | x |
+| **Triggers** | x | x | x | x | x | x | x |
+| **Data Pipeline** | | x | x | x | x | | x |
+| **Scheduled Tasks** | x | | x | | | x | x |
+| **Customer Delivery** | x | | | | | | x |
+| **Fleet Management** | | | x | | | x | x |
+| **Monitoring/Alerting** | | | x | | | | x |
 
 ## Reference Documents
 
