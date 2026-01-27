@@ -40,18 +40,18 @@ This project demonstrates advanced manipulation with dual-arm coordination, visi
 | Grippers (2) | Tongs-style end effectors | Custom or Robotiq Hand-E with tong fingers |
 | Wrist Cameras (2) | Ingredient detection | Intel RealSense D405 (compact) |
 | Overview Camera | Workspace monitoring | Intel RealSense D435 or USB webcam |
-| Compute | Main controller | System76 Thelio or Meerkat |
+| Compute | Main controller | System76 Meerkat |
 | Prep Station | Refrigerated ingredient rail | Avantco CPT-60-HC (59", 6x 1/3 pans) |
 | Bowl Dispenser | Automated bowl dispensing | Cup/bowl dispenser mechanism |
 | Handoff Station | Customer pickup area | Custom shelf/window |
 | Dressing Station | Self-serve dressings | Pump bottles on counter |
 | Mounting | Arm mounting structure | Custom gantry or dual pedestals |
 
-**Estimated Hardware Cost:** $15,000-20,000
+**Estimated Hardware Cost:** $15,000-19,000
 - UFACTORY 850 arms: ~$8,000 x 2 = $16,000
 - Prep station: ~$1,500
 - Cameras: ~$500
-- System76 computer: ~$1,500
+- System76 Meerkat: ~$800
 - Grippers, mounting, misc: ~$2,000
 
 **Remote-Friendly:** Partially - dual-arm coordination logic can be developed in simulation, physical testing requires full setup
