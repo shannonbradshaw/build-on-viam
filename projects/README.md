@@ -111,44 +111,6 @@ See also: [Future Projects](future-projects.md) - Cleaning Cart, Dishwasher, Box
 | Roomba 1 | Pi 5 (1) | webcam (1) | (internal) | Roomba 500/600 (1) | Serial adapter (1), IR beacons |
 | Roomba 2 | Pi 5 (1) | webcam (1) | (internal) | Roomba 500/600 (1) | Serial adapter (1), IR beacons |
 
-### Hardware Totals
-
-| Component | Count | Notes |
-|-----------|-------|-------|
-| **Arms** | | |
-| xArm 6 | 8 | Vino (4 builds × 2) |
-| xArm 7 | 2 | Chess (2 builds × 1) |
-| UFACTORY 850 | 6 | Salad (2 builds × 2), Barista (2 builds × 1) |
-| **Grippers** | | |
-| xArm Gripper G2 | 16 | Vino (8), Chess (2), Salad (4), Barista (2) |
-| Tongs extension | 4 | Salad (2 builds × 2) |
-| **Compute** | | |
-| System76 Meerkat | 10 | Vino (4), Chess (2), Salad (2), Barista (2) |
-| Raspberry Pi 5 | 12 | Inventory (6), Lighting (4), Roomba (2) |
-| **Cameras** | | |
-| Intel RealSense D435 | 16 | Vino (8), Chess (2), Salad (4), Barista (2) |
-| Webcam | 16 | Vino (4), Salad (2), Barista (2), Inventory (6), Roomba (2) |
-| **Bases** | | |
-| Roomba 500/600 | 2 | Retro Roomba (2 builds × 1) |
-| **Barista Equipment** | | |
-| Eureka Atom grinder | 2 | Barista (2 builds × 1) |
-| Puqpress Q2 | 2 | Barista (2 builds × 1) |
-| Gaggia Classic Pro | 2 | Barista (2 builds × 1) |
-| **Other** | | |
-| Lutron Smart Bridge PRO | 4 | Lighting (1 build × 4) |
-| RFID reader | 2 | Inventory (1 build × 2) |
-| Tablet | 3 | Barista (2), Inventory (1) |
-
-### Arm Summary
-
-| Arm Model | Projects | Per Build | Builds | Total |
-|-----------|----------|-----------|--------|-------|
-| xArm 6 | Vino | 2 | 4 | 8 |
-| xArm 7 | Chess | 1 | 2 | 2 |
-| UFACTORY 850 | Salad Maker | 2 | 2 | 4 |
-| UFACTORY 850 | Barista | 1 | 2 | 2 |
-| **Total** | | | | **16** |
-
 ### Inventory & Procurement
 
 **Current inventory** (existing builds + stock):
