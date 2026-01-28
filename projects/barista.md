@@ -2,53 +2,61 @@
 
 ## Overview
 
-**One-line description:** Robotic coffee station that prepares espresso drinks on demand
+**One-line description:** Single-arm robot that operates an espresso station like a human barista
 
 **Project Lead:** TBD
 **Team Members:** TBD
-**Status:** Proposed
+**Status:** New
 
 ## Description
 
-Barista is a robotic coffee preparation system that makes espresso-based drinks on demand. Using a robot arm, the system operates an espresso machine - grinding beans, tamping, pulling shots, steaming milk, and assembling drinks. Customers order via a tablet interface or mobile app and watch their drink being prepared.
+Barista is a robotic coffee preparation system where a single UFACTORY 850 arm performs all the steps a human barista would: grabbing the portafilter, holding it under the grinder, placing it on an auto-tamper, locking it into the espresso machine, brewing the shot, steaming milk, and assembling drinks. Customers order via a tablet interface and watch their drink being prepared.
 
-This project combines manipulation complexity (multi-step beverage preparation), customer-facing interaction (ordering interface), and operational features (inventory tracking, scheduling, quality monitoring). It's a natural complement to Vino, demonstrating similar customer delivery features with significantly more complex automation.
+Unlike systems that use fully-automatic espresso machines, this project uses a semi-automatic machine with a robot performing the manipulation. This approach mirrors commercial robotic baristas like [Rozum Cafe](https://cafe.rozum.com/) while demonstrating advanced manipulation skills.
 
-Coffee is a high-frequency use case - unlike wine (occasional), coffee is daily. This creates natural opportunities for data collection, model training, and demonstrating fleet management across multiple office locations.
+This project combines manipulation complexity (multi-step beverage preparation), customer-facing interaction (ordering interface), and operational features (inventory tracking, scheduling, quality monitoring).
 
 ## Viam Capabilities Demonstrated
 
 - [x] Motion / Arm Control ← **Complex multi-step manipulation**
-- [x] Gripper Manipulation (portafilter, cups, tamper)
-- [x] Vision / ML (cup detection, foam quality, fill level)
-- [x] Data Management (order history, drink analytics)
+- [x] Gripper Manipulation ← **Portafilter, cups, milk pitcher**
+- [x] Vision / ML ← **Cup detection, fill level, foam quality**
+- [x] Data Management ← **Order history, drink analytics**
 - [x] Fleet Management ← **Multiple coffee stations**
 - [x] Remote Operation
-- [x] Modular Resources (barista service)
+- [x] Modular Resources
 - [ ] Multi-machine Coordination
 - [x] Cloud Integration
-- [x] Customer Delivery ← **Ordering app, preferences, billing**
-- [x] Triggers ← **Order received, cup placed, brew complete**
-- [x] Scheduled Tasks ← **Cleaning cycles, bean refill checks**
+- [x] Customer Delivery ← **Ordering app, preferences**
+- [x] Triggers ← **Order received, brew complete**
+- [x] Scheduled Tasks ← **Cleaning cycles, warmup**
 - [x] Monitoring/Alerting ← **Bean level, water, temperature**
 - [x] Data Pipeline ← **Quality images for training**
 
 ## Hardware Requirements
 
-| Component | Description | Options |
-|-----------|-------------|---------|
-| Arm | 6-DOF robot arm | xArm 6, xArm 5 Lite, UFactory Lite 6 |
-| Gripper | Multi-tool handling | Parallel jaw + custom portafilter holder |
-| Espresso Machine | Semi-auto espresso | Breville Barista Express, Gaggia Classic, Rancilio Silvia |
-| Grinder | Coffee grinding | Built-in or separate burr grinder |
-| Camera | Drink monitoring | USB camera for cup/fill detection |
-| Tablet | Order interface | iPad or Android tablet |
-| Cup Dispenser | Cup staging | Simple gravity dispenser |
-| Milk System | Steaming/frothing | Machine steam wand or separate frother |
-| Sensors | Level monitoring | Weight sensors for beans/water |
-| Compute | Main controller | Raspberry Pi 4, Intel NUC |
+| Component | Description | Specific Model |
+|-----------|-------------|----------------|
+| Arm | 6-DOF robot arm | UFACTORY 850 (850mm reach, 5kg payload) |
+| Gripper | Portafilter/pitcher handling | UFACTORY Gripper |
+| Auto-tamper | Consistent 30lb tamp pressure | Puqpress Q2 (~$900) |
+| Espresso Machine | Semi-automatic | Rancilio Silvia Pro X or Gaggia Classic Pro |
+| Grinder | On-demand grinding | Eureka Mignon Specialita (~$500) |
+| Wrist Camera | Close-up detection | Intel RealSense D405 |
+| Overview Camera | Workspace monitoring | USB webcam |
+| Tablet | Order interface | Android tablet |
+| Cup Dispenser | Cup staging | Gravity dispenser |
+| Knockbox | Puck disposal | Standard knockbox |
+| Milk Pitcher | Steaming vessel | Standard 12oz pitcher |
+| Compute | Main controller | System76 Meerkat |
 
-**Estimated Hardware Cost:** $3,000-6,000 (arm + espresso machine + accessories)
+**Estimated Hardware Cost:** $12,000-15,000
+- UFACTORY 850: ~$8,000
+- Puqpress Q2: ~$900
+- Espresso machine: ~$1,500
+- Grinder: ~$500
+- System76 Meerkat: ~$800
+- Cameras, tablet, accessories: ~$500
 
 **Remote-Friendly:** Partially - control logic can be developed remotely, physical testing requires hardware
 
@@ -58,29 +66,29 @@ Coffee is a high-frequency use case - unlike wine (occasional), coffee is daily.
 
 Select one for hackathon scope:
 
-### Option A: Single Drink Type (Recommended)
-Make espresso shots only - no milk, no variations.
+### Option A: Espresso Only (Recommended)
+Pull espresso shots - grind, tamp, brew, serve.
 - **Complexity:** Medium
 - **Demo Appeal:** High
-- **Scope:** Portafilter handling, tamping, shot pulling, cup delivery
+- **Scope:** Full portafilter workflow, no milk
 
 ### Option B: Espresso + Americano
-Espresso plus hot water addition for Americano.
+Espresso plus hot water addition.
 - **Complexity:** Medium
 - **Demo Appeal:** High
 - **Scope:** Adds water dispensing step
 
-### Option C: Full Drink Menu
-Espresso, Americano, Latte (requires milk steaming).
+### Option C: Full Milk Drinks
+Espresso, Latte, Cappuccino with steamed milk.
 - **Complexity:** High
 - **Demo Appeal:** Very High
-- **Scope:** Adds milk steaming, foam quality monitoring
+- **Scope:** Adds milk steaming with pitcher handling
 
 ### Option D: Order Interface Focus
-Simple drink preparation + polished ordering interface.
+Simple espresso + polished ordering experience.
 - **Complexity:** Medium
 - **Demo Appeal:** High
-- **Scope:** Focus on customer experience, simpler manipulation
+- **Scope:** Focus on customer experience
 
 **Selected MVP:** _______________
 
@@ -90,103 +98,88 @@ Simple drink preparation + polished ordering interface.
 
 Select 3-5 items for post-hackathon development:
 
-### Drink Preparation
+### Core Workflow
+- [ ] **Portafilter handling** - Grab, hold, lock-in, remove
+- [ ] **Grinder operation** - Position under grinder, activate, dose
+- [ ] **Auto-tamper integration** - Place on Puqpress, retrieve
+- [ ] **Shot pulling** - Lock portafilter, start brew, monitor
+- [ ] **Puck disposal** - Knock out puck, clean portafilter
+
+### Milk Steaming
+- [ ] **Pitcher handling** - Grab pitcher, position under wand
+- [ ] **Steam wand operation** - Hold during steaming
+- [ ] **Pour milk** - Pour steamed milk into cup
+- [ ] **Foam quality detection** - ML model assesses microfoam
+
+### Drink Variations
 - [ ] **Multiple drink types** - Espresso, Americano, Latte, Cappuccino
 - [ ] **Size variations** - Small, Medium, Large cups
-- [ ] **Strength options** - Single, double, triple shots
-- [ ] **Milk alternatives** - Oat, almond, soy milk handling
-- [ ] **Temperature control** - Monitor and adjust brew temperature
-
-### Manipulation & Quality
-- [ ] **Tamping pressure** - Consistent tamp pressure via force feedback
-- [ ] **Grind adjustment** - Automatic grind size tuning based on shot time
-- [ ] **Foam quality detection** - ML model assesses microfoam quality
-- [ ] **Fill level monitoring** - Camera detects fill level, stops at correct amount
-- [ ] **Latte art** - Stretch goal: pour patterns for latte art
+- [ ] **Strength options** - Single, double shots
+- [ ] **Milk alternatives** - Different pitchers for oat, almond
 
 ### Customer Delivery (Gap Feature)
-- [ ] **Web ordering interface** - TypeScript SDK tablet app for ordering
-- [ ] **Mobile app** - Flutter SDK app for remote ordering
-- [ ] **Guest profiles** - Remember regular orders, preferences
-- [ ] **Order queue display** - Show pending orders on screen
-- [ ] **Billing integration** - Per-drink billing demonstration
-- [ ] **Loyalty tracking** - Drink count, rewards (demo)
+- [ ] **Tablet ordering interface** - TypeScript SDK app
+- [ ] **Mobile app** - Flutter SDK for remote ordering
+- [ ] **Guest profiles** - Remember regular orders
+- [ ] **Order queue display** - Show pending orders
+- [ ] **Order status** - Real-time prep progress
 
 ### Triggers (Gap Feature)
-- [ ] **Order received trigger** - New order starts preparation sequence
-- [ ] **Cup placed trigger** - Sensor detects cup in position, proceeds
-- [ ] **Shot complete trigger** - Detect shot volume reached, stop extraction
+- [ ] **Order received** - Start preparation sequence
+- [ ] **Brew complete** - Detect shot done, proceed to next step
 - [ ] **Low beans alert** - Weight sensor triggers refill alert
-- [ ] **Water level alert** - Trigger alert when reservoir low
 - [ ] **Temperature alert** - Alert if brew temp out of range
 
 ### Scheduled Tasks (Gap Feature)
 - [ ] **Morning warmup** - Pre-heat machine before office opens
-- [ ] **Cleaning cycle** - Daily backflush and cleaning routine
+- [ ] **Cleaning cycle** - Daily backflush routine
 - [ ] **Inventory check** - Daily bean/water level report
-- [ ] **Descaling reminder** - Schedule-based maintenance alert
 
-### Data Pipeline / ML Training (Gap Feature)
-- [ ] **Drink image capture** - Capture image of every finished drink
-- [ ] **Quality labeling** - Rate drinks for quality (foam, color, fill)
-- [ ] **Train quality model** - Detect good vs bad drinks before serving
-- [ ] **Shot time tracking** - Capture extraction times for grind tuning
-- [ ] **Failure mode capture** - Image failed drinks for troubleshooting
-
-### Monitoring & Alerting (Gap Feature)
-- [ ] **Real-time dashboard** - Station status, queue length, drink stats
-- [ ] **Inventory alerts** - Beans, milk, cups, water levels
-- [ ] **Error notifications** - Alert on jams, spills, machine issues
-- [ ] **Usage analytics** - Popular drinks, peak times, wait times
-
-### Fleet (Gap Feature)
-- [ ] **Multi-station deployment** - Same config across office locations
-- [ ] **Centralized ordering** - Order from any station, view all queues
-- [ ] **Cross-station analytics** - Compare usage, quality across locations
-- [ ] **Unified inventory** - Track supplies across all stations
+### Data Pipeline (Gap Feature)
+- [ ] **Drink image capture** - Photo of every finished drink
+- [ ] **Shot time tracking** - Extraction times for grind tuning
+- [ ] **Quality labeling** - Rate drinks for training data
 
 ---
 
 ## Stretch Goals
 
 - [ ] Voice ordering ("Hey Barista, make me a latte")
-- [ ] Latte art patterns (hearts, leaves, etc.)
-- [ ] Cold brew / iced drink support
-- [ ] Bean variety selection from multiple hoppers
-- [ ] Integration with calendar (make coffee before meeting ends)
-- [ ] Roast date tracking and freshness alerts
-- [ ] Per-user caffeine tracking (optional health feature)
+- [ ] Latte art pour patterns
+- [ ] Grind size auto-adjustment based on shot timing
+- [ ] Multiple bean hoppers with selection
+- [ ] Calendar integration (coffee ready when meeting ends)
 
 ---
 
 ## Success Criteria
 
 **MVP Complete When:**
-- [ ] Robot can prepare an espresso shot end-to-end
-- [ ] Cup is correctly positioned and filled
-- [ ] Order can be placed via tablet interface
+- [ ] Robot grabs portafilter and holds under grinder
+- [ ] Robot places portafilter on Puqpress
+- [ ] Robot locks portafilter into group head
+- [ ] Robot activates brew and waits for completion
+- [ ] Robot serves cup to pickup location
 - [ ] Works reliably for 5+ drinks in sequence
-- [ ] No spills or safety issues
 
 **Project Complete When:**
+- [ ] Milk steaming workflow complete
 - [ ] Multiple drink types available
-- [ ] Customer ordering interface polished
+- [ ] Customer ordering interface working
 - [ ] Monitoring dashboard operational
-- [ ] All selected backlog items implemented
 - [ ] Documentation complete
-- [ ] Can run unsupervised for a morning
 
 ---
 
 ## Documentation Deliverables
 
 - [ ] README with setup instructions
-- [ ] Hardware assembly guide
+- [ ] Hardware assembly and mounting guide
 - [ ] Espresso machine integration guide
+- [ ] Arm calibration procedure
 - [ ] Drink recipe configuration
 - [ ] Customer app setup guide
 - [ ] Operations and maintenance guide
-- [ ] Troubleshooting guide (jams, spills, quality issues)
 
 ---
 
@@ -199,46 +192,123 @@ Select 3-5 items for post-hackathon development:
 
 ---
 
+## Technical Details
+
+### Single-Arm Workflow Sequence
+
+```
+1. RECEIVE ORDER
+   └── Trigger: Order placed via tablet
+
+2. PREPARE PORTAFILTER
+   ├── Grab portafilter from holder
+   ├── Move to grinder
+   ├── Hold under grinder spout
+   └── Activate grinder (button press or timed)
+
+3. TAMP
+   ├── Move to Puqpress
+   ├── Place portafilter on tamper
+   ├── Wait for tamp completion (~1.3 sec)
+   └── Retrieve portafilter
+
+4. BREW
+   ├── Move to espresso machine group head
+   ├── Lock portafilter (twist motion)
+   ├── Position cup under spout
+   ├── Activate brew (button or lever)
+   └── Wait for shot completion (~25-30 sec)
+
+5. STEAM MILK (if latte/cappuccino)
+   ├── Grab milk pitcher
+   ├── Position under steam wand
+   ├── Activate steam
+   ├── Hold for steaming duration
+   └── Pour milk into cup
+
+6. SERVE
+   ├── Move cup to pickup location
+   └── Signal order ready
+
+7. CLEANUP
+   ├── Remove portafilter from group head
+   ├── Knock out puck into knockbox
+   └── Return portafilter to holder
+```
+
+### Workspace Layout
+
+```
+        [Grinder]     [Espresso Machine]
+            │              │
+            ▼              ▼
+    ┌───────────────────────────────────┐
+    │                                   │
+    │           [UFACTORY 850]          │
+    │                │                  │
+    │    ┌───────────┼───────────┐      │
+    │    │           │           │      │
+    │    ▼           ▼           ▼      │
+    │ [Puqpress]  [Cups]    [Knockbox]  │
+    │                                   │
+    │         [Milk Pitcher]            │
+    │                                   │
+    │      [Pickup] ← Customer          │
+    └───────────────────────────────────┘
+```
+
+### Key Manipulation Challenges
+
+| Task | Challenge | Solution |
+|------|-----------|----------|
+| Portafilter lock-in | Requires twist motion under spring pressure | Compliant motion, force feedback |
+| Grinder activation | Button press while holding portafilter | Two-stage: position, then press |
+| Steam wand positioning | Hold steady during steaming | Fixed wand angle, move pitcher |
+| Puck knockback | Firm tap required | Controlled velocity impact |
+
+### Espresso Machine Options
+
+| Machine | Price | Pros | Cons |
+|---------|-------|------|------|
+| Rancilio Silvia Pro X | ~$1,500 | PID built-in, reliable, common | No API, button control only |
+| Gaggia Classic Pro | ~$450 | Cheap, well-documented Pi mods | Needs PID mod for consistency |
+| Profitec Go | ~$1,200 | Compact, PID, quality build | No smart features |
+| Lelit Anna 2 | ~$500 | PID, compact | Limited community support |
+
+**Recommendation:** Rancilio Silvia Pro X - reliable, PID temperature control built-in, robot just needs to press buttons.
+
+### References
+
+- [Rozum Cafe](https://cafe.rozum.com/) - Commercial robotic barista (~$100k)
+- [Cafe X](https://www.cafexapp.com/) - Single-arm robotic coffee bar
+- [Puqpress Q2](https://puq.coffee/) - Automatic tamper with 22-66lb adjustable pressure
+- [Gaggia Classic Pi Mods](https://github.com/esrice/piggia) - Open source Pi control
+
+---
+
 ## Notes
 
-**Why this project is compelling:**
+**Why single arm works:**
+- Sequential workflow is natural for coffee making
+- One arm is sufficient for all manipulation tasks
+- Simpler development, lower cost
+- Commercial systems (Cafe X) use single arm successfully
 
-1. **High engagement** - Everyone loves coffee, high interaction frequency
-2. **Demo appeal** - Watching a robot make your coffee is captivating
-3. **Real utility** - Actually useful in an office setting
-4. **Feature coverage** - Naturally exercises many Viam capabilities
-5. **Complexity showcase** - Multi-step manipulation is impressive
-6. **Scale story** - Easy to imagine multiple stations (fleet)
+**Why Puqpress instead of robot tamping:**
+- UFACTORY 850 payload (5kg/11lb) < required tamp force (30lb)
+- Auto-tamper ensures consistent pressure
+- This is what commercial robotic baristas do
+- Robot still does all other manipulation
 
 **Gap Features This Project Addresses:**
-- **Customer Delivery** - Full ordering interface with TypeScript/Flutter SDKs
-- **Triggers** - Order received, cup placed, shot complete, inventory alerts
-- **Scheduled Tasks** - Morning warmup, cleaning cycles, inventory checks
-- **Monitoring/Alerting** - Bean level, water level, temperature, usage dashboard
-- **Data Pipeline** - Drink quality images, shot timing data, model training
-- **Fleet Management** - Multiple coffee stations with centralized management
-
-**Comparison to Vino:**
-
-| Aspect | Vino | Barista |
-|--------|------|---------|
-| Drink complexity | Single action (pour) | Multi-step (grind, tamp, brew, steam) |
-| Frequency | Occasional | Daily/multiple per day |
-| Temperature sensitivity | Room temp | Critical (brew temp, steam temp) |
-| Quality variation | Low | High (many variables affect quality) |
-| Data opportunity | Low volume | High volume, quality metrics |
-| Fleet potential | Medium | High (every office needs coffee) |
+- **Customer Delivery** - Ordering interface with TypeScript/Flutter SDKs
+- **Triggers** - Order received, brew complete, inventory alerts
+- **Scheduled Tasks** - Morning warmup, cleaning cycles
+- **Monitoring/Alerting** - Bean level, water, temperature, usage
+- **Data Pipeline** - Drink quality images, shot timing data
 
 **Risk Factors:**
-- Espresso machine integration varies by model
-- Milk steaming is complex manipulation
-- Quality consistency requires tuning
-- Cleanup and maintenance are significant
+- Portafilter lock-in requires precise force control
+- Steam wand manipulation is complex
 - Hot liquids require safety considerations
-
-**Recommended Approach:**
-1. Start with espresso-only MVP (no milk)
-2. Use semi-automatic machine with exposed portafilter
-3. Focus on reliability before adding drink types
-4. Add customer interface early for engagement
-5. Milk steaming as post-hackathon enhancement
+- Espresso quality depends on many variables

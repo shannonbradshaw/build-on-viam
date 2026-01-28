@@ -10,7 +10,7 @@ This directory contains all projects for the Build on Viam program.
 | [Chess](chess.md) | Existing | Arm, vision, ML, **data pipeline** | Full game play, move execution |
 | [Salad Maker](salad-maker.md) | New | **Dual-arm**, vision, **customer delivery**, **multi-machine** | Single arm fixed recipe |
 | [Greenhouse](greenhouse.md) | New | Data, ML, **fleet**, **triggers** | Monitor + auto-water |
-| [Barista](barista.md) | Proposed | Arm, **customer delivery**, **fleet**, **triggers** | Espresso only |
+| [Barista](barista.md) | New | Arm, **customer delivery**, **fleet**, **triggers** | Espresso only |
 | [Inventory Tracker](inventory-tracker.md) | New | RFID, vision, **triggers**, **customer delivery** | Barcode checkout |
 | [Retro Roomba](retro-roomba.md) | New | **Custom module**, protocol, SLAM | Basic drive control |
 | [Smart Lighting](smart-lighting.md) | New | IoT, **triggers**, **multi-machine**, **scheduled tasks** | Basic control + scenes |
@@ -127,10 +127,12 @@ Current build configuration for 50 engineers:
 |---------|--------|-----------|-----------------|
 | Vino | 4 | 5 | 20 |
 | Chess | 2 | 5 | 10 |
-| Salad Maker | 1 | 5 | 5 |
+| Salad Maker | 2 | 5 | 10 |
+| Barista | 2 | 5 | 10 |
+| Greenhouse | 1 | 5 | 5 |
 | Inventory Tracker | 1 | 5 | 5 |
 | Smart Lighting | 1 | 5 | 5 |
-| Retro Roomba | 1 | 5 | 5 |
+| Retro Roomba | 2 | 5 | 10 |
 
 **Note:** Adjust based on interest and hardware availability.
 
