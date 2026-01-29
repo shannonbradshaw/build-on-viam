@@ -55,30 +55,26 @@ These are the capabilities we want to demonstrate across our project portfolio:
 
 As of the current project portfolio, here's how capabilities are covered:
 
-**Active Projects:** Vino, Chess, Salad Maker, Greenhouse, Barista, Inventory Tracker, Retro Roomba, Smart Lighting
+**Projects:** Chess, Vino, Salad Maker, Greenhouse, Barista, Inventory Tracker, Retro Roomba, Smart Lighting
 
-**Future Projects:** Cleaning Cart, Dishwasher, Box Bot
-
-| Capability | Primary Project | Secondary |
-|------------|-----------------|-----------|
-| Hardware Integration | All projects | - |
-| Motion Planning | Chess, Vino, Salad Maker, Barista | - |
-| Vision / ML | Chess, Inventory Tracker, Greenhouse | Salad Maker, Barista |
-| Data Capture & Sync | Greenhouse, Retro Roomba | All projects |
-| Remote Operation | All projects | - |
-| Module Development | **Retro Roomba**, **Smart Lighting** | Inventory Tracker |
-| Fragments | Greenhouse, Retro Roomba | Smart Lighting |
-| Fleet Management | **Greenhouse**, **Smart Lighting** | Barista, Inventory Tracker |
-| OTA Updates | Retro Roomba (stretch) | - |
-| Provisioning | Retro Roomba (stretch) | - |
-| Event-Driven Automation | **Inventory Tracker**, **Smart Lighting** | Greenhouse, Vino, Chess, Barista, Salad Maker |
-| Scheduled Tasks | **Smart Lighting**, **Inventory Tracker** | Greenhouse, Barista, Vino |
-| Monitoring & Alerting | **Greenhouse**, Barista | Inventory Tracker |
-| Data Pipeline (ML) | **Chess**, **Greenhouse** | Inventory Tracker, Salad Maker, Barista |
-| Customer Delivery | **Inventory Tracker**, **Vino** | Salad Maker, Barista |
-| Web/Mobile Apps | Inventory Tracker, Barista | Vino, Salad Maker |
-
-**Bold** = Primary responsibility for demonstrating this capability.
+| Capability | Projects |
+|------------|----------|
+| Hardware Integration | All projects |
+| Motion Planning | Chess, Vino, Salad Maker, Barista |
+| Vision / ML Inference | Chess, Vino, Salad Maker, Barista, Inventory Tracker, Greenhouse |
+| Data Capture & Sync | All projects |
+| Remote Operation | All projects |
+| Module Development | Chess, Vino, Salad Maker, Barista, Inventory Tracker, Retro Roomba, Smart Lighting |
+| Fragments | All projects |
+| Fleet Management | Vino, Greenhouse, Barista, Inventory Tracker, Smart Lighting |
+| OTA Updates | Retro Roomba |
+| Provisioning | — |
+| Event-Driven Automation | All projects |
+| Scheduled Tasks | Vino, Salad Maker, Greenhouse, Barista, Inventory Tracker, Smart Lighting |
+| Monitoring & Alerting | Vino, Greenhouse, Barista |
+| Data Pipeline (ML Training) | Vino, Salad Maker, Greenhouse, Barista, Inventory Tracker |
+| Customer Delivery | Vino, Salad Maker, Barista, Inventory Tracker |
+| Web/Mobile Apps | Vino, Salad Maker, Barista, Inventory Tracker |
 
 
 ## Proposing New Projects
