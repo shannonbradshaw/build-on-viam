@@ -80,23 +80,6 @@ As of the current project portfolio, here's how capabilities are covered:
 
 **Bold** = Primary responsibility for demonstrating this capability.
 
-## Gap Analysis Methodology
-
-When assessing feature coverage:
-
-1. **List all Viam capabilities** from documentation (see `../docs-dev/understand/what-is-viam.md`)
-2. **Map each capability to projects** that naturally exercise it
-3. **Identify gaps** - capabilities with no project coverage
-4. **Assign gaps to projects** where the capability fits naturally
-5. **Consider new projects** if no existing project is a natural fit
-
-### Questions to Ask
-
-- Does this capability have at least one project demonstrating it well?
-- Is the demonstration compelling (not just technically present)?
-- Would a customer understand how to use this capability from our example?
-- Is the project that owns this capability likely to be maintained?
-
 ## Configuration Architecture
 
 All Build on Viam projects should follow the two-layer configuration pattern:
