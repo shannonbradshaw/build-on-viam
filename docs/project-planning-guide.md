@@ -33,7 +33,7 @@ These are the capabilities we want to demonstrate across our project portfolio:
 |------------|-------------|
 | **Fleet Management** | Managing multiple machines with shared configs |
 | **OTA Updates** | Deploying module and model updates to fleet |
-| **Provisioning** | Automatic setup of new machines |
+| **Provisioning** | Using fragments to reuse configurations across a fleet |
 
 ### Operational Capabilities
 
@@ -68,7 +68,7 @@ As of the current project portfolio, here's how capabilities are covered:
 | Fragments | All projects |
 | Fleet Management | Vino, Greenhouse, Barista, Inventory Tracker, Smart Lighting |
 | OTA Updates | All projects |
-| Provisioning | — |
+| Provisioning | All projects |
 | Event-Driven Automation | All projects |
 | Scheduled Tasks | Vino, Salad Maker, Greenhouse, Barista, Inventory Tracker, Smart Lighting |
 | Monitoring & Alerting | Vino, Greenhouse, Barista |
