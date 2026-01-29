@@ -16,17 +16,33 @@ This project demonstrates navigation, SLAM, vision detection, and multi-robot co
 
 ## Viam Capabilities Demonstrated
 
-- [ ] Motion / Arm Control (if collecting)
-- [x] Vision / ML
-- [x] Data Management
-- [x] Fleet Management (coordination with dishwasher)
-- [x] Remote Operation
-- [ ] Modular Resources
-- [x] Multi-machine Coordination
-- [x] Cloud Integration
-- [x] Navigation / SLAM
-- [x] Scheduled Tasks ← **Primary scheduled tasks demo**
-- [x] Event-Driven Automation ← **Motion-based pause, schedule-based actions**
+### Core Capabilities
+- [x] **Hardware Integration** — Mobile base, lidar, camera, optional arm/gripper
+- [ ] **Motion Planning** — Stretch: arm manipulation for item collection
+- [x] **Vision / ML Inference** — Item detection and classification
+- [x] **Data Capture & Sync** — Patrol data, detection logs synced to cloud
+- [x] **Remote Operation** — Remote monitoring and control
+- [ ] **Module Development** — Not primary focus
+
+### Scale & Fleet Capabilities
+- [x] **Fragments** — Patrol route configs as reusable fragments
+- [x] **Fleet Management** — Multiple carts, coordination with dishwasher robot
+- [ ] **OTA Updates** — Not primary focus
+- [ ] **Provisioning** — Not primary focus
+
+### Operational Capabilities
+- [x] **Event-Driven Automation** — Motion-based pause, low battery return, tray full alert
+- [x] **Scheduled Tasks** — Primary: multiple daily patrols (morning, post-lunch, end-of-day)
+- [ ] **Monitoring & Alerting** — Backlog: patrol status dashboard
+- [ ] **Data Pipeline (ML Training)** — Backlog: detection improvement
+
+### Customer-Facing Capabilities
+- [ ] **Customer Delivery** — Not applicable
+- [ ] **Web/Mobile Apps** — Backlog: patrol monitoring dashboard
+
+### Additional Capabilities
+- [x] **Navigation / SLAM** — Office mapping, autonomous patrol routes
+- [x] **Multi-Machine Coordination** — Dishwasher handoff, multi-cart fleet
 
 ## Hardware Requirements
 

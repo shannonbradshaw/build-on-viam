@@ -16,17 +16,29 @@ Extended functionality includes restocking kitchen supplies by unpacking boxes a
 
 ## Viam Capabilities Demonstrated
 
-- [x] Motion / Arm Control
-- [x] Gripper Manipulation
-- [x] Vision / ML
-- [x] Data Management
-- [ ] Fleet Management
-- [x] Remote Operation
-- [ ] Modular Resources
-- [ ] Multi-machine Coordination
-- [x] Cloud Integration
-- [x] Event-Driven Automation ← **Box detection, jam alerts, bin full**
-- [x] Data Pipeline ← **Box image capture for classifier training**
+### Core Capabilities
+- [x] **Hardware Integration** — Arm, gripper, camera, flattening mechanism
+- [x] **Motion Planning** — Arm manipulation for box handling
+- [x] **Vision / ML Inference** — Box detection and size classification
+- [x] **Data Capture & Sync** — Processing metrics, box images synced to cloud
+- [x] **Remote Operation** — Remote monitoring and status
+- [ ] **Module Development** — Not primary focus
+
+### Scale & Fleet Capabilities
+- [x] **Fragments** — Station configuration as reusable fragment
+- [ ] **Fleet Management** — Stretch: multi-station deployment
+- [ ] **OTA Updates** — Not primary focus
+- [ ] **Provisioning** — Not primary focus
+
+### Operational Capabilities
+- [x] **Event-Driven Automation** — Box detection, jam alerts, bin full notifications
+- [ ] **Scheduled Tasks** — Backlog: off-hours operation for noise reduction
+- [ ] **Monitoring & Alerting** — Backlog: metrics dashboard, maintenance alerts
+- [x] **Data Pipeline (ML Training)** — Box image capture for classifier training
+
+### Customer-Facing Capabilities
+- [ ] **Customer Delivery** — Not applicable
+- [ ] **Web/Mobile Apps** — Backlog: recycling metrics dashboard
 
 ## Hardware Requirements
 

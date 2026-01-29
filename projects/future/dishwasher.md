@@ -16,18 +16,32 @@ Extended functionality includes loading dirty dishes from the sink and coordinat
 
 ## Viam Capabilities Demonstrated
 
-- [x] Motion / Arm Control
-- [x] Gripper Manipulation
-- [x] Vision / ML
-- [x] Data Management (dish tracking)
-- [ ] Fleet Management
-- [x] Remote Operation
-- [ ] Modular Resources
-- [ ] Multi-machine Coordination (stretch: sink handoff)
-- [x] Cloud Integration
-- [x] Configuration Management (cabinet positions)
-- [x] Data Pipeline ← **Dish image capture for classifier training**
-- [x] Event-Driven Automation ← **Dishwasher cycle complete detection**
+### Core Capabilities
+- [x] **Hardware Integration** — Arm, gripper, cameras, dishwasher interface
+- [x] **Motion Planning** — Arm manipulation for dish pick-and-place
+- [x] **Vision / ML Inference** — Dish detection and classification
+- [x] **Data Capture & Sync** — Dish tracking, cycle data synced to cloud
+- [x] **Remote Operation** — Develop manipulation logic remotely
+- [ ] **Module Development** — Not primary focus
+
+### Scale & Fleet Capabilities
+- [x] **Fragments** — Cabinet position configs as reusable fragments
+- [ ] **Fleet Management** — Not applicable (single station)
+- [ ] **OTA Updates** — Not primary focus
+- [ ] **Provisioning** — Not primary focus
+
+### Operational Capabilities
+- [x] **Event-Driven Automation** — Dishwasher cycle complete detection, drop detection
+- [ ] **Scheduled Tasks** — Backlog: scheduled unload times
+- [ ] **Monitoring & Alerting** — Backlog: error logging, inventory alerts
+- [x] **Data Pipeline (ML Training)** — Dish image capture for classifier training
+
+### Customer-Facing Capabilities
+- [ ] **Customer Delivery** — Not applicable
+- [ ] **Web/Mobile Apps** — Not primary focus
+
+### Multi-Machine Coordination
+- [ ] **Sink handoff** — Stretch: coordinate with cleaning cart robot
 
 ## Hardware Requirements
 
