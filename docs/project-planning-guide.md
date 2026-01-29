@@ -11,6 +11,19 @@ Build on Viam projects should collectively:
 3. **Exercise the full lifecycle** - From prototype to fleet deployment and maintenance
 4. **Be compelling demos** - Visitors, customers, and executives should be impressed
 
+## Projects
+
+| Project | Summary |
+|---------|---------|
+| [Barista](../projects/barista.md) | Single-arm robot that operates an espresso station like a human barista |
+| [Chess](../projects/chess.md) | Robot that plays chess against humans, physically moving pieces on a real board |
+| [Greenhouse](../projects/greenhouse.md) | Automated growing environment with sensing, environmental control, and growth tracking |
+| [Inventory Tracker](../projects/inventory-tracker.md) | Track lab equipment with zero-tagging vision - just hold up an item and go |
+| [Retro Roomba](../projects/retro-roomba.md) | Bring a Roomba 650/655 into the Viam ecosystem with a custom driver module |
+| [Salad Maker](../projects/salad-maker.md) | Dual-arm robot that assembles custom salads from a refrigerated prep station |
+| [Smart Lighting](../projects/smart-lighting.md) | Intelligent lighting that responds to occupancy, daylight, and schedules |
+| [Vino](../projects/vino.md) | Wine service robot that pours and serves wine on demand |
+
 ## Viam Platform Capabilities
 
 These are the capabilities we want to demonstrate across our project portfolio:
