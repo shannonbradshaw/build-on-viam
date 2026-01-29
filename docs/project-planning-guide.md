@@ -82,34 +82,25 @@ When proposing a new project, consider:
 ### 1. Feature Coverage
 
 - Does this project demonstrate a broad set of Viam capabilities?
-- Which "gap features" could this project address?
-- Would this be the PRIMARY demo for any capability?
+- Does it emphasize any capability not well covered by other projects?
 
-### 2. Natural Fit
+### 2. Demo Appeal
 
-- Do the gap features fit naturally, or are they forced?
-- Example: Fleet management fits Greenhouse naturally (multiple sensor stations) but not Chess (single board)
-- Example: Customer delivery fits Vino naturally
-
-### 3. Demo Appeal
-
-- Is this compelling to watch?
 - Would visitors/customers be impressed?
-- Does it have a clear "wow" moment?
+- Is there a clear "wow" moment?
 
-### 4. Feasibility
+### 3. Feasibility
 
 - What are the hardware needs?
 - What is the MVP for the hackathon?
 - Is the MVP achievable in hackathon timeframe?
 
-### 5. Lifecycle Coverage
+### 4. Lifecycle Coverage
 
 - Does this project exercise multiple lifecycle stages?
 - Prototype → Deploy → Scale → Fleet → Maintain
-- Greenhouse scores highly because it naturally progresses through all stages
 
-### 6. Maintenance
+### 5. Maintenance
 
 - Can this project be maintained long-term?
 - Is the hardware reliable?
