@@ -240,40 +240,6 @@ Connect with other Build on Viam projects.
 
 ---
 
-## Success Criteria
-
-**MVP Complete When:**
-- [ ] Roomba drives from Viam app (SetVelocity works)
-- [ ] Battery level readable as sensor
-- [ ] Bump sensors cause stops
-- [ ] Module published to registry (private)
-
-**v1.0 Complete When:**
-- [ ] All Roomba sensors exposed through Viam
-- [ ] Module has unit tests
-- [ ] Documentation complete
-- [ ] Hardware fragment created and versioned
-
-**Full Project Complete When:**
-- [ ] Fleet of 2+ Roombas managed together
-- [ ] Custom web or mobile control interface
-- [ ] Event-driven automation configured
-- [ ] Data capture and analysis pipeline working
-
----
-
-## Documentation Deliverables
-
-- [ ] README with setup instructions
-- [ ] Wiring diagram (Pi to Roomba)
-- [ ] Configuration examples
-- [ ] Roomba Open Interface command reference
-- [ ] Module development notes
-- [ ] Testing guide
-- [ ] Parts list with purchase links
-
----
-
 ## Links
 
 - **Jira Epic:** [TBD]

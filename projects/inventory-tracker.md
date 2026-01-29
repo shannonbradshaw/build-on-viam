@@ -194,47 +194,6 @@ Complete hands-free tracking.
 
 ---
 
-## Success Criteria
-
-**Phase 1 (MVP) Complete When:**
-- [ ] Camera detects checkout gesture reliably
-- [ ] Photo captured and saved to cloud on each checkout
-- [ ] Slack notification sent with image within 5 seconds
-- [ ] Dashboard shows recent checkouts with images
-- [ ] Works reliably for 10+ checkouts in a row
-
-**Phase 2 Complete When:**
-- [ ] Model recognizes 20+ common lab items with >90% accuracy
-- [ ] Auto-labeling applied to new checkouts
-- [ ] Unknown items queued for manual labeling
-- [ ] Retraining pipeline works end-to-end
-
-**Phase 3 Complete When:**
-- [ ] Face recognition identifies enrolled users accurately
-- [ ] Full automatic checkout (item + person + time) logged
-- [ ] Overdue reminders sent to correct person
-- [ ] Privacy controls implemented and documented
-
-**Project Complete When:**
-- [ ] System runs unattended for 30+ days
-- [ ] Training data pipeline feeds model improvements
-- [ ] Multiple checkout stations deployed
-- [ ] Documentation complete
-
----
-
-## Documentation Deliverables
-
-- [ ] README with setup instructions
-- [ ] Hardware assembly guide (camera mounting)
-- [ ] Checkout station placement guide
-- [ ] Dashboard user guide
-- [ ] Adding new items guide
-- [ ] Model training guide
-- [ ] Privacy policy for face recognition
-
----
-
 ## Links
 
 - **Jira Epic:** [TBD]

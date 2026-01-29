@@ -144,35 +144,6 @@ Select 3-5 items for post-hackathon development:
 
 ---
 
-## Success Criteria
-
-**MVP Complete When:**
-- [ ] Lutron module connects to bridge via Telnet
-- [ ] Can control individual lights from Viam
-- [ ] Zone grouping works
-- [ ] Basic scene activation works
-- [ ] One automation working: occupancy or daylight threshold
-
-**Project Complete When:**
-- [ ] Daylight harvesting working
-- [ ] Scheduled scenes operational
-- [ ] Occupancy sensor integration complete
-- [ ] Dashboard showing lighting status
-- [ ] Documentation complete
-
----
-
-## Documentation Deliverables
-
-- [ ] README with setup instructions
-- [ ] Lutron Bridge PRO configuration guide
-- [ ] Wiring and installation guide
-- [ ] Zone configuration reference
-- [ ] Scene programming guide
-- [ ] Event-driven automation configuration guide
-
----
-
 ## Links
 
 - **Jira Epic:** [TBD]

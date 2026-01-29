@@ -148,33 +148,6 @@ Select 3-5 items for post-hackathon development:
 
 ---
 
-## Success Criteria
-
-**MVP Complete When:**
-- [ ] Sensors reading and logging to Viam cloud
-- [ ] Dashboard shows current and historical data
-- [ ] Automated watering activates correctly (if Option B+)
-- [ ] System runs unattended for 24+ hours
-
-**Project Complete When:**
-- [ ] Plants successfully grown from seed to harvest
-- [ ] All selected backlog items implemented
-- [ ] Time-lapse video created
-- [ ] Documentation complete
-
----
-
-## Documentation Deliverables
-
-- [ ] README with setup instructions
-- [ ] Hardware wiring guide
-- [ ] Sensor calibration guide
-- [ ] Fragment templates for different crops
-- [ ] Dashboard configuration
-- [ ] Time-lapse setup guide
-
----
-
 ## Links
 
 - **Jira Epic:** [TBD]

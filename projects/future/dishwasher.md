@@ -140,33 +140,6 @@ Select 3-5 items for post-hackathon development:
 
 ---
 
-## Success Criteria
-
-**MVP Complete When:**
-- [ ] Robot can detect dishes in dishwasher rack
-- [ ] Robot can pick up a dish without dropping
-- [ ] Robot can place dish in designated cabinet location
-- [ ] Works reliably for 5+ dishes in sequence
-
-**Project Complete When:**
-- [ ] Handles all common dish types
-- [ ] Can unload full dishwasher load
-- [ ] All selected backlog items implemented
-- [ ] Documentation complete
-
----
-
-## Documentation Deliverables
-
-- [ ] README with setup instructions
-- [ ] Hardware assembly guide
-- [ ] Kitchen installation guide
-- [ ] Cabinet position configuration guide
-- [ ] Supported dish types reference
-- [ ] Troubleshooting guide
-
----
-
 ## Links
 
 - **Jira Epic:** [TBD]

@@ -149,31 +149,6 @@ Camera reads wine label, displays pairing suggestions and tasting notes.
 
 ---
 
-## Success Criteria
-
-**MVP Complete When:**
-- [ ] Robot can pick up a bottle from rack
-- [ ] Robot can pour wine into a glass
-- [ ] Pour amount is reasonably consistent
-- [ ] Demo runs reliably 3+ times in a row
-
-**Project Complete When:**
-- [ ] All selected backlog items implemented
-- [ ] Documentation complete
-- [ ] Can be operated by someone not on the team
-
----
-
-## Documentation Deliverables
-
-- [ ] README with setup instructions
-- [ ] Hardware assembly guide
-- [ ] Configuration reference
-- [ ] Demo operation guide
-- [ ] Video of system in operation
-
----
-
 ## Links
 
 - **Existing Code:** ~/viam/vino

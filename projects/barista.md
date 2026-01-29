@@ -152,37 +152,6 @@ Select 3-5 items for post-hackathon development:
 
 ---
 
-## Success Criteria
-
-**MVP Complete When:**
-- [ ] Robot grabs portafilter and holds under grinder
-- [ ] Robot places portafilter on Puqpress
-- [ ] Robot locks portafilter into group head
-- [ ] Robot activates brew and waits for completion
-- [ ] Robot serves cup to pickup location
-- [ ] Works reliably for 5+ drinks in sequence
-
-**Project Complete When:**
-- [ ] Milk steaming workflow complete
-- [ ] Multiple drink types available
-- [ ] Customer ordering interface working
-- [ ] Monitoring dashboard operational
-- [ ] Documentation complete
-
----
-
-## Documentation Deliverables
-
-- [ ] README with setup instructions
-- [ ] Hardware assembly and mounting guide
-- [ ] Espresso machine integration guide
-- [ ] Arm calibration procedure
-- [ ] Drink recipe configuration
-- [ ] Customer app setup guide
-- [ ] Operations and maintenance guide
-
----
-
 ## Links
 
 - **Jira Epic:** [TBD]

@@ -146,33 +146,6 @@ Select 3-5 items for post-hackathon development:
 
 ---
 
-## Success Criteria
-
-**MVP Complete When:**
-- [ ] Robot can navigate office without collisions
-- [ ] Robot detects dishes/cups on desks via camera
-- [ ] Robot completes a patrol route and reports findings
-- [ ] Works reliably for 3+ patrol runs
-
-**Project Complete When:**
-- [ ] Full office map with named locations
-- [ ] Detection accuracy >90% for common items
-- [ ] All selected backlog items implemented
-- [ ] Documentation complete
-
----
-
-## Documentation Deliverables
-
-- [ ] README with setup instructions
-- [ ] Hardware assembly guide
-- [ ] SLAM mapping guide
-- [ ] Office configuration guide (locations, routes)
-- [ ] Detection model training guide
-- [ ] Operations guide (scheduling, monitoring)
-
----
-
 ## Links
 
 - **Jira Epic:** [TBD]

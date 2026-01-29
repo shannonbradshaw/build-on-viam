@@ -104,29 +104,6 @@ Select one for hackathon scope:
 
 ---
 
-## Success Criteria
-
-**MVP Complete When:**
-- [ ] [Specific, measurable criterion 1]
-- [ ] [Specific, measurable criterion 2]
-- [ ] [Works reliably for N iterations]
-
-**Project Complete When:**
-- [ ] [All selected backlog items implemented]
-- [ ] [Documentation complete]
-- [ ] [Can run unsupervised / reliably]
-
----
-
-## Documentation Deliverables
-
-- [ ] README with setup instructions
-- [ ] Hardware assembly guide
-- [ ] Configuration guide
-- [ ] [Project-specific documentation]
-
----
-
 ## Links
 
 - **Jira Epic:** [TBD]

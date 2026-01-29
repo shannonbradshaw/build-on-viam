@@ -167,43 +167,6 @@ Select 3-5 items for post-hackathon development:
 
 ---
 
-## Success Criteria
-
-**Option A Complete When:**
-- [ ] Arm and gripper configured in Viam
-- [ ] Motion service working with defined frame system
-- [ ] Robot can grab one ingredient from prep pan
-- [ ] Robot can place ingredient into a bowl
-- [ ] Pick-and-place runs reliably 5+ times
-
-**Option B Complete When:**
-- [ ] All Option A criteria met
-- [ ] Robot can build a 4-ingredient salad
-- [ ] Sequenced motion through all ingredient positions
-- [ ] Demo runs 3+ times without intervention
-
-**Full Project Complete When:**
-- [ ] Dual-arm coordination working
-- [ ] Bowl dispenser integration complete
-- [ ] Ordering interface functional
-- [ ] 5+ preset recipes available
-- [ ] Custom ingredient selection working
-- [ ] Handoff to customer pickup working
-
----
-
-## Documentation Deliverables
-
-- [ ] README with setup instructions
-- [ ] Hardware assembly and mounting guide
-- [ ] Dual-arm calibration procedure
-- [ ] Ingredient pan layout guide
-- [ ] Recipe configuration reference
-- [ ] Ordering interface user guide
-- [ ] Tongs gripper design files (if custom)
-
----
-
 ## Links
 
 - **Jira Epic:** [TBD]

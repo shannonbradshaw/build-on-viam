@@ -139,33 +139,6 @@ Select 3-5 items for post-hackathon development:
 
 ---
 
-## Success Criteria
-
-**MVP Complete When:**
-- [ ] Robot detects box placed in input area
-- [ ] Robot successfully flattens box
-- [ ] Robot places flattened box in output area
-- [ ] Works reliably for 3+ different box sizes
-
-**Project Complete When:**
-- [ ] All selected backlog items implemented
-- [ ] Runs unsupervised for full workday
-- [ ] Metrics dashboard operational
-- [ ] Documentation complete
-
----
-
-## Documentation Deliverables
-
-- [ ] README with setup instructions
-- [ ] Hardware assembly guide
-- [ ] Station mounting guide
-- [ ] Supported box sizes reference
-- [ ] Troubleshooting guide (jams, errors)
-- [ ] Metrics dashboard guide
-
----
-
 ## Links
 
 - **Jira Epic:** [TBD]

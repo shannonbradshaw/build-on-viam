@@ -21,7 +21,7 @@ Build on Viam is an internal program where Viam engineers build real robotics pr
 
 These are the Viam capabilities we want to exercise throughout this program.
 
-### Core Capabilities (must be covered)
+### Core Capabilities
 
 | Capability | Description |
 |------------|-------------|
@@ -31,7 +31,7 @@ These are the Viam capabilities we want to exercise throughout this program.
 | **Data Capture & Sync** | Edge-to-cloud data pipelines with offline resilience |
 | **Remote Operation** | Control and monitor robots through firewalls |
 | **Module Development** | Custom components and services via Registry |
-| **Fragments** | Reusable configuration blocks for fleet management |
+| **Fragments** | Reusable configuration blocks |
 
 ### Scale & Fleet Capabilities
 
@@ -39,7 +39,7 @@ These are the Viam capabilities we want to exercise throughout this program.
 |------------|-------------|
 | **Fleet Management** | Managing multiple machines with shared configs |
 | **OTA Updates** | Deploying module and model updates to fleet |
-| **Provisioning** | Using fragments to reuse configurations across a fleet |
+| **Provisioning** | Using fragments to reuse machine configurations across a fleet |
 
 ### Operational Capabilities
 
