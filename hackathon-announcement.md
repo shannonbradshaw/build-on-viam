@@ -8,11 +8,7 @@ Deep platform familiarity isn't optional — it's what enables us to work faster
 
 ## The Projects
 
-The program is built around a set of well-defined robotics applications that we'll develop over the coming months, starting with a hackathon kickoff. Each project has clear goals, exercises key Viam capabilities, and has a well-defined backlog that extends beyond the hackathon. Browse the full list of projects here:
-
-https://github.com/shannonbradshaw/build-on-viam/tree/main/projects
-
-We welcome additional project proposals — more on that below.
+The program is built around a set of well-defined robotics applications that we'll develop over the coming months, starting with a hackathon kickoff. Each project has clear goals, exercises key Viam capabilities, and has a well-defined backlog that extends beyond the hackathon. We welcome additional project proposals — links to browse projects and submit proposals are below.
 
 ## What's changing with 20% time?
 
