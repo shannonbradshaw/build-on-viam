@@ -23,12 +23,12 @@ This project demonstrates navigation, SLAM, vision detection, and multi-robot co
 - [x] **Data Capture & Sync** — Patrol data, detection logs synced to cloud
 - [x] **Remote Operation** — Remote monitoring and control
 - [ ] **Module Development** — Not primary focus
+- [x] **Fragments** — Patrol route configs as reusable fragments
 
 ### Scale & Fleet Capabilities
-- [x] **Fragments** — Patrol route configs as reusable fragments
 - [x] **Fleet Management** — Multiple carts, coordination with dishwasher robot
-- [ ] **OTA Updates** — Not primary focus
-- [ ] **Provisioning** — Not primary focus
+- [x] **OTA Updates** — Module and configuration updates via Registry
+- [x] **Provisioning** — Fragment-based configuration reuse
 
 ### Operational Capabilities
 - [x] **Event-Driven Automation** — Motion-based pause, low battery return, tray full alert

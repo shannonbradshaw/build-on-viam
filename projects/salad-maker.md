@@ -25,12 +25,12 @@ This project demonstrates advanced manipulation with dual-arm coordination, visi
 - [x] **Data Capture & Sync** — Order history, ingredient usage synced to cloud
 - [x] **Remote Operation** — Develop coordination logic remotely
 - [x] **Module Development** — Custom salad service module
+- [x] **Fragments** — Hardware configuration as reusable fragment
 
 ### Scale & Fleet Capabilities
-- [x] **Fragments** — Hardware configuration as reusable fragment
 - [ ] **Fleet Management** — Stretch: multiple prep stations
-- [ ] **OTA Updates** — Not primary focus
-- [ ] **Provisioning** — Not primary focus
+- [x] **OTA Updates** — Module and configuration updates via Registry
+- [x] **Provisioning** — Fragment-based configuration reuse
 
 ### Operational Capabilities
 - [x] **Event-Driven Automation** — Order received, bowl ready, low ingredient alerts

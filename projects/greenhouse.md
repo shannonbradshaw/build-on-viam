@@ -23,12 +23,12 @@ This project naturally exercises the full robotics lifecycle - from prototype th
 - [x] **Data Capture & Sync** — Environmental data synced to cloud with offline resilience
 - [x] **Remote Operation** — Full remote monitoring and control
 - [ ] **Module Development** — Backlog: custom sensor/actuator modules
+- [x] **Fragments** — Environment recipes as reusable configurations
 
 ### Scale & Fleet Capabilities
-- [x] **Fragments** — Environment recipes as reusable configurations
 - [x] **Fleet Management** — Primary demo: multiple grow stations with centralized monitoring
-- [ ] **OTA Updates** — Backlog: push recipe updates to all stations
-- [ ] **Provisioning** — Backlog: automated new station setup
+- [x] **OTA Updates** — Module and configuration updates via Registry
+- [x] **Provisioning** — Fragment-based configuration reuse
 
 ### Operational Capabilities
 - [x] **Event-Driven Automation** — Threshold-based: humidity, temperature, soil moisture, light

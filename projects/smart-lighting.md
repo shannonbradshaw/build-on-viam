@@ -23,12 +23,12 @@ This project demonstrates event-driven automation, scheduled tasks, IoT integrat
 - [x] **Data Capture & Sync** — Lighting events, energy usage synced to cloud
 - [x] **Remote Operation** — Full remote control and development
 - [x] **Module Development** — Primary: Lutron Telnet protocol module
+- [x] **Fragments** — Zone configurations as reusable fragments
 
 ### Scale & Fleet Capabilities
-- [x] **Fragments** — Zone configurations as reusable fragments
 - [x] **Fleet Management** — Multiple light zones managed as fleet
-- [ ] **OTA Updates** — Not primary focus
-- [ ] **Provisioning** — Not primary focus
+- [x] **OTA Updates** — Module and configuration updates via Registry
+- [x] **Provisioning** — Fragment-based configuration reuse
 
 ### Operational Capabilities
 - [x] **Event-Driven Automation** — Primary: occupancy, daylight thresholds, after-hours behavior

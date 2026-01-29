@@ -23,12 +23,12 @@ This project demonstrates manipulation capabilities, vision-based detection, and
 - [x] **Data Capture & Sync** — Pour analytics synced to cloud
 - [x] **Remote Operation** — Develop control logic remotely
 - [x] **Module Development** — Custom vino service module
+- [x] **Fragments** — Hardware configuration as reusable fragment
 
 ### Scale & Fleet Capabilities
-- [x] **Fragments** — Hardware configuration as reusable fragment
 - [ ] **Fleet Management** — Stretch: multi-station deployment
-- [ ] **OTA Updates** — Not primary focus
-- [ ] **Provisioning** — Not primary focus
+- [x] **OTA Updates** — Module and configuration updates via Registry
+- [x] **Provisioning** — Fragment-based configuration reuse
 
 ### Operational Capabilities
 - [x] **Event-Driven Automation** — Glass placement, bottle empty, order received

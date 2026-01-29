@@ -23,12 +23,12 @@ No computer vision—just serial communication, bump sensors, and clean abstract
 - [x] **Data Capture & Sync** — Sensor logs, battery cycles, patrol data
 - [x] **Remote Operation** — Control through app and SDKs via WebRTC
 - [x] **Module Development** — Primary: build driver module from scratch
+- [x] **Fragments** — Hardware fragment for Roomba configuration
 
 ### Scale & Fleet Capabilities
-- [x] **Fragments** — Hardware fragment for Roomba configuration
 - [ ] **Fleet Management** — Stretch: multiple Roombas
 - [x] **OTA Updates** — Publish and version driver via Registry
-- [ ] **Provisioning** — Stretch: streamlined multi-Roomba setup
+- [x] **Provisioning** — Fragment-based configuration reuse
 
 ### Operational Capabilities
 - [x] **Event-Driven Automation** — Low battery, dock needed, bump detected

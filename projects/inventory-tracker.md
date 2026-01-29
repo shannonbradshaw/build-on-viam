@@ -29,12 +29,12 @@ This approach is pragmatic - it works on day one with zero training, builds its 
 - [x] **Data Capture & Sync** — Checkout images synced to cloud with offline resilience
 - [x] **Remote Operation** — Full remote monitoring and development
 - [x] **Module Development** — Checkout station module
+- [x] **Fragments** — Checkout station configuration as reusable fragment
 
 ### Scale & Fleet Capabilities
-- [x] **Fragments** — Checkout station configuration as reusable fragment
 - [x] **Fleet Management** — Multiple checkout stations with centralized view
-- [ ] **OTA Updates** — Backlog: push model updates to all stations
-- [ ] **Provisioning** — Backlog: automated new station setup
+- [x] **OTA Updates** — Module and configuration updates via Registry
+- [x] **Provisioning** — Fragment-based configuration reuse
 
 ### Operational Capabilities
 - [x] **Event-Driven Automation** — Checkout detection, overdue alerts, escalating notifications

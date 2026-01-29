@@ -23,12 +23,12 @@ Extended functionality includes loading dirty dishes from the sink and coordinat
 - [x] **Data Capture & Sync** — Dish tracking, cycle data synced to cloud
 - [x] **Remote Operation** — Develop manipulation logic remotely
 - [ ] **Module Development** — Not primary focus
+- [x] **Fragments** — Cabinet position configs as reusable fragments
 
 ### Scale & Fleet Capabilities
-- [x] **Fragments** — Cabinet position configs as reusable fragments
 - [ ] **Fleet Management** — Not applicable (single station)
-- [ ] **OTA Updates** — Not primary focus
-- [ ] **Provisioning** — Not primary focus
+- [x] **OTA Updates** — Module and configuration updates via Registry
+- [x] **Provisioning** — Fragment-based configuration reuse
 
 ### Operational Capabilities
 - [x] **Event-Driven Automation** — Dishwasher cycle complete detection, drop detection

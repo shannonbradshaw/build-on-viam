@@ -25,12 +25,12 @@ This project demonstrates vision-based detection, precise manipulation, game eng
 - [ ] **Data Capture & Sync** — Not primary focus (game state saved locally)
 - [x] **Remote Operation** — Can play against robot remotely via video feed
 - [x] **Module Development** — Chess service, piece-finder vision service via Registry
+- [x] **Fragments** — Hardware configuration as reusable fragment
 
 ### Scale & Fleet Capabilities
-- [x] **Fragments** — Hardware configuration as reusable fragment
 - [ ] **Fleet Management** — Not applicable (single board)
-- [ ] **OTA Updates** — Not a focus
-- [ ] **Provisioning** — Not a focus
+- [x] **OTA Updates** — Module and configuration updates via Registry
+- [x] **Provisioning** — Fragment-based configuration reuse
 
 ### Operational Capabilities
 - [x] **Event-Driven Automation** — Human move detection, game end detection

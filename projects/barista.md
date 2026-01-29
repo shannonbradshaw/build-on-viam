@@ -25,12 +25,12 @@ This project combines manipulation complexity (multi-step beverage preparation),
 - [x] **Data Capture & Sync** — Order history, drink analytics synced to cloud
 - [x] **Remote Operation** — Develop control logic remotely
 - [x] **Module Development** — Custom barista service module
+- [x] **Fragments** — Hardware configuration as reusable fragment
 
 ### Scale & Fleet Capabilities
-- [x] **Fragments** — Hardware configuration as reusable fragment
 - [x] **Fleet Management** — Multiple coffee stations with centralized monitoring
-- [ ] **OTA Updates** — Backlog: push recipe updates to all stations
-- [ ] **Provisioning** — Backlog: automated new station setup
+- [x] **OTA Updates** — Module and configuration updates via Registry
+- [x] **Provisioning** — Fragment-based configuration reuse
 
 ### Operational Capabilities
 - [x] **Event-Driven Automation** — Order received, brew complete, low beans alert

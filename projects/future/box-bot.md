@@ -23,12 +23,12 @@ Extended functionality includes restocking kitchen supplies by unpacking boxes a
 - [x] **Data Capture & Sync** — Processing metrics, box images synced to cloud
 - [x] **Remote Operation** — Remote monitoring and status
 - [ ] **Module Development** — Not primary focus
+- [x] **Fragments** — Station configuration as reusable fragment
 
 ### Scale & Fleet Capabilities
-- [x] **Fragments** — Station configuration as reusable fragment
 - [ ] **Fleet Management** — Stretch: multi-station deployment
-- [ ] **OTA Updates** — Not primary focus
-- [ ] **Provisioning** — Not primary focus
+- [x] **OTA Updates** — Module and configuration updates via Registry
+- [x] **Provisioning** — Fragment-based configuration reuse
 
 ### Operational Capabilities
 - [x] **Event-Driven Automation** — Box detection, jam alerts, bin full notifications
