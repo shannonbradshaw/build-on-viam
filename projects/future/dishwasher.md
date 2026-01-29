@@ -27,7 +27,7 @@ Extended functionality includes loading dirty dishes from the sink and coordinat
 - [x] Cloud Integration
 - [x] Configuration Management (cabinet positions)
 - [x] Data Pipeline ← **Dish image capture for classifier training**
-- [x] Triggers ← **Dishwasher cycle complete trigger**
+- [x] Event-Driven Automation ← **Dishwasher cycle complete detection**
 
 ## Hardware Requirements
 
@@ -95,7 +95,7 @@ Select 3-5 items for post-hackathon development:
 ### Extended Functions
 - [ ] **Dishwasher loading** - Reverse workflow - load from sink
 - [ ] **Sink handoff** - Receive dishes from cleaning cart robot
-- [ ] **Cycle trigger** - Start unloading when dishwasher cycle ends
+- [ ] **Cycle completion** - Start unloading when dishwasher cycle ends
 - [ ] **Gantry extension** - Add gantry for full kitchen reach
 
 ### Data & Monitoring
@@ -110,10 +110,10 @@ Select 3-5 items for post-hackathon development:
 - [ ] **Train improved classifier** - Use captured data to train better dish detector
 - [ ] **Deploy updated model** - Push improved model via Registry
 
-### Triggers (Gap Feature)
-- [ ] **Cycle complete trigger** - Smart dishwasher signals cycle done, robot starts unloading
-- [ ] **Cabinet full trigger** - Detect when cabinet location is full, alert or use alternate
-- [ ] **Drop detection trigger** - If dish dropped, alert and pause for inspection
+### Event-Driven Automation (Gap Feature)
+- [ ] **Cycle complete detection** - Smart dishwasher signals cycle done, robot starts unloading
+- [ ] **Cabinet full detection** - Detect when cabinet location is full, alert or use alternate
+- [ ] **Drop detection** - If dish dropped, alert and pause for inspection
 
 ---
 
@@ -173,4 +173,4 @@ Select 3-5 items for post-hackathon development:
 
 **Gap Features This Project Addresses:**
 - **Data Pipeline** - Dish image capture, grasp success tracking, classifier training
-- **Triggers** - Dishwasher cycle complete, cabinet full alerts, drop detection
+- **Event-Driven Automation** - Dishwasher cycle complete, cabinet full alerts, drop detection

@@ -36,6 +36,6 @@ These active projects provide stepping stones to future projects:
 | Future Project | Related Active Project | Shared Learning |
 |----------------|----------------------|-----------------|
 | Cleaning Cart | Retro Roomba | Navigation, SLAM, custom drivers |
-| Cleaning Cart | Smart Lighting | Multi-machine coordination, triggers |
+| Cleaning Cart | Smart Lighting | Multi-machine coordination, event-driven automation |
 | Dishwasher | Vino | Arm manipulation, gripper control |
 | Box Bot | Vino | Arm manipulation, vision detection |

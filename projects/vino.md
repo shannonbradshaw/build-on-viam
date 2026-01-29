@@ -26,7 +26,7 @@ This project demonstrates manipulation capabilities, vision-based detection, and
 - [ ] Multi-machine Coordination
 - [x] Cloud Integration
 - [x] Customer Delivery ← **Primary customer-facing demo**
-- [x] Triggers ← **Glass placement, bottle empty**
+- [x] Event-Driven Automation ← **Glass placement, bottle empty**
 - [x] Scheduled Tasks ← **Cleaning cycles**
 
 ## Hardware Requirements
@@ -114,10 +114,10 @@ Camera reads wine label, displays pairing suggestions and tasting notes.
 - [ ] **Order queue display** - Show pending orders on screen
 - [ ] **Event mode** - Pre-configured settings for specific events/tastings
 
-### Triggers
-- [ ] **Glass placement trigger** - Sensor detects glass, starts pour sequence
+### Event-Driven Automation
+- [ ] **Glass placement detection** - Sensor detects glass, starts pour sequence
 - [ ] **Bottle empty alert** - Alert when bottle weight indicates empty
-- [ ] **Order received trigger** - Start pour sequence when order placed via app
+- [ ] **Order received** - Start pour sequence when order placed via app
 
 ### Data & Monitoring
 - [ ] **Inventory tracking** - Track bottles consumed, sync to cloud
@@ -178,7 +178,7 @@ Camera reads wine label, displays pairing suggestions and tasting notes.
 
 **Gap Features This Project Addresses:**
 - **Customer Delivery** - Primary demo of customer-facing SDK (TypeScript web app for ordering)
-- **Triggers** - Glass placement sensor, bottle empty alerts, order-received triggers
+- **Event-Driven Automation** - Glass placement sensor, bottle empty alerts, order-received events
 
 **Key Technical Challenges:**
 - **Point cloud segmentation** - Current obstacles-pointcloud module conflates surface/table segmentation with object segmentation, causing false positives when multiple objects detected

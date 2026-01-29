@@ -24,7 +24,7 @@ This project naturally exercises the full robotics lifecycle - from prototype th
 - [ ] Modular Resources
 - [x] Multi-machine Coordination ← **Multiple sensor stations**
 - [x] Cloud Integration
-- [x] Triggers ← **Threshold-based automation**
+- [x] Event-Driven Automation ← **Threshold-based automation**
 - [x] Fragments (environment recipes)
 - [x] Monitoring/Alerting ← **Environmental alerts**
 - [x] Data Pipeline ← **Capture → Train → Deploy cycle**
@@ -104,11 +104,11 @@ Select 3-5 items for post-hackathon development:
 - [ ] **Cross-station comparison** - Compare growth across different setups
 - [ ] **Centralized recipes** - Push environment profiles to all stations
 
-### Triggers (Gap Feature)
-- [ ] **Humidity trigger** - When humidity < 40%, activate mister automatically
-- [ ] **Temperature trigger** - When temp > 85°F, activate fans and send alert
-- [ ] **Soil moisture trigger** - When soil dry, trigger watering cycle
-- [ ] **Light trigger** - Adjust grow lights based on ambient light sensor
+### Event-Driven Automation (Gap Feature)
+- [ ] **Humidity threshold** - When humidity < 40%, activate mister automatically
+- [ ] **Temperature threshold** - When temp > 85°F, activate fans and send alert
+- [ ] **Soil moisture threshold** - When soil dry, start watering cycle
+- [ ] **Light level threshold** - Adjust grow lights based on ambient light sensor
 
 ### Data Pipeline / ML Training (Gap Feature)
 - [ ] **Automated data capture** - Capture images on schedule for training data
@@ -141,7 +141,7 @@ Select 3-5 items for post-hackathon development:
 **MVP Complete When:**
 - [ ] Sensors reading and logging to Viam cloud
 - [ ] Dashboard shows current and historical data
-- [ ] Automated watering triggers correctly (if Option B+)
+- [ ] Automated watering activates correctly (if Option B+)
 - [ ] System runs unattended for 24+ hours
 
 **Project Complete When:**
@@ -184,7 +184,7 @@ Select 3-5 items for post-hackathon development:
 
 **Gap Features This Project Addresses:**
 - **Fleet Management** - Primary demo of multi-machine coordination with 2-3 sensor stations
-- **Triggers** - Threshold-based automation (humidity, temperature, soil moisture)
+- **Event-Driven Automation** - Threshold-based automation (humidity, temperature, soil moisture)
 - **Data Pipeline** - End-to-end capture → label → train → deploy workflow
 - **Monitoring/Alerting** - Environmental alerts and fleet health dashboard
 - **Scheduled Tasks** - Periodic sensor readings, daily reports, time-lapse capture

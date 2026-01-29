@@ -28,7 +28,7 @@ This project demonstrates advanced manipulation with dual-arm coordination, visi
 - [x] Multi-machine Coordination ← **Two arms working together**
 - [x] Cloud Integration
 - [x] Customer Delivery ← **Ordering app/kiosk**
-- [x] Triggers ← **Order received, bowl ready, low ingredient**
+- [x] Event-Driven Automation ← **Order received, bowl ready, low ingredient**
 - [x] Scheduled Tasks ← **Cleaning, inventory checks**
 - [x] Data Pipeline ← **Ingredient images for portion training**
 
@@ -78,7 +78,7 @@ Both arms coordinate to build a preset salad faster. No portion control necessar
 One arm builds custom salads from app orders.
 - **Complexity:** Medium-High
 - **Demo Appeal:** High
-- **Scope:** Ordering interface, ingredient selection, triggers, single arm
+- **Scope:** Ordering interface, ingredient selection, event-driven automation, single arm
 
 ### Option E: Full System
 Dual arms, custom orders, bowl dispenser, handoff station.
@@ -123,12 +123,12 @@ Select 3-5 items for post-hackathon development:
 - [ ] **Order status display** - Show order progress to customer
 - [ ] **Pickup notification** - Alert when salad is ready
 
-### Triggers (Gap Feature)
+### Event-Driven Automation (Gap Feature)
 - [ ] **Order received** - Start assembly when order placed
-- [ ] **Bowl dispensed** - Trigger assembly sequence when bowl ready
+- [ ] **Bowl dispensed** - Start assembly sequence when bowl ready
 - [ ] **Low ingredient alert** - Alert staff when pan needs refill
 - [ ] **Empty pan alert** - Stop accepting orders with that ingredient
-- [ ] **Assembly complete** - Trigger handoff sequence
+- [ ] **Assembly complete** - Start handoff sequence
 
 ### Scheduled Tasks (Gap Feature)
 - [ ] **Morning prep check** - Verify all ingredients stocked
@@ -301,7 +301,7 @@ Bowl moves between arms or stays in shared workspace
 
 **Gap Features This Project Addresses:**
 - **Customer Delivery** - Ordering kiosk/app, order status, pickup notification
-- **Triggers** - Order received, bowl ready, low ingredient alerts
+- **Event-Driven Automation** - Order received, bowl ready, low ingredient alerts
 - **Scheduled Tasks** - Morning prep check, cleaning cycles
 - **Data Pipeline** - Portion images, grab success tracking, ML training
 - **Multi-machine** - Dual-arm coordination as multi-machine pattern

@@ -22,7 +22,7 @@ No computer vision—just serial communication, bump sensors, and clean abstract
 | Hardware Abstraction | Primary | Implement base, sensor, power_sensor, movement_sensor APIs |
 | Protocol Implementation | Primary | Roomba Open Interface serial protocol |
 | Data Capture & Sync | Strong | Sensor logs, battery cycles, patrol data |
-| Triggers | Strong | Low battery, dock needed, bump detected |
+| Event-Driven Automation | Strong | Low battery, dock needed, bump detected |
 | Remote Operation | Strong | Control through app and SDKs |
 | Fleet Management | Stretch | Multiple Roombas |
 | Fragments | Strong | Hardware fragment for Roomba setup |
@@ -116,7 +116,7 @@ Build robot-side application logic as a Viam module.
 - [ ] Create application module (separate from driver module)
 - [ ] Implement patrol service (drive patterns, obstacle response)
 - [ ] Implement return-to-dock behavior
-- [ ] Expose DoCommand for manual trigger of behaviors
+- [ ] Expose DoCommand for manual activation of behaviors
 - [ ] Configure as dependency of driver module
 
 ---
@@ -149,13 +149,13 @@ Configure Viam's built-in data capture and sync.
 
 ---
 
-### 6. Triggers & Automation
+### 6. Event-Driven Automation
 
-Configure Viam triggers for event-driven behaviors.
+Configure event-driven behaviors.
 
-- [ ] Low battery alert trigger
-- [ ] Bump detection trigger
-- [ ] Cliff detection trigger
+- [ ] Low battery alert
+- [ ] Bump detection response
+- [ ] Cliff detection response
 - [ ] Webhook notifications (Slack/Discord)
 - [ ] Email alerts
 - [ ] Conditional data capture on events
@@ -231,7 +231,7 @@ Connect with other Build on Viam projects.
 **MVP Complete When:**
 - [ ] Roomba drives from Viam app (SetVelocity works)
 - [ ] Battery level readable as sensor
-- [ ] Bump sensors trigger stops
+- [ ] Bump sensors cause stops
 - [ ] Module published to registry (private)
 
 **v1.0 Complete When:**
@@ -243,7 +243,7 @@ Connect with other Build on Viam projects.
 **Full Project Complete When:**
 - [ ] Fleet of 2+ Roombas managed together
 - [ ] Custom web or mobile control interface
-- [ ] Triggers and automation configured
+- [ ] Event-driven automation configured
 - [ ] Data capture and analysis pipeline working
 
 ---

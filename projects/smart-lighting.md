@@ -12,12 +12,12 @@
 
 Smart Office Lighting integrates Lutron Caseta lighting controls with Viam, creating an intelligent lighting system that responds to multiple inputs: occupancy sensors, ambient light levels, and time schedules. The system automatically adjusts lighting based on who's in the office, how much natural light is available, and what time of day it is.
 
-This project demonstrates triggers, scheduled tasks, IoT integration, and custom module development - capabilities that manipulation-heavy projects don't emphasize.
+This project demonstrates event-driven automation, scheduled tasks, IoT integration, and custom module development - capabilities that manipulation-heavy projects don't emphasize.
 
 ## Viam Capabilities Demonstrated
 
 - [x] Custom Module Development ← **Lutron Telnet protocol module**
-- [x] Triggers ← **Primary demo: occupancy, daylight thresholds**
+- [x] Event-Driven Automation ← **Primary demo: occupancy, daylight thresholds**
 - [x] Scheduled Tasks ← **Time-based scenes, daylight harvesting**
 - [x] Data Capture ← **Lighting events, energy usage**
 - [x] Fleet Management ← **Multiple light zones as fleet**
@@ -87,11 +87,11 @@ Select 3-5 items for post-hackathon development:
 - [ ] **Scene activation** - Preset lighting configurations
 - [ ] **Fade transitions** - Smooth level changes
 
-### Triggers (Gap Feature)
-- [ ] **Occupancy trigger** - Motion sensor activates lights
+### Event-Driven Automation (Gap Feature)
+- [ ] **Occupancy detection** - Motion sensor activates lights
 - [ ] **Vacancy timeout** - Dim/off after no motion for N minutes
 - [ ] **Daylight threshold** - Adjust artificial light based on ambient
-- [ ] **After hours trigger** - Different behavior outside work hours
+- [ ] **After hours behavior** - Different behavior outside work hours
 - [ ] **Manual override detection** - Detect Pico remote use, pause automation
 
 ### Scheduled Tasks (Gap Feature)
@@ -139,7 +139,7 @@ Select 3-5 items for post-hackathon development:
 - [ ] Can control individual lights from Viam
 - [ ] Zone grouping works
 - [ ] Basic scene activation works
-- [ ] One trigger working: occupancy or daylight threshold
+- [ ] One automation working: occupancy or daylight threshold
 
 **Project Complete When:**
 - [ ] Daylight harvesting working
@@ -157,7 +157,7 @@ Select 3-5 items for post-hackathon development:
 - [ ] Wiring and installation guide
 - [ ] Zone configuration reference
 - [ ] Scene programming guide
-- [ ] Trigger configuration guide
+- [ ] Event-driven automation configuration guide
 
 ---
 
@@ -310,7 +310,7 @@ def calculate_dimmer_level(ambient_lux, current_level):
 ## Notes
 
 **Gap Features This Project Addresses:**
-- **Triggers** - Occupancy detection, daylight thresholds, after-hours behavior
+- **Event-Driven Automation** - Occupancy detection, daylight thresholds, after-hours behavior
 - **Scheduled Tasks** - Time-based scenes, daylight harvesting loop
 - **Custom Module Development** - Lutron Telnet protocol integration
 - **IoT Integration** - Extends Viam beyond robotics into building automation

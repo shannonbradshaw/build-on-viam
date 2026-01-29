@@ -31,7 +31,7 @@ This approach is pragmatic - it works on day one with zero training, builds its 
 - [x] Multi-machine Coordination ← **Stations report to central system**
 - [x] Cloud Integration
 - [x] Customer Delivery ← **Dashboard for viewing checkouts and audit trail**
-- [x] Triggers ← **Checkout detection, overdue alerts, notifications**
+- [x] Event-Driven Automation ← **Checkout detection, overdue alerts, notifications**
 - [x] Scheduled Tasks ← **Daily reports, weekly utilization summaries**
 - [x] Data Pipeline ← **Captured images train item/face recognition models**
 
@@ -64,7 +64,7 @@ Detect checkout events and capture photos for audit trail.
 5. Notification sent to Slack with image: "Checkout at 10:32am - [photo]"
 6. Human review if needed - photo serves as audit trail
 
-**Trigger options:**
+**Detection options:**
 - Motion detection in designated zone
 - "Person holding object" pose detection
 - Physical button press (simplest)
@@ -72,7 +72,7 @@ Detect checkout events and capture photos for audit trail.
 
 - **Complexity:** Low-Medium
 - **Demo Appeal:** Medium-High
-- **Scope:** Vision trigger, data capture, notifications, basic dashboard
+- **Scope:** Vision-based detection, data capture, notifications, basic dashboard
 
 ### Phase 2: Item Recognition
 
@@ -117,7 +117,7 @@ Complete hands-free tracking.
 
 ### Phase 1: Capture & Notify
 - [ ] **Checkout zone detection** - Define camera FOV region for checkout gestures
-- [ ] **Motion/gesture trigger** - Detect when someone holds up an item
+- [ ] **Motion/gesture detection** - Detect when someone holds up an item
 - [ ] **Photo capture** - High-quality image of person + item together
 - [ ] **Cloud storage** - Save images with timestamps to Viam data management
 - [ ] **Slack notification** - Send photo + timestamp to channel on each checkout
@@ -139,8 +139,8 @@ Complete hands-free tracking.
 - [ ] **Privacy controls** - Users can delete their data, opt out
 - [ ] **Unknown person handling** - Prompt for identification or flag for review
 
-### Triggers (Gap Feature)
-- [ ] **Checkout detected** - Trigger capture + notification on gesture detection
+### Event-Driven Automation (Gap Feature)
+- [ ] **Checkout detected** - Capture + notification on gesture detection
 - [ ] **Overdue reminder** - Item not returned after N days, notify (requires Phase 3)
 - [ ] **Escalating alerts** - 3 days, 7 days, then notify manager
 - [ ] **Return detected** - Item reappears on shelf camera (stretch)
@@ -333,7 +333,7 @@ Person: [Unknown - click to label] or [Shannon]
 - System improves over time through use
 
 **Gap Features This Project Addresses:**
-- **Triggers** - Checkout detection, overdue alerts
+- **Event-Driven Automation** - Checkout detection, overdue alerts
 - **Data Pipeline** - Images → labels → training → deployment
 - **Scheduled Tasks** - Daily summaries, weekly reports
 - **Customer Delivery** - Dashboard with audit trail

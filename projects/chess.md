@@ -28,8 +28,8 @@ This project demonstrates vision-based detection, precise manipulation, game eng
 - [x] Modular Resources (chess service, piece-finder vision service)
 - [ ] Multi-machine Coordination
 - [x] Cloud Integration
-- [ ] Data Pipeline ← **Aspirational: Capture → Train → Deploy for piece type detection**
-- [x] Triggers ← **Human move detection via board state changes**
+- [ ] Data Pipeline 
+- [x] Event-Driven Automation
 
 ## Hardware Requirements
 
@@ -202,10 +202,10 @@ Add user-facing features for a polished experience.
 - [ ] **Player statistics:** Track wins/losses/draws per player
 - [ ] **Tournament mode:** Track multiple games, maintain leaderboard
 
-### Triggers
-- [ ] **Game end trigger:** Detect checkmate/stalemate, auto-save game and offer reset
-- [ ] **Timeout trigger:** If no move detected for X minutes, prompt player
-- [ ] **Illegal position alert:** Trigger alert if detected position is impossible
+### Event-Driven Automation
+- [ ] **Game end detection:** Detect checkmate/stalemate, auto-save game and offer reset
+- [ ] **Timeout handling:** If no move detected for X minutes, prompt player
+- [ ] **Illegal position alert:** Alert if detected position is impossible
 
 ---
 

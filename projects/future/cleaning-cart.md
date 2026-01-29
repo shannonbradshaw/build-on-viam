@@ -26,7 +26,7 @@ This project demonstrates navigation, SLAM, vision detection, and multi-robot co
 - [x] Cloud Integration
 - [x] Navigation / SLAM
 - [x] Scheduled Tasks ← **Primary scheduled tasks demo**
-- [x] Triggers ← **Motion-based pause, schedule triggers**
+- [x] Event-Driven Automation ← **Motion-based pause, schedule-based actions**
 
 ## Hardware Requirements
 
@@ -112,12 +112,12 @@ Select 3-5 items for post-hackathon development:
 - [ ] **Weekly deep clean** - Saturday full-office patrol
 - [ ] **Meeting room check** - Scheduled check after calendar meetings end
 
-### Triggers (Gap Feature)
+### Event-Driven Automation (Gap Feature)
 - [ ] **Motion sensor pause** - When person detected nearby, pause and wait
-- [ ] **Low battery return** - Trigger return to charger when battery < 20%
+- [ ] **Low battery return** - Return to charger when battery < 20%
 - [ ] **Tray full alert** - When tray capacity reached, alert and return to kitchen
-- [ ] **Spill detection alert** - Trigger alert to facilities when spill detected
-- [ ] **Calendar integration** - Trigger patrol when meeting ends (calendar API)
+- [ ] **Spill detection alert** - Alert facilities when spill detected
+- [ ] **Calendar integration** - Start patrol when meeting ends (calendar API)
 
 ---
 
@@ -188,5 +188,5 @@ Select 3-5 items for post-hackathon development:
 
 **Gap Features This Project Addresses:**
 - **Scheduled Tasks** - Primary demo of Viam's scheduling capabilities with multiple daily patrols
-- **Triggers** - Motion-based pause, battery triggers, capacity alerts
+- **Event-Driven Automation** - Motion-based pause, battery alerts, capacity alerts
 - **Fleet** - Potential for multiple carts in larger facility (stretch)

@@ -25,7 +25,7 @@ Extended functionality includes restocking kitchen supplies by unpacking boxes a
 - [ ] Modular Resources
 - [ ] Multi-machine Coordination
 - [x] Cloud Integration
-- [x] Triggers ← **Box detection, jam alerts, bin full**
+- [x] Event-Driven Automation ← **Box detection, jam alerts, bin full**
 - [x] Data Pipeline ← **Box image capture for classifier training**
 
 ## Hardware Requirements
@@ -103,11 +103,11 @@ Select 3-5 items for post-hackathon development:
 - [ ] **Multi-material sorting** - Separate cardboard from other recyclables
 - [ ] **QR scanning** - Track supplies via package codes (restock mode)
 
-### Triggers (Gap Feature)
-- [ ] **Box detected trigger** - When box placed in intake, start flatten sequence
-- [ ] **Jam detection trigger** - Detect mechanism jam, alert and pause
-- [ ] **Bin full trigger** - When output bin full, alert facilities team
-- [ ] **Scheduled operation trigger** - Only operate during off-hours (noise)
+### Event-Driven Automation (Gap Feature)
+- [ ] **Box detected** - When box placed in intake, start flatten sequence
+- [ ] **Jam detection** - Detect mechanism jam, alert and pause
+- [ ] **Bin full detection** - When output bin full, alert facilities team
+- [ ] **Scheduled operation** - Only operate during off-hours (noise)
 
 ### Data Pipeline / ML Training (Gap Feature)
 - [ ] **Box image capture** - Capture images of each box before processing
@@ -175,5 +175,5 @@ Select 3-5 items for post-hackathon development:
 - Andrea's suggestion adds internal validation
 
 **Gap Features This Project Addresses:**
-- **Triggers** - Box detection to start processing, jam alerts, bin full notifications
+- **Event-Driven Automation** - Box detection to start processing, jam alerts, bin full notifications
 - **Data Pipeline** - Capture box images, train size/type classifier, deploy improvements

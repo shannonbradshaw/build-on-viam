@@ -9,11 +9,11 @@ This directory contains all projects for the Build on Viam program.
 | [Vino](vino.md) | Existing | Arm, gripper, **customer delivery** | Pour on demand, glass detection |
 | [Chess](chess.md) | Existing | Arm, vision, ML, **data pipeline** | Full game play, move execution |
 | [Salad Maker](salad-maker.md) | New | **Dual-arm**, vision, **customer delivery**, **multi-machine** | Single arm fixed recipe |
-| [Greenhouse](greenhouse.md) | New | Data, ML, **fleet**, **triggers** | Monitor + auto-water |
-| [Barista](barista.md) | New | Arm, **customer delivery**, **fleet**, **triggers** | Espresso only |
-| [Inventory Tracker](inventory-tracker.md) | New | RFID, vision, **triggers**, **customer delivery** | Barcode checkout |
+| [Greenhouse](greenhouse.md) | New | Data, ML, **fleet**, **event-driven automation** | Monitor + auto-water |
+| [Barista](barista.md) | New | Arm, **customer delivery**, **fleet**, **event-driven automation** | Espresso only |
+| [Inventory Tracker](inventory-tracker.md) | New | RFID, vision, **event-driven automation**, **customer delivery** | Barcode checkout |
 | [Retro Roomba](retro-roomba.md) | New | **Custom module**, protocol, SLAM | Basic drive control |
-| [Smart Lighting](smart-lighting.md) | New | IoT, **triggers**, **multi-machine**, **scheduled tasks** | Basic control + scenes |
+| [Smart Lighting](smart-lighting.md) | New | IoT, **event-driven automation**, **multi-machine**, **scheduled tasks** | Basic control + scenes |
 
 See also: [Future Projects](future-projects.md) - Cleaning Cart, Dishwasher, Box Bot
 
@@ -44,7 +44,7 @@ See also: [Future Projects](future-projects.md) - Cleaning Cart, Dishwasher, Box
 ### IoT/Sensing
 - **Greenhouse** - Environmental monitoring and control
 - **Inventory Tracker** - RFID/vision asset tracking
-- **Smart Lighting** - Lutron integration, cross-machine triggers
+- **Smart Lighting** - Lutron integration, cross-machine event-driven automation
 
 ## Viam Capabilities by Project
 
@@ -57,7 +57,7 @@ See also: [Future Projects](future-projects.md) - Cleaning Cart, Dishwasher, Box
 | Data Capture | x | x | x | x | x | x | x | x |
 | Remote Operation | x | x | x | x | x | x | x | x |
 | **Custom Module** | | | | | | x | x | x |
-| **Triggers** | x | x | x | x | x | x | x | x |
+| **Event-Driven Automation** | x | x | x | x | x | x | x | x |
 | **Data Pipeline** | | x | x | x | x | x | | |
 | **Scheduled Tasks** | x | | x | x | x | x | | x |
 | **Customer Delivery** | x | | x | | x | x | | |
@@ -71,7 +71,7 @@ See also: [Future Projects](future-projects.md) - Cleaning Cart, Dishwasher, Box
 
 | Gap Feature | Primary Projects | Secondary Projects |
 |-------------|------------------|-------------------|
-| **Triggers** | Inventory Tracker, Smart Lighting | Greenhouse, Salad Maker, Barista |
+| **Event-Driven Automation** | Inventory Tracker, Smart Lighting | Greenhouse, Salad Maker, Barista |
 | **Scheduled Tasks** | Smart Lighting, Inventory Tracker | Greenhouse, Salad Maker, Barista |
 | **Customer Delivery** | Inventory Tracker, Vino, Salad Maker | Barista |
 | **Data Pipeline** | Chess, Greenhouse, Salad Maker | Inventory Tracker, Barista |
@@ -163,7 +163,7 @@ Several projects can work together:
 | Integration | Projects | Description |
 |-------------|----------|-------------|
 | **Lights follow rover** | Smart Lighting + Retro Roomba | Lights activate when rover enters zone |
-| **Checkout triggers lights** | Inventory Tracker + Smart Lighting | Lab lights on when equipment checked out |
+| **Checkout activates lights** | Inventory Tracker + Smart Lighting | Lab lights on when equipment checked out |
 | **Robot fleet dashboard** | All mobile robots | Centralized monitoring of all rovers |
 
 ## Reference Documents

@@ -28,7 +28,7 @@ This project combines manipulation complexity (multi-step beverage preparation),
 - [ ] Multi-machine Coordination
 - [x] Cloud Integration
 - [x] Customer Delivery ← **Ordering app, preferences**
-- [x] Triggers ← **Order received, brew complete**
+- [x] Event-Driven Automation ← **Order received, brew complete**
 - [x] Scheduled Tasks ← **Cleaning cycles, warmup**
 - [x] Monitoring/Alerting ← **Bean level, water, temperature**
 - [x] Data Pipeline ← **Quality images for training**
@@ -116,10 +116,10 @@ Select 3-5 items for post-hackathon development:
 - [ ] **Order queue display** - Show pending orders
 - [ ] **Order status** - Real-time prep progress
 
-### Triggers (Gap Feature)
+### Event-Driven Automation (Gap Feature)
 - [ ] **Order received** - Start preparation sequence
 - [ ] **Brew complete** - Detect shot done, proceed to next step
-- [ ] **Low beans alert** - Weight sensor triggers refill alert
+- [ ] **Low beans alert** - Weight sensor activates refill alert
 - [ ] **Temperature alert** - Alert if brew temp out of range
 
 ### Scheduled Tasks (Gap Feature)
@@ -190,7 +190,7 @@ Select 3-5 items for post-hackathon development:
 
 ```
 1. RECEIVE ORDER
-   └── Trigger: Order placed via tablet
+   └── Event: Order placed via tablet
 
 2. PREPARE PORTAFILTER
    ├── Grab portafilter from holder
@@ -306,7 +306,7 @@ The only button the robot needs to press is the **Gaggia Classic Pro brew rocker
 
 **Gap Features This Project Addresses:**
 - **Customer Delivery** - Ordering interface with TypeScript/Flutter SDKs
-- **Triggers** - Order received, brew complete, inventory alerts
+- **Event-Driven Automation** - Order received, brew complete, inventory alerts
 - **Scheduled Tasks** - Morning warmup, cleaning cycles
 - **Monitoring/Alerting** - Bean level, water, temperature, usage
 - **Data Pipeline** - Drink quality images, shot timing data
