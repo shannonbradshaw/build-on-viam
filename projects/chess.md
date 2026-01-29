@@ -161,8 +161,6 @@ Add user-facing features for a polished experience.
 
 **Suggested order:** A → B → D → C (reliability first, then rules, then UX, then advanced ML)
 
-**Selected MVP:** _______________
-
 ---
 
 ## Backlog
