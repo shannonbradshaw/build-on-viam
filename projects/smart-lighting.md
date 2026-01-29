@@ -39,9 +39,7 @@ This project demonstrates multi-machine coordination, triggers, scheduled tasks,
 | Motion Sensors | Occupancy detection | Caseta Motion Sensor (PD-OSENS) |
 | Pico Remotes | Manual override | Pico Remote (PJ2-3BRL) |
 | Compute | Viam machine | Raspberry Pi 5 |
-| Light Sensor | Daylight harvesting | BH1750 (~$5) |
-
-**Estimated Hardware Cost:** $500-1,000 (depending on number of zones)
+| Light Sensor | Daylight harvesting | BH1750 |
 
 **Remote-Friendly:** Yes - module development fully remote, physical install minimal
 

@@ -41,8 +41,6 @@ This project naturally exercises the full robotics lifecycle - from prototype th
 | Enclosure | Growing environment | IKEA cabinet, grow tent, custom build |
 | Growing medium | Plant support | Soil pots, hydroponics, AeroGarden-style |
 
-**Estimated Hardware Cost:** $200-500 (excluding enclosure)
-
 **Remote-Friendly:** Yes - sensors can be monitored from anywhere, development can be fully remote
 
 ---

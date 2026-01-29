@@ -39,8 +39,6 @@ This project demonstrates manipulation capabilities, vision-based detection, and
 | Wine Rack | Bottle storage | Custom with known positions, or vision-based |
 | Compute | Main controller | Raspberry Pi 4, Intel NUC |
 
-**Estimated Hardware Cost:** $TBD (arm is primary cost)
-
 **Remote-Friendly:** Partially - can develop control logic remotely, physical testing requires hardware
 
 ---
@@ -79,54 +77,64 @@ Camera reads wine label, displays pairing suggestions and tasting notes.
 
 ## Backlog
 
-Select 3-5 items for post-hackathon development:
+### Technical Improvements
+- [ ] **Graceful error recovery** - `reset()` should determine current state and recover appropriately
+- [ ] **Failed grab recovery** - If bottle grab fails, put glass back before retrying
+- [ ] **Config from app** - Pull configuration from Viam app instead of hardcoding
+- [ ] **April tag localization** - Auto-determine arm 2 location using April tags
+- [ ] **Remove hardcoded positions** - Eliminate hardcoded joint positions throughout
+- [ ] **Motion refactoring** - Clean up hacks in motion.go, use proper motion service patterns
 
-### Manipulation & Pouring
+### Point Cloud & Detection
+- [ ] **Separate surface and object segmentation** - obstacles-pointcloud conflates table segmentation with object detection; these need to be separate concerns
+- [ ] **Single object detection** - Demo fails when detecting multiple point clouds instead of one; need reliable single-object isolation
+- [ ] **Auto-find bottle** - Vision-based bottle detection (not just glass)
+- [ ] **Detection UI feedback** - Show on screen when "no objects found" or "too many found"
+
+### Pour Quality
+- [ ] **Pour stopping detection** - Better detection of when to stop pouring
+- [ ] **Pour consistency** - More reliable pour amounts
+- [ ] **Dynamic pour amounts** - Adjust pour based on glass size and drink type
+
+### Manipulation & Gripping
+- [ ] **Grab verification** - Confirm successful grab (pressure sensor at back of gripper, or camera-based)
 - [ ] **Multiple bottle types** - Handle different bottle shapes/sizes
-- [ ] **Pour level detection** - Camera monitors fill level, stops at right amount
-- [ ] **Glass handoff** - Robot hands glass to person or mobile robot
+- [ ] **Multiple glass types** - Support different glass sizes and shapes
+- [ ] **Person interference handling** - Better timing/detection when person reaches into workspace
+- [ ] **Funnel refill workflow** - Get funnel, put on bottle, pick up glass, pour water, put funnel back
 
-### Data & Monitoring
-- [ ] **Temperature monitoring** - Track wine storage temps, alert if out of range
-- [ ] **Inventory tracking** - Track bottles consumed, sync to cloud
-- [ ] **Pour analytics** - Track pours by wine type, time, etc.
+### Control Interface
+- [ ] **Streamdeck integration** - Physical button control for demo
+- [ ] **Mode switching** - DoCommand to switch between manual and auto modes
+- [ ] **Dynamic button states** - Streamdeck buttons reflect current system state
+- [ ] **Default to manual mode** - Start in manual mode for safety
 
-### User Interaction
-- [ ] **Voice commands** - "Pour me a glass of the Pinot"
-- [ ] **Mobile app** - Wine selection and service interface
-- [ ] **Guest preferences** - Remember what guests like
-
-### Scale & Fleet
-- [ ] **Multi-station fleet** - Multiple Vino units in different locations
-- [ ] **Centralized inventory** - Unified wine inventory across stations
-
-### Customer Delivery (Gap Feature)
+### Customer Delivery
 - [ ] **Web ordering interface** - TypeScript SDK web app for ordering pours
-- [ ] **Guest authentication** - Simple login for tracking preferences
 - [ ] **Order queue display** - Show pending orders on screen
-- [ ] **Pour history** - Track what each guest has ordered
-- [ ] **Event mode** - Pre-configured for specific events/tastings
-- [ ] **Billing demo** - Demonstrate per-pour billing capability
+- [ ] **Event mode** - Pre-configured settings for specific events/tastings
 
-### Triggers (Gap Feature)
-- [ ] **Glass placement trigger** - Weight sensor detects glass, starts pour sequence
-- [ ] **Bottle empty alert** - Trigger alert when bottle weight indicates empty
-- [ ] **Temperature alert** - Alert if wine storage temp out of range
+### Triggers
+- [ ] **Glass placement trigger** - Sensor detects glass, starts pour sequence
+- [ ] **Bottle empty alert** - Alert when bottle weight indicates empty
 - [ ] **Order received trigger** - Start pour sequence when order placed via app
 
-### Scheduled Tasks (Gap Feature)
-- [ ] **End-of-day cleaning** - Scheduled cleaning cycle for gripper/pour area
-- [ ] **Inventory check** - Daily inventory snapshot for tracking
-- [ ] **Temperature log** - Periodic temperature readings to cloud
+### Data & Monitoring
+- [ ] **Inventory tracking** - Track bottles consumed, sync to cloud
+- [ ] **Pour analytics** - Track pours by wine type, time, etc.
 
 ---
 
 ## Stretch Goals
 
-- [ ] Wine recommendation engine based on preferences/history
-- [ ] Decanting with timed aeration
+- [ ] Voice commands ("Pour me a glass of the Pinot")
+- [ ] Guest preferences and history tracking
+- [ ] Wine recommendation engine based on preferences
+- [ ] Multi-station fleet with centralized inventory
+- [ ] Per-pour billing demonstration
 - [ ] Label scanning with vintage database lookup
-- [ ] Party mode: queue up orders from multiple guests
+- [ ] Decanting with timed aeration
+- [ ] Temperature monitoring and alerts
 - [ ] Integration with wine cellar management systems
 
 ---
@@ -171,10 +179,13 @@ Select 3-5 items for post-hackathon development:
 **Gap Features This Project Addresses:**
 - **Customer Delivery** - Primary demo of customer-facing SDK (TypeScript web app for ordering)
 - **Triggers** - Glass placement sensor, bottle empty alerts, order-received triggers
-- **Scheduled Tasks** - End-of-day cleaning, inventory snapshots
+
+**Key Technical Challenges:**
+- **Point cloud segmentation** - Current obstacles-pointcloud module conflates surface/table segmentation with object segmentation, causing false positives when multiple objects detected
+- **Error recovery** - Demo needs graceful recovery from failed states without manual intervention
+- **Pour consistency** - Reliable pour amounts across different glass types and fill levels
 
 **Why customer delivery fits here:**
 - Vino has natural guest appeal - visitors want to interact
 - Web ordering interface demonstrates TypeScript SDK
-- Per-pour billing demonstrates Viam's billing capabilities
 - Event mode shows configuration for specific use cases

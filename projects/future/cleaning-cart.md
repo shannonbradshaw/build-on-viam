@@ -40,8 +40,6 @@ This project demonstrates navigation, SLAM, vision detection, and multi-robot co
 | Tray/Bins | Item storage | Mounted bins for dishes, trash |
 | Compute | Main controller | Raspberry Pi 4, Jetson Nano |
 
-**Estimated Hardware Cost:** $1,500-5,000+ (depending on base and arm)
-
 **Remote-Friendly:** Partially - navigation and vision can be developed with simulation/recordings, full testing requires office environment
 
 ---

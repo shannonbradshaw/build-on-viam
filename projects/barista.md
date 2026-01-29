@@ -39,9 +39,9 @@ This project combines manipulation complexity (multi-step beverage preparation),
 |-----------|-------------|----------------|
 | Arm | 6-DOF robot arm | UFACTORY 850 (850mm reach, 5kg payload) |
 | Gripper | Portafilter/pitcher handling | UFACTORY Gripper |
-| Auto-tamper | Consistent 30lb tamp pressure | Puqpress Q2 (~$900) |
-| Espresso Machine | Semi-automatic, physical buttons | Gaggia Classic Pro (~$450) |
-| Grinder | Portafilter-activated | Eureka Atom (~$1,100) |
+| Auto-tamper | Consistent 30lb tamp pressure | Puqpress Q2 |
+| Espresso Machine | Semi-automatic, physical buttons | Gaggia Classic Pro |
+| Grinder | Portafilter-activated | Eureka Atom |
 | Wrist Camera | Close-up detection | Intel RealSense D405 |
 | Overview Camera | Workspace monitoring | USB webcam |
 | Tablet | Order interface | Android tablet |
@@ -49,14 +49,6 @@ This project combines manipulation complexity (multi-step beverage preparation),
 | Knockbox | Puck disposal | Standard knockbox |
 | Milk Pitcher | Steaming vessel | Standard 12oz pitcher |
 | Compute | Main controller | System76 Meerkat |
-
-**Estimated Hardware Cost:** $12,000-14,000
-- UFACTORY 850: ~$8,000
-- Eureka Atom grinder: ~$1,100
-- Puqpress Q2: ~$900
-- Gaggia Classic Pro: ~$450
-- System76 Meerkat: ~$800
-- Cameras, tablet, accessories: ~$500
 
 **Remote-Friendly:** Partially - control logic can be developed remotely, physical testing requires hardware
 
@@ -277,18 +269,18 @@ The only button the robot needs to press is the **Gaggia Classic Pro brew rocker
 
 ### Espresso Machine Options
 
-| Machine | Price | Pros | Cons |
-|---------|-------|------|------|
-| Gaggia Classic Pro | ~$450 | Rocker switches (easy for robot), 58mm portafilter, Pi mods available | No PID (can add aftermarket) |
-| Rancilio Silvia | ~$465 | Professional build, toggle switches | No PID built-in |
-| Rancilio Silvia Pro X | ~$1,500 | PID built-in, reliable | Higher cost |
-| Breville Bambino Plus | ~$250 | Compact, PID, affordable | 54mm portafilter (non-standard) |
+| Machine | Pros | Cons |
+|---------|------|------|
+| Gaggia Classic Pro | Rocker switches (easy for robot), 58mm portafilter, Pi mods available | No PID (can add aftermarket) |
+| Rancilio Silvia | Professional build, toggle switches | No PID built-in |
+| Rancilio Silvia Pro X | PID built-in, reliable | More complex |
+| Breville Bambino Plus | Compact, PID | 54mm portafilter (non-standard) |
 
-**Recommendation:** Gaggia Classic Pro - rocker switches are easy for robot to press, 58mm commercial portafilter, well-documented mods, excellent value.
+**Recommendation:** Gaggia Classic Pro - rocker switches are easy for robot to press, 58mm commercial portafilter, well-documented mods.
 
 ### References
 
-- [Rozum Cafe](https://cafe.rozum.com/) - Commercial robotic barista (~$100k)
+- [Rozum Cafe](https://cafe.rozum.com/) - Commercial robotic barista
 - [Cafe X](https://www.cafexapp.com/) - Single-arm robotic coffee bar
 - [Artly Coffee](https://artly.coffee/) - AI-trained robotic barista
 - [Eureka Atom](https://www.eureka.co.it/en/products/espresso_line_home/atom.aspx) - Portafilter-activated grinder
@@ -303,7 +295,7 @@ The only button the robot needs to press is the **Gaggia Classic Pro brew rocker
 **Why single arm works:**
 - Sequential workflow is natural for coffee making
 - One arm is sufficient for all manipulation tasks
-- Simpler development, lower cost
+- Simpler development
 - Commercial systems (Cafe X) use single arm successfully
 
 **Why Puqpress instead of robot tamping:**

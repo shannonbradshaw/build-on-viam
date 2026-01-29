@@ -40,8 +40,6 @@ Extended functionality includes loading dirty dishes from the sink and coordinat
 | Mount | Installation | Counter-mounted, ceiling gantry |
 | Compute | Main controller | Raspberry Pi 4, Jetson Nano |
 
-**Estimated Hardware Cost:** $TBD (arm + gantry is significant)
-
 **Remote-Friendly:** Partially - manipulation logic can be developed remotely, physical testing requires hardware and kitchen setup
 
 ---

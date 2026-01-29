@@ -143,18 +143,18 @@ See also: [Future Projects](future-projects.md) - Cleaning Cart, Dishwasher, Box
 | RFID reader | 2 | TBD | TBD |
 | Tablet | 3 | TBD | TBD |
 
-## Cost Comparison
+## Project Comparison
 
-| Project | Hardware Cost | Arm Required | Remote-Friendly |
-|---------|--------------|--------------|-----------------|
-| Salad Maker | ~$19k | Yes (2x UFACTORY 850) | Partial |
-| Barista | ~$13k | Yes (UFACTORY 850) | Partial |
-| Vino | ~$9k | Yes (xArm 6) | Partial |
-| Chess | ~$10k | Yes (xArm 7) | Partial |
-| Greenhouse | ~$400 | No | Yes |
-| Inventory Tracker | ~$500 | No | Yes |
-| Smart Lighting | ~$700 | No | Yes |
-| Retro Roomba | ~$150 | No | Partial |
+| Project | Arm Required | Remote-Friendly |
+|---------|--------------|-----------------|
+| Salad Maker | Yes (2x UFACTORY 850) | Partial |
+| Barista | Yes (UFACTORY 850) | Partial |
+| Vino | Yes (xArm 6) | Partial |
+| Chess | Yes (xArm 7) | Partial |
+| Greenhouse | No | Yes |
+| Inventory Tracker | No | Yes |
+| Smart Lighting | No | Yes |
+| Retro Roomba | No | Partial |
 
 ## Cross-Project Integration
 

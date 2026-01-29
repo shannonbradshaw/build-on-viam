@@ -10,7 +10,7 @@
 
 ## Description
 
-Salad Maker is a dual-arm robotic system that assembles salads on demand. Two UFACTORY 850 arms work together to grab ingredients from a refrigerated prep rail using tongs-style grippers, building salads in bowls dispensed from an automated dispenser. Customers order via app or kiosk, selecting from preset recipes or customizing their own combination.
+Salad Maker is a dual-arm robotic system that assembles salads on demand. Two UFACTORY 850 arms work together to grab ingredients from a refrigerated prep rail using tongs-style grippers, building salads in bowls. Customers order via app or kiosk, selecting from preset recipes or customizing their own combination.
 
 The dual-arm configuration enables parallel ingredient handling and bimanual coordination - one arm can hold the bowl while the other adds ingredients, or both arms can grab different ingredients simultaneously for faster assembly.
 
@@ -47,40 +47,40 @@ This project demonstrates advanced manipulation with dual-arm coordination, visi
 | Dressing Station | Self-serve dressings | Pump bottles on counter |
 | Mounting | Arm mounting structure | Custom gantry or dual pedestals |
 
-**Estimated Hardware Cost:** $15,000-19,000
-- UFACTORY 850 arms: ~$8,000 x 2 = $16,000
-- Prep station: ~$1,500
-- Cameras: ~$500
-- System76 Meerkat: ~$800
-- Grippers, mounting, misc: ~$2,000
-
 **Remote-Friendly:** Partially - dual-arm coordination logic can be developed in simulation, physical testing requires full setup
 
 ---
 
 ## MVP Options
 
-Select one for hackathon scope:
+Suggested MVPs for consideration. 
 
-### Option A: Single Arm, Fixed Recipe (Recommended for start)
-One arm builds a single preset salad recipe into a pre-placed bowl.
+### Option A: First Ingredient (Recommended for start)
+Pick one ingredient from one pan, place it in a bowl. Use pre-defined poses.
+- **Complexity:** Low-Medium
+- **Demo Appeal:** Low
+- **Scope:** Arm + gripper setup, motion service, frame system, single pick-and-place
+- **Viam focus:** Component configuration, motion service, named positions
+
+### Option B: Single Arm, Fixed Recipe
+One arm builds a single preset salad recipe into a pre-placed bowl. No portion control necessary. Use pre-defined poses for ingredient pans and bowl positions.
 - **Complexity:** Medium
 - **Demo Appeal:** Medium-High
-- **Scope:** Single arm, fixed bowl position, 3-4 ingredients
+- **Scope:** Single arm, fixed bowl position, 3-4 ingredients, sequenced motion
 
-### Option B: Dual Arm, Fixed Recipe
-Both arms coordinate to build a preset salad faster.
+### Option C: Dual Arm, Fixed Recipe
+Both arms coordinate to build a preset salad faster. No portion control necessary.
 - **Complexity:** High
 - **Demo Appeal:** High
-- **Scope:** Dual-arm coordination, fixed recipe
+- **Scope:** Dual-arm coordination, collision avoidance, fixed recipe
 
-### Option C: Single Arm, Custom Orders
+### Option D: Single Arm, Custom Orders
 One arm builds custom salads from app orders.
 - **Complexity:** Medium-High
 - **Demo Appeal:** High
-- **Scope:** Ordering interface, ingredient selection, single arm
+- **Scope:** Ordering interface, ingredient selection, triggers, single arm
 
-### Option D: Full System
+### Option E: Full System
 Dual arms, custom orders, bowl dispenser, handoff station.
 - **Complexity:** Very High
 - **Demo Appeal:** Very High
@@ -157,13 +157,20 @@ Select 3-5 items for post-hackathon development:
 
 ## Success Criteria
 
-**MVP Complete When:**
-- [ ] Robot can grab ingredients from prep pans with tongs
-- [ ] Robot can place ingredients into a bowl
-- [ ] Robot can build a 4-ingredient salad reliably
+**Option A Complete When:**
+- [ ] Arm and gripper configured in Viam
+- [ ] Motion service working with defined frame system
+- [ ] Robot can grab one ingredient from prep pan
+- [ ] Robot can place ingredient into a bowl
+- [ ] Pick-and-place runs reliably 5+ times
+
+**Option B Complete When:**
+- [ ] All Option A criteria met
+- [ ] Robot can build a 4-ingredient salad
+- [ ] Sequenced motion through all ingredient positions
 - [ ] Demo runs 3+ times without intervention
 
-**Project Complete When:**
+**Full Project Complete When:**
 - [ ] Dual-arm coordination working
 - [ ] Bowl dispenser integration complete
 - [ ] Ordering interface functional

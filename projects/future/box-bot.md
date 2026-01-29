@@ -40,8 +40,6 @@ Extended functionality includes restocking kitchen supplies by unpacking boxes a
 | Bin | Output storage | Stacking area, binding station |
 | Compute | Main controller | Raspberry Pi 4, Intel NUC |
 
-**Estimated Hardware Cost:** $TBD (depends on arm vs custom mechanism)
-
 **Remote-Friendly:** Partially - vision/logic can be developed remotely, physical testing requires hardware
 
 ---

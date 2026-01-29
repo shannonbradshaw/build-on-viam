@@ -34,14 +34,12 @@ This project solves a real problem (missing equipment, stockouts) while demonstr
 |-----------|-------------|---------|
 | Compute | Per-shelf controller | Raspberry Pi 5 |
 | Camera | Shelf monitoring | USB webcam, Pi Camera |
-| RFID Reader | Item/badge scanning | RC522 (~$5), PN532 (~$10) |
-| RFID Tags | Item identification | 13.56MHz stickers (~$0.10 ea) |
-| Barcode Scanner | Alternative to RFID | USB barcode scanner (~$30) |
+| RFID Reader | Item/badge scanning | RC522, PN532 |
+| RFID Tags | Item identification | 13.56MHz stickers |
+| Barcode Scanner | Alternative to RFID | USB barcode scanner |
 | Weight Sensors | Detect item removal (optional) | HX711 + load cells |
 | Tablet | Checkout kiosk | Android tablet or iPad |
 | Shelving | Storage display | Wire shelving or existing |
-
-**Estimated Hardware Cost:** $300-800 (depending on approach)
 
 **Remote-Friendly:** Yes - app development fully remote, ML training remote, physical setup minimal
 
@@ -182,7 +180,7 @@ Select 3-5 items for post-hackathon development:
 
 ### RFID Integration
 
-**Hardware:** RC522 module (~$5) connected via SPI to Raspberry Pi
+**Hardware:** RC522 module connected via SPI to Raspberry Pi
 
 **Python library:** [pi-rc522](https://github.com/ondryaso/pi-rc522)
 
@@ -259,7 +257,7 @@ users:
 
 **Why this project is valuable:**
 - Solves real problem the team faces daily
-- Low hardware cost, high learning value
+- Simple hardware, high learning value
 - Remote-friendly development
 - Demonstrates capabilities manipulation projects don't
 - System will actually be used after hackathon
