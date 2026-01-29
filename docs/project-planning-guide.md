@@ -67,7 +67,7 @@ As of the current project portfolio, here's how capabilities are covered:
 | Module Development | Chess, Vino, Salad Maker, Barista, Inventory Tracker, Retro Roomba, Smart Lighting |
 | Fragments | All projects |
 | Fleet Management | Vino, Greenhouse, Barista, Inventory Tracker, Smart Lighting |
-| OTA Updates | Retro Roomba |
+| OTA Updates | All projects |
 | Provisioning | — |
 | Event-Driven Automation | All projects |
 | Scheduled Tasks | Vino, Salad Maker, Greenhouse, Barista, Inventory Tracker, Smart Lighting |
