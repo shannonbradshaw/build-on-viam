@@ -8,6 +8,7 @@ Build on Viam is an internal program where Viam engineers build real robotics pr
 
 | Project | Summary |
 |---------|---------|
+| [Apples](./applesauce.md) | Robotic system that picks, cores, and peels apples from a basket |
 | [Barista](./barista.md) | Single-arm robot that operates an espresso station like a human barista |
 | [Chess](./chess.md) | Robot that plays chess against humans, physically moving pieces on a real board |
 | [Greenhouse](./greenhouse.md) | Automated growing environment with sensing, environmental control, and growth tracking |
@@ -60,22 +61,22 @@ These are the Viam capabilities we want to exercise throughout this program.
 
 As of the current project portfolio, here's how capabilities are covered:
 
-**Projects:** Chess, Vino, Salad Maker, Greenhouse, Barista, Inventory Tracker, Retro Roomba, Smart Lighting
+**Projects:** Apples, Chess, Vino, Salad Maker, Greenhouse, Barista, Inventory Tracker, Retro Roomba, Smart Lighting
 
 | Capability | Projects |
 |------------|----------|
 | Hardware Integration | All projects |
-| Motion Planning | Chess, Vino, Salad Maker, Barista |
-| Vision / ML Inference | Chess, Vino, Salad Maker, Barista, Inventory Tracker, Greenhouse |
+| Motion Planning | Apples, Chess, Vino, Salad Maker, Barista |
+| Vision / ML Inference | Apples, Chess, Vino, Salad Maker, Barista, Inventory Tracker, Greenhouse |
 | Data Capture & Sync | All projects |
 | Remote Operation | All projects |
-| Module Development | Chess, Vino, Salad Maker, Barista, Inventory Tracker, Retro Roomba, Smart Lighting |
+| Module Development | Apples, Chess, Vino, Salad Maker, Barista, Inventory Tracker, Retro Roomba, Smart Lighting |
 | Fragments | All projects |
-| Fleet Management | Vino, Greenhouse, Barista, Inventory Tracker, Smart Lighting |
+| Fleet Management | Apples, Vino, Greenhouse, Barista, Inventory Tracker, Smart Lighting |
 | OTA Updates | All projects |
-| Provisioning | Greenhouse, Barista, Inventory Tracker, Smart Lighting, Cleaning Cart |
-| Scheduled Tasks | Vino, Salad Maker, Greenhouse, Barista, Inventory Tracker, Smart Lighting |
-| Monitoring & Alerting | Vino, Greenhouse, Barista |
+| Provisioning | Apples, Greenhouse, Barista, Inventory Tracker, Smart Lighting, Cleaning Cart |
+| Scheduled Tasks | Apples, Vino, Salad Maker, Greenhouse, Barista, Inventory Tracker, Smart Lighting |
+| Monitoring & Alerting | Apples, Vino, Greenhouse, Barista |
 | Data Pipeline (ML Training) | Vino, Salad Maker, Greenhouse, Barista, Inventory Tracker |
 | Customer Delivery | Vino, Salad Maker, Barista, Inventory Tracker |
 | Web/Mobile Apps | Vino, Salad Maker, Barista, Inventory Tracker |
