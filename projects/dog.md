@@ -20,7 +20,7 @@ This project showcases Viam's end-to-end robotics platform capabilities: hardwar
 
 ### Core Capabilities
 - [x] **Hardware Integration** — Integration with Unitree G02 quadruped via SDK, onboard cameras (front-facing wide-angle), IMU for orientation sensing
-	- some work has already been done here 
+	- some work has already been done [here](https://github.com/viam-modules/unitree) 
 - [x] **Motion Planning** — Dynamic velocity planning to maintain following distance (1.5-3m), adaptive speed control matching human walking speed (0-1.5 m/s), basic obstacle avoidance using depth sensing
 - [x] **Vision / ML Inference** — Person detection and tracking using YOLOv8 or MobileNet SSD models, depth estimation for distance calculation, continuous person re-identification to handle occlusions
 - [x] **Data Capture & Sync** — Capture camera frames, detection bounding boxes, tracking metrics, and movement telemetry for model refinement and behavior analysis
