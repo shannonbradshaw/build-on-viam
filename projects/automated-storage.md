@@ -10,7 +10,7 @@
 
 ## Description
 
-<img src="https://pn-data.nyc3.cdn.digitaloceanspaces.com/20_percent/isometric_full.jpg" alt="Automated storage and retrieval system isometric view" style="max-width: 600px;">
+![Automated storage and retrieval system isometric view](https://pn-data.nyc3.cdn.digitaloceanspaces.com/20_percent/isometric_full.jpg)
 
 Automated Storage and Retrieval System is a modular lab storage solution that works like a reversible vending machine. Users select an item on a screen (e.g., M4 nuts), and the machine delivers the bin containing that item. When done, they place the bin in a return slot and the machine puts it back in its assigned position. Bins are identified by RFID tags stuck to their bottoms; a 3-axis gantry with a gripper handles all pick-and-place without additional actuators. The machine maintains an internal state of bin positions and can reindex via RFID if bins are ever reshuffled. A camera takes a picture of bin's contents when it is returned, so that users can see the latest state of the contents in the app from their desks.
 
@@ -152,6 +152,8 @@ Everything in Option B, plus a camera captures a photo of the user on each retri
 ~1m x 1m x 0.5m V-slot aluminum frame. Up to 29 bins (4" x 6") in a grid. Gantry rides on V-wheels with GT2 belt drive, one NEMA 23 stepper per axis.
 
 **Retrieval:** User selects item on touchscreen → controller looks up bin slot → gantry moves to slot, grips bin → delivers to pickup window → IR sensor confirms position, RFID verifies identity → status set to "in use."
+
+![Retrieval process](https://pn-data.nyc3.cdn.digitaloceanspaces.com/20_percent/retrieval_process.jpg)
 
 **Return:** User places bin in return slot → IR detects, RFID identifies → (Option C: camera snapshots contents) → gantry returns bin to its slot → status set to "stored."
 
