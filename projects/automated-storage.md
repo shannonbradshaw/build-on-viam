@@ -153,7 +153,7 @@ Everything in Option B, plus a camera captures a photo of the user on each retri
 
 **Retrieval:** User selects item on touchscreen → controller looks up bin slot → gantry moves to slot, grips bin → delivers to pickup window → IR sensor confirms position, RFID verifies identity → status set to "in use."
 
-![Retrieval process](https://pn-data.nyc3.cdn.digitaloceanspaces.com/20_percent/retrieval_process.jpg)
+<img src="https://pn-data.nyc3.cdn.digitaloceanspaces.com/20_percent/retrieval_process.jpg" alt="Retrieval process" height="800">
 
 **Return:** User places bin in return slot → IR detects, RFID identifies → (Option C: camera snapshots contents) → gantry returns bin to its slot → status set to "stored."
 
