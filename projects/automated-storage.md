@@ -22,7 +22,7 @@ This project showcases Viam’s hardware integration (gantry, RFID reader, camer
 
 - [x] **Hardware Integration** — 2-3 axis gantry, RFID reader, ultrasonic distance sensor, camera, screen
 - [ ] **Motion Planning** — Not applicable
-- [?] **Vision / ML Inference** — Optional: possible parsing of bin contents to text, item counting
+- [ ] **Vision / ML Inference** — Optional: possible parsing of bin contents to text, item counting
 - [x] **Data Capture & Sync** — Logging bin in-out flow. Storing bin content images
 - [x] **Remote Operation** — Monitoring inventory state, possibly machine status (e.g. fetching, returning, idle)
 - [x] **Module Development** — RFID module, overall control module
@@ -30,9 +30,9 @@ This project showcases Viam’s hardware integration (gantry, RFID reader, camer
 
 ### Scale & Fleet Capabilities
 
-- [?] **Fleet Management** — Stretch: multiple units across the lab with centralized inventory view
+- [ ] **Fleet Management** — Stretch: multiple units across the lab with centralized inventory view
 - [x] **OTA Updates** — Module and configuration updates via Registry
-- [?] **Provisioning** — Stretch: fragment with row/column variables reused across units
+- [ ] **Provisioning** — Stretch: fragment with row/column variables reused across units
 
 ### Operational Capabilities
 
