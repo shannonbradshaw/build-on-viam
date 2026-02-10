@@ -181,3 +181,12 @@ Everything in Option B, plus a camera captures a photo of the user on each retri
 - Mechanical tolerances for reliable gripper engagement
 - RFID read reliability through bin material
 - Protruding bin contents can collide with the gripper or frame during transport
+
+## Existing Prototype
+
+<div align="center">
+  <video width="600" autoplay loop muted>
+    <source src="https://pn-data.nyc3.cdn.digitaloceanspaces.com/20_percent/existing_prototype_compressed.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
