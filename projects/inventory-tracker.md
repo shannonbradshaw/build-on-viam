@@ -23,7 +23,6 @@ This approach is pragmatic - it works on day one with zero training, builds its 
 ## Viam Capabilities Demonstrated
 
 ### Core Capabilities
-
 - [ ] **Hardware Integration** — Camera, optional button, display
 - [ ] **Motion Planning** — Not applicable
 - [x] **Vision / ML Inference** — Item recognition, face recognition (phased)
@@ -33,34 +32,30 @@ This approach is pragmatic - it works on day one with zero training, builds its 
 - [x] **Fragments** — Checkout station configuration as reusable fragment
 
 ### Scale & Fleet Capabilities
-
 - [x] **Fleet Management** — Multiple checkout stations with centralized view
 - [x] **OTA Updates** — Module and configuration updates via Registry
 - [x] **Provisioning** — Fragment-based configuration reuse
 
 ### Operational Capabilities
-
 - [x] **Scheduled Tasks** — Daily summaries, weekly utilization reports
 - [ ] **Monitoring & Alerting** — Backlog: station health, low activity alerts
 - [x] **Data Pipeline (ML Training)** — Primary: captured images → labeling → item/face models → deploy
 
 ### Customer-Facing Capabilities
-
 - [x] **Customer Delivery** — Dashboard for viewing checkouts and audit trail
 - [x] **Web/Mobile Apps** — Web dashboard, mobile-friendly checkout status
 
 ### Multi-Machine Coordination
-
 - [x] **Stations report to central system** — Centralized view across all locations
 
 ## Hardware Requirements
 
-| Component          | Description                 | Options                                            |
-| ------------------ | --------------------------- | -------------------------------------------------- |
-| Compute            | Checkout station controller | Raspberry Pi 5                                     |
-| Camera             | Capture person + item       | USB webcam, Pi Camera                              |
-| Display (optional) | Feedback to user            | Small LCD or status LEDs                           |
-| Mounting           | Camera position             | Shelf-mounted, wall-mounted, or freestanding kiosk |
+| Component | Description | Options |
+|-----------|-------------|---------|
+| Compute | Checkout station controller | Raspberry Pi 5 |
+| Camera | Capture person + item | USB webcam, Pi Camera |
+| Display (optional) | Feedback to user | Small LCD or status LEDs |
+| Mounting | Camera position | Shelf-mounted, wall-mounted, or freestanding kiosk |
 
 **Estimated Cost per Station:** ~$100-150
 
@@ -75,7 +70,6 @@ This approach is pragmatic - it works on day one with zero training, builds its 
 Detect checkout events and capture photos for audit trail.
 
 **Flow:**
-
 1. Person approaches checkout station
 2. Holds item up in front of camera (in designated "checkout zone")
 3. System detects the gesture/motion and captures photo
@@ -84,7 +78,6 @@ Detect checkout events and capture photos for audit trail.
 6. Human review if needed - photo serves as audit trail
 
 **Detection options:**
-
 - Motion detection in designated zone
 - "Person holding object" pose detection
 - Physical button press (simplest)
@@ -136,7 +129,6 @@ Complete hands-free tracking.
 ## Backlog
 
 ### Phase 1: Capture & Notify
-
 - [ ] **Checkout zone detection** - Define camera FOV region for checkout gestures
 - [ ] **Motion/gesture detection** - Detect when someone holds up an item
 - [ ] **Photo capture** - High-quality image of person + item together
@@ -146,7 +138,6 @@ Complete hands-free tracking.
 - [ ] **Manual labeling UI** - Add item name and person to captured checkouts
 
 ### Phase 2: Item Recognition
-
 - [ ] **Training data export** - Export labeled images for model training
 - [ ] **Item classifier** - Train model to recognize common lab equipment
 - [ ] **Auto-labeling** - Apply model to new checkouts
@@ -155,7 +146,6 @@ Complete hands-free tracking.
 - [ ] **Model retraining pipeline** - Improve model as more data collected
 
 ### Phase 3: Face Recognition
-
 - [ ] **User consent flow** - Opt-in for face recognition
 - [ ] **Face database** - Store face embeddings for enrolled users
 - [ ] **Face matching** - Identify person during checkout
@@ -163,27 +153,23 @@ Complete hands-free tracking.
 - [ ] **Unknown person handling** - Prompt for identification or flag for review
 
 ### Event-Driven Automation (Gap Feature)
-
 - [ ] **Checkout detected** - Capture + notification on gesture detection
 - [ ] **Overdue reminder** - Item not returned after N days, notify (requires Phase 3)
 - [ ] **Escalating alerts** - 3 days, 7 days, then notify manager
 - [ ] **Return detected** - Item reappears on shelf camera (stretch)
 
 ### Scheduled Tasks (Gap Feature)
-
 - [ ] **Daily summary** - Morning report of previous day's checkouts
 - [ ] **Weekly utilization** - Most checked-out items, longest holds
 - [ ] **Shelf audit** - Periodic shelf camera capture for reconciliation
 
 ### Customer Delivery (Gap Feature)
-
 - [ ] **Web dashboard** - View all checkouts, search, filter
 - [ ] **Mobile-friendly** - Check inventory status from phone
 - [ ] **Per-team views** - Filter by team or location
 - [ ] **Admin tools** - Manage items, users, locations
 
 ### Data Pipeline (Gap Feature)
-
 - [ ] **Image capture** - Every checkout builds training dataset
 - [ ] **Labeling interface** - Easy annotation of item + person
 - [ ] **Model training** - Train/retrain in Viam
@@ -191,7 +177,6 @@ Complete hands-free tracking.
 - [ ] **A/B testing** - Compare model versions
 
 ### Fleet & Scale
-
 - [ ] **Multiple stations** - Hardware lab, supply closet, kitchen
 - [ ] **Centralized view** - All stations in one dashboard
 - [ ] **Station fragments** - Reusable config per checkout station
@@ -223,7 +208,6 @@ Complete hands-free tracking.
 ### Checkout Detection
 
 **Approach 1: Motion + Pose Detection**
-
 ```
 1. Camera monitors checkout zone continuously
 2. Motion detected → start analyzing frames
@@ -233,7 +217,6 @@ Complete hands-free tracking.
 ```
 
 **Approach 2: Simple Button**
-
 ```
 1. Person holds up item
 2. Presses physical button
@@ -242,7 +225,6 @@ Complete hands-free tracking.
 ```
 
 **Approach 3: Dwell Time**
-
 ```
 1. Camera monitors checkout zone
 2. Person + object detected in zone
@@ -285,7 +267,6 @@ users:
 ### Notification Format
 
 **Slack message:**
-
 ```
 📦 Checkout detected
 📍 Hardware Lab Station
@@ -300,7 +281,6 @@ Person: [Unknown - click to label] or [Shannon]
 ### ML Pipeline
 
 **Item Recognition:**
-
 1. Export labeled checkout images
 2. Crop to item region (manual or detected)
 3. Train classifier (transfer learning from ImageNet)
@@ -308,7 +288,6 @@ Person: [Unknown - click to label] or [Shannon]
 5. Monitor accuracy, retrain as needed
 
 **Face Recognition:**
-
 1. Collect face images during enrollment (multiple angles)
 2. Generate face embeddings (e.g., using face_recognition library)
 3. Store embeddings in user database
@@ -320,28 +299,24 @@ Person: [Unknown - click to label] or [Shannon]
 ## Notes
 
 **Why no tagging:**
-
 - Zero friction for users - just hold up and go
 - No inventory of tags to manage
 - Works with any item immediately
 - System improves over time through use
 
 **Gap Features This Project Addresses:**
-
 - **Event-Driven Automation** - Checkout detection, overdue alerts
 - **Data Pipeline** - Images → labels → training → deployment
 - **Scheduled Tasks** - Daily summaries, weekly reports
 - **Customer Delivery** - Dashboard with audit trail
 
 **Privacy Considerations:**
-
 - Face recognition requires explicit opt-in
 - Users can view and delete their data
 - Option to use system without face recognition (photo audit only)
 - Clear signage at checkout stations
 
 **Why this approach is valuable:**
-
 - Works on day one with zero ML training
 - Builds its own training data through normal use
 - Each phase adds value incrementally
