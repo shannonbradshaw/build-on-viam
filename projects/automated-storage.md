@@ -26,7 +26,7 @@ This project showcases Viam’s hardware integration (gantry, RFID reader, camer
 - [x] **Data Capture & Sync** — Logging bin in-out flow. Storing bin content images
 - [x] **Remote Operation** — Monitoring inventory state, possibly machine status (e.g. fetching, returning, idle)
 - [x] **Module Development** — RFID module, overall control module
-- [?] **Fragments** — Overall machine fragment, with variables for number of rows and columns
+- [ ] **Fragments** — Overall machine fragment, with variables for number of rows and columns
 
 ### Scale & Fleet Capabilities
 
