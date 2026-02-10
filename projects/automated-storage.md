@@ -141,7 +141,7 @@ Everything in Option B, plus a camera captures a photo of the user on each retri
 - **Jira Epic:** [TBD]
 - **GitHub Repo:** [TBD]
 - **Viam Organization:** [TBD]
-- **Hardware BOM:** [TBD]
+- **Hardware BOM:** [Google Doc](https://docs.google.com/document/d/19-JbjoUL0PPk2hkcDsG-CM7M_3LyEGcC-vvEyboqY2c/edit?tab=t.0#heading=h.vfoqwi6vdtwv)
 
 ---
 
