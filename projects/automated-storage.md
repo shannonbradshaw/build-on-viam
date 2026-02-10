@@ -10,40 +10,40 @@
 
 ## Description
 
-Automated Storage and Retrieval System is a modular lab storage solution that works like a reversible vending machine. Users select an item on a screen (e.g., M4 nuts), and the machine delivers the bin containing that item. When done, they place the bin in a return slot and the machine puts it back in its assigned position. Bins are identified by RFID tags; a 3-axis gantry with a gripper handles all pick-and-place without additional actuators. The machine maintains an internal state of bin positions and can reindex via RFID if bins are ever reshuffled.
+Automated Storage and Retrieval System is a modular lab storage solution that works like a reversible vending machine. Users select an item on a screen (e.g., M4 nuts), and the machine delivers the bin containing that item. When done, they place the bin in a return slot and the machine puts it back in its assigned position. Bins are identified by RFID tags stuck to their bottoms; a 3-axis gantry with a gripper handles all pick-and-place without additional actuators. The machine maintains an internal state of bin positions and can reindex via RFID if bins are ever reshuffled. A camera takes a picture of bin's contents when it is returned, so that users can see the latest state of the contents in the app from their desks.
 
 The system addresses real pain for lab managers—who today manually maintain inventory and reorder—and for lab users—who often don’t know if an item exists, where it is, or who has it. It keeps an automatic digital twin of inventory, a searchable database with up-to-date bin status (stored vs. in use), content snapshots on each return, and optional tracking of who retrieved which bin. That combination of physical automation and data visibility makes it compelling both as a utility and as a demo.
 
-This project showcases Viam’s hardware integration (gantry, gripper, RFID), motion planning for reliable bin handling, data capture and sync for inventory and status, and remote operation for development and monitoring. Optional extensions (bulk return, vision-based quantity or content validation) would further exercise vision and ML pipelines.
+This project showcases Viam’s hardware integration (gantry, RFID reader, camera, screen, ultrasonic distance sensor), motion planning for reliable bin handling, data capture and sync for inventory and status, and remote operation for development and monitoring. Optional extensions (bulk return, vision-based quantity or content validation) would further exercise vision and ML pipelines.
 
 ## Viam Capabilities Demonstrated
 
 ### Core Capabilities
 
-- [ ] **Hardware Integration** — [Describe hardware: cameras, arms, sensors, etc.]
-- [ ] **Motion Planning** — [Describe if applicable, or "Not applicable"]
-- [ ] **Vision / ML Inference** — [Describe vision/ML usage, or "Not applicable"]
-- [ ] **Data Capture & Sync** — [Describe data capture needs, or "Not primary focus"]
-- [ ] **Remote Operation** — [Describe remote operation capabilities]
-- [ ] **Module Development** — [Describe custom modules, or "Not primary focus"]
-- [ ] **Fragments** — [Describe fragment usage for configuration reuse]
+- [x] **Hardware Integration** — 2-3 axis gantry, RFID reader, ultrasonic distance sensor, camera, screen
+- [ ] **Motion Planning** — Not applicable
+- [?] **Vision / ML Inference** — Optional: possible parsing of bin contents to text, item counting
+- [x] **Data Capture & Sync** — Logging bin in-out flow. Storing bin content images
+- [x] **Remote Operation** — Monitoring inventory state, possibly machine status (e.g. fetching, returning, idle)
+- [x] **Module Development** — RFID module, overall control module
+- [?] **Fragments** — Overall machine fragment, with variables for number of rows and columns
 
 ### Scale & Fleet Capabilities
 
-- [ ] **Fleet Management** — [Describe if managing multiple machines, or "Not applicable"]
-- [ ] **OTA Updates** — [Module and configuration updates via Registry]
-- [ ] **Provisioning** — [Fragment-based configuration reuse, or "Not applicable" if not fleet-oriented]
+- [?] **Fleet Management** — Stretch: multiple units across the lab with centralized inventory view
+- [x] **OTA Updates** — Module and configuration updates via Registry
+- [?] **Provisioning** — Stretch: fragment with row/column variables reused across units
 
 ### Operational Capabilities
 
-- [ ] **Scheduled Tasks** — [Describe scheduled operations, or "Not applicable"]
-- [ ] **Monitoring & Alerting** — [Describe monitoring needs, or "Not applicable"]
-- [ ] **Data Pipeline (ML Training)** — [Describe capture → label → train → deploy workflow, or "Not applicable"]
+- [x] **Scheduled Tasks** — RFID reindexing routine, daily inventory summary reports
+- [x] **Monitoring & Alerting** — Bin jam detection, stretch: low-stock alerts
+- [ ] **Data Pipeline (ML Training)** — Backlog: bin content images → label → train quantity estimation / content validation models → deploy
 
 ### Customer-Facing Capabilities
 
-- [ ] **Customer Delivery** — [Describe guest/customer-facing features, or "Not applicable"]
-- [ ] **Web/Mobile Apps** — [Describe app interfaces, or "Not applicable"]
+- [x] **Customer Delivery** — Touchscreen item selection,
+- [x] **Web/Mobile Apps** — Searchable inventory dashboard with bin status, content snapshots
 
 ## Hardware Requirements
 

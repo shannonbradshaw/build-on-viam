@@ -30,3 +30,126 @@ Bulk return mechanism: a system that allows placing multiple bins in the return 
 Computer Vision-based inventory estimation: quantity of items in the bin estimated from the return photo and is recorded in the database
 Computer Vision-based bin content validation: e.g. alert message is sent if somebody put a screw in a washer bin
 Additional bin sizes, e.g. 8’ x 12’
+
+Item
+Type
+Product URL
+Unit price
+
+# of units
+
+Total cost
+Bin 6' x 8'
+Other
+https://www.mcmaster.com/4315T71-4315T712/
+$9.42
+29
+$273.18
+20mm x 20mm x 1000mm V-slot rail
+Framing
+https://makerstore.cc/product/v-slot-20-x-20mm/
+$13.25
+18
+$238.50
+20mm x 60mm x 1000mm V-slot rail
+Framing
+https://makerstore.cc/product/v-slot-20-x-60mm/
+$24.25
+2
+$48.50
+20mm x 60mm x 500mm V-slot rail
+Framing
+https://makerstore.cc/product/v-slot-20-x-60mm/
+$12.40
+1
+$12.40
+20mm x 60mm x 1000mm V-slot rail
+Framing
+https://makerstore.cc/product/v-slot-20-x-80mm-4/
+$31.15
+1
+$31.15
+V-slot 3-way cube
+Framing
+https://makerstore.cc/product/us-brac-cube/
+$4.00
+8
+$32.00
+V-slot 90 degree corner connector
+Framing
+https://makerstore.cc/product/90-degree-angle-corner-connector-v-slot/
+$3.40
+8
+$27.20
+V-slot sliding T-nut
+Framing
+https://makerstore.cc/product/sliding-t-nut/
+$0.65
+180
+$117.00
+V-slot low-profile screws (various lengths)
+Framing
+https://makerstore.cc/product/m5-low-profile-screws/
+$0.30
+180
+$54.00
+Dual V Wheel Kit – Metal
+Motion
+https://makerstore.cc/product/dual-v-wheel-kit-metal/
+$8.40
+16
+$134.40
+Smooth Idler Pulley Kit
+Motion
+https://makerstore.cc/product/us-wheel-pulley-kit/
+$6.00
+6
+$36.00
+Motor Mount Plate – NEMA23
+Motion
+https://makerstore.cc/product/motor-mount-plate-nema23/
+$14.80
+3
+$44.40
+GT2 (2mm) Timing Belt
+Motion
+https://makerstore.cc/product/gt2-2mm-timing-belt-per-meter/
+$4.95
+4
+$19.80
+GT2 (2mm) Aluminum Timing Pulley 30
+Motion
+https://makerstore.cc/product/gt2-2mm-aluminum-timing-pulley-30/
+$8.65
+3
+$25.95
+NEMA 23 Bipolar Stepper Motor
+Electronics
+https://www.omc-stepperonline.com/nema-23-bipolar-1-8deg-1-16nm-164-3oz-in-1-5a-5-4v-57x57x56mm-4-wires-23hs22-1504s
+$13.37
+3
+$40.11
+Stepper Motor Driver
+Electronics
+https://www.adafruit.com/product/6121?gad_campaignid=21079227318
+$8.95
+3
+$26.85
+RFID reader board
+Electronics
+https://www.adafruit.com/product/364
+$39.95
+1
+$39.95
+IR distance sensor
+Electronics
+https://www.sparkfun.com/infrared-proximity-sensor-sharp-gp2y0a21yk.html
+$15.50
+2
+$31.00
+Raspberry Pi touch display
+Electronics
+https://www.pishop.us/product/official-raspberry-pi-7-touch-screen-display-with-10-finger-capacitive-touch/?src=raspberrypi
+$66.00
+1
+$66.00
