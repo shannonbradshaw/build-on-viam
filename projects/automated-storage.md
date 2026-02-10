@@ -10,6 +10,8 @@
 
 ## Description
 
+![Automated storage and retrieval system isometric view](https://pn-data.nyc3.cdn.digitaloceanspaces.com/20_percent/isometric_full.jpg)
+
 Automated Storage and Retrieval System is a modular lab storage solution that works like a reversible vending machine. Users select an item on a screen (e.g., M4 nuts), and the machine delivers the bin containing that item. When done, they place the bin in a return slot and the machine puts it back in its assigned position. Bins are identified by RFID tags stuck to their bottoms; a 3-axis gantry with a gripper handles all pick-and-place without additional actuators. The machine maintains an internal state of bin positions and can reindex via RFID if bins are ever reshuffled. A camera takes a picture of bin's contents when it is returned, so that users can see the latest state of the contents in the app from their desks.
 
 The system addresses real pain for lab managers—who today manually maintain inventory and reorder—and for lab users—who often don’t know if an item exists, where it is, or who has it. It keeps an automatic digital twin of inventory, a searchable database with up-to-date bin status (stored vs. in use), content snapshots on each return, and optional tracking of who retrieved which bin. That combination of physical automation and data visibility makes it compelling both as a utility and as a demo.
