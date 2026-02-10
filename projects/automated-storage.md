@@ -87,7 +87,7 @@ Everything in Option B, plus a camera captures a photo of the user on each retri
 - **Complexity:** High
 - **Demo Appeal:** Very High
 
-**Selected MVP:** ******\_\_\_******
+**Selected MVP:** **\*\***\_\_\_**\*\***
 
 ---
 
@@ -147,20 +147,31 @@ Everything in Option B, plus a camera captures a photo of the user on each retri
 
 ## Technical Details
 
-[Include any technical details that help understand the implementation approach, architecture diagrams, protocol specifications, etc.]
+~1m x 1m x 0.5m V-slot aluminum frame. Up to 29 bins (4" x 6") in a grid. Gantry rides on V-wheels with GT2 belt drive, one NEMA 23 stepper per axis.
+
+**Retrieval:** User selects item on touchscreen → controller looks up bin slot → gantry moves to slot, grips bin → delivers to pickup window → IR sensor confirms position, RFID verifies identity → status set to "in use."
+
+**Return:** User places bin in return slot → IR detects, RFID identifies → (Option C: camera snapshots contents) → gantry returns bin to its slot → status set to "stored."
+
+**State:** Each bin has a unique RFID tag. Controller maintains a `slot (row, col) → bin ID` map. Reindexing routine scans all slots to rebuild the map if needed.
+
+**Comms:** Steppers via GPIO/motor controller, RFID over I2C/SPI (PN532), IR sensors via ADC, touchscreen via DSI, cloud sync via Viam data management.
 
 ---
 
 ## Notes
 
-[Additional context, considerations, or explanations that help evaluators understand the proposal]
+**Why RFID over fixed slot assignment:** Bins can be physically rearranged without breaking the system — just reindex. Tags are ~$0.50 each.
 
 **Why this project is compelling:**
 
-- [Reason 1]
-- [Reason 2]
+- Solves a real daily problem — will actually be used after the hackathon
+- Visually impressive demo (bins moving autonomously in a grid)
+- Broad Viam coverage (hardware, data, remote monitoring, modules) without needing an expensive robot arm
+- Modular — start with one column (Option A), scale to full grid
 
 **Risk Factors:**
 
-- [Potential challenge 1]
-- [Potential challenge 2]
+- Mechanical tolerances for reliable gripper engagement
+- RFID read reliability through bin material
+- Protruding bin contents can collide with the gripper or frame during transport
