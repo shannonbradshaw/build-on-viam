@@ -47,11 +47,13 @@ This project showcases Viam’s hardware integration (gantry, RFID reader, camer
 
 ## Hardware Requirements
 
-| Component       | Description       | Options                |
-| --------------- | ----------------- | ---------------------- |
-| [e.g., Arm]     | [Purpose]         | [Specific models]      |
-| [e.g., Camera]  | [Purpose]         | [Specific models]      |
-| [e.g., Compute] | [Main controller] | [Raspberry Pi 5, etc.] |
+| Component | Description | Options |
+|-----------|-------------|---------|
+| Stepper Motors (x3) | Gantry axis drive | [NEMA 23 Bipolar 1.5A](https://www.omc-stepperonline.com/nema-23-bipolar-1-8deg-1-16nm-164-3oz-in-1-5a-5-4v-57x57x56mm-4-wires-23hs22-1504s) |
+| Stepper Drivers (x3) | Motor control | [Adafruit stepper driver](https://www.adafruit.com/product/6121) |
+| RFID Reader | Bin identification | [Adafruit PN532 NFC/RFID board](https://www.adafruit.com/product/364) |
+| IR Distance Sensors (x2) | Bin presence detection | [Sharp GP2Y0A21YK](https://www.sparkfun.com/infrared-proximity-sensor-sharp-gp2y0a21yk.html) |
+| Touchscreen Display | User item selection interface | [Official Raspberry Pi 7" Touch Display](https://www.pishop.us/product/official-raspberry-pi-7-touch-screen-display-with-10-finger-capacitive-touch/) |
 
 **Remote-Friendly:** [Yes/Partially/No] - [Explain what can be developed remotely]
 
