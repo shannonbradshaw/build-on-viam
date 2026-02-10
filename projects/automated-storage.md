@@ -47,15 +47,15 @@ This project showcases Viam’s hardware integration (gantry, RFID reader, camer
 
 ## Hardware Requirements
 
-| Component | Description | Options |
-|-----------|-------------|---------|
-| Stepper Motors (x3) | Gantry axis drive | [NEMA 23 Bipolar 1.5A](https://www.omc-stepperonline.com/nema-23-bipolar-1-8deg-1-16nm-164-3oz-in-1-5a-5-4v-57x57x56mm-4-wires-23hs22-1504s) |
-| Stepper Drivers (x3) | Motor control | [Adafruit stepper driver](https://www.adafruit.com/product/6121) |
-| RFID Reader | Bin identification | [Adafruit PN532 NFC/RFID board](https://www.adafruit.com/product/364) |
-| IR Distance Sensors (x2) | Bin presence detection | [Sharp GP2Y0A21YK](https://www.sparkfun.com/infrared-proximity-sensor-sharp-gp2y0a21yk.html) |
-| Touchscreen Display | User item selection interface | [Official Raspberry Pi 7" Touch Display](https://www.pishop.us/product/official-raspberry-pi-7-touch-screen-display-with-10-finger-capacitive-touch/) |
+| Component                | Description                   | Options                                                                                                                                               |
+| ------------------------ | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Stepper Motors (x3)      | Gantry axis drive             | [NEMA 23 Bipolar 1.5A](https://www.omc-stepperonline.com/nema-23-bipolar-1-8deg-1-16nm-164-3oz-in-1-5a-5-4v-57x57x56mm-4-wires-23hs22-1504s)          |
+| Stepper Drivers (x3)     | Motor control                 | [Adafruit stepper driver](https://www.adafruit.com/product/6121)                                                                                      |
+| RFID Reader              | Bin identification            | [Adafruit PN532 NFC/RFID board](https://www.adafruit.com/product/364)                                                                                 |
+| IR Distance Sensors (x2) | Bin presence detection        | [Sharp GP2Y0A21YK](https://www.sparkfun.com/infrared-proximity-sensor-sharp-gp2y0a21yk.html)                                                          |
+| Touchscreen Display      | User item selection interface | [Official Raspberry Pi 7" Touch Display](https://www.pishop.us/product/official-raspberry-pi-7-touch-screen-display-with-10-finger-capacitive-touch/) |
 
-**Remote-Friendly:** [Yes/Partially/No] - [Explain what can be developed remotely]
+**Remote-Friendly:** Partially - Touchscreen app and web app can be developed remotely.
 
 ---
 
@@ -63,59 +63,76 @@ This project showcases Viam’s hardware integration (gantry, RFID reader, camer
 
 Select one for hackathon scope:
 
-### Option A: [Name] (Recommended)
+### Option A: 2-Axis Retrieve & Return (Recommended)
 
-[Brief description of minimal viable demo]
+2-axis gantry (X + Z) retrieves and returns bins from a single column of slots. User selects a bin on the touchscreen, the gantry fetches it to a pickup window. Return works in reverse. RFID identifies bins on pickup and return. All state is local.
 
-- **Scope:** [What's included]
-- **Complexity:** [Low/Medium/High]
-- **Demo Appeal:** [Medium/High/Very High]
+- **Scope:** 2-axis gantry control, RFID identification, ultrasonic distance sensor for bin empty/full status, touchscreen UI for bin selection, local state tracking
+- **Complexity:** Medium
+- **Demo Appeal:** High
 
-### Option B: [Name]
+### Option B: 3-Axis Full Grid + Database
 
-[Brief description]
+3-axis gantry (X + Y + Z) serves a full grid of bins. Adds a remote searchable inventory database so users can check bin status and contents from their laptop or phone. Bin status (stored / in use) syncs to the cloud.
 
-- **Scope:** [What's included]
-- **Complexity:** [Low/Medium/High]
-- **Demo Appeal:** [Medium/High/Very High]
+- **Scope:** 3-axis gantry control, RFID, touchscreen UI, cloud-synced inventory database, web dashboard
+- **Complexity:** Medium-High
+- **Demo Appeal:** Very High
 
-### Option C: [Name]
+### Option C: 3-Axis + User Tracking + Vision
 
-[Brief description]
+Everything in Option B, plus a camera captures a photo of the user on each retrieval (for audit trail / who-has-what tracking), and bin contents are photographed on every return for a visual inventory log.
 
-- **Scope:** [What's included]
-- **Complexity:** [Low/Medium/High]
-- **Demo Appeal:** [Medium/High/Very High]
+- **Scope:** 3-axis gantry, RFID, touchscreen UI, cloud database, web dashboard, user photo capture, bin content snapshots, bin contents parsing
+- **Complexity:** High
+- **Demo Appeal:** Very High
 
-**Selected MVP:** **\*\***\_\_\_**\*\***
+**Selected MVP:** ******\_\_\_******
 
 ---
 
 ## Backlog
 
-### [Category 1, e.g., Core Functionality]
+### Core Gantry & Retrieval
 
-- [ ] [Feature 1]
-- [ ] [Feature 2]
-- [ ] [Feature 3]
+- [ ] **2-axis gantry control** — X + Z movement, homing, position calibration
+- [ ] **3rd axis (Y) expansion** — Extend to full grid access
+- [ ] **Bin gripper mechanism** — Reliable grab and release of bins from slots
+- [ ] **RFID read on pickup/return** — Identify bin at gripper position
+- [ ] **RFID reindexing routine** — Scan all slots to rebuild bin position state
+- [ ] **Bin presence detection** — IR sensors confirm bin seated in slot or pickup window
 
-### [Category 2, e.g., Data & Analytics]
+### User Interface
 
-- [ ] [Feature 1]
-- [ ] [Feature 2]
+- [ ] **Touchscreen item selection** — Browse / search items, request retrieval
+- [ ] **Return flow** — User places bin in return slot, machine re-shelves it
+- [ ] **Status display** — Show machine state (idle, fetching, returning, error)
+- [ ] **Bin labels** — Human-readable labels on bin sides matching database entries
 
-### [Category 3]
+### Inventory & Data
 
-- [ ] [Feature 1]
-- [ ] [Feature 2]
+- [ ] **Local bin state tracking** — Map of which bin is in which slot
+- [ ] **Cloud inventory database** — Bin contents, status, timestamps synced to Airtable or similar
+- [ ] **Searchable web dashboard** — Employees look up items, see bin status and availability
+- [ ] **Bin content snapshots** — Camera photographs bin contents on every return
+- [ ] **User photo on retrieval** — Camera captures who retrieved each bin (audit trail)
+
+### Monitoring & Alerts
+
+- [ ] **Gantry health monitoring** — Track motor errors, stalls, position drift
+- [ ] **Bin jam detection** — Alert when bin isn't seated or gripper fails
+- [ ] **Low-stock alerts** — Flag bins that are frequently empty or not returned
 
 ---
 
 ## Stretch Goals
 
-- [ ] [Ambitious future capability 1]
-- [ ] [Ambitious future capability 2]
-- [ ] [Integration with other projects]
+- [ ] **Bulk return mechanism** — Accept multiple bins in a queue instead of one-by-one
+- [ ] **Vision-based quantity estimation** — Estimate item count from return photo, record in database
+- [ ] **Vision-based content validation** — Alert if wrong items are placed in a bin (e.g., screw in washer bin)
+- [ ] **3D model content parsing** — Generate 3D model of bin contents for richer inventory records
+- [ ] **Additional bin sizes** — Support larger bins (e.g., 8" x 12") alongside standard 6" x 8"
+- [ ] **Integration with Lab Inventory Tracker** — Share item database with the vision-based checkout system
 
 ---
 
