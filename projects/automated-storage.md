@@ -2,7 +2,7 @@
 
 ## Overview
 
-**One-line description:** [Brief description of what this robot/system does]
+**One-line description:** Modular lab storage system that retrieves and returns bins on demand via a 3-axis gantry, with RFID identification and a searchable inventory.
 
 **Project Lead:** Petr Novikov
 **Team Members:** TBD
@@ -10,11 +10,11 @@
 
 ## Description
 
-[2-3 paragraphs describing the project, its purpose, and why it's a good demonstration of Viam's capabilities. Include:]
+Automated Storage and Retrieval System is a modular lab storage solution that works like a reversible vending machine. Users select an item on a screen (e.g., M4 nuts), and the machine delivers the bin containing that item. When done, they place the bin in a return slot and the machine puts it back in its assigned position. Bins are identified by RFID tags; a 3-axis gantry with a gripper handles all pick-and-place without additional actuators. The machine maintains an internal state of bin positions and can reindex via RFID if bins are ever reshuffled.
 
-- What does this robot/system do?
-- Why is it compelling (demo appeal, utility, learning value)?
-- What Viam capabilities does it showcase?
+The system addresses real pain for lab managers—who today manually maintain inventory and reorder—and for lab users—who often don’t know if an item exists, where it is, or who has it. It keeps an automatic digital twin of inventory, a searchable database with up-to-date bin status (stored vs. in use), content snapshots on each return, and optional tracking of who retrieved which bin. That combination of physical automation and data visibility makes it compelling both as a utility and as a demo.
+
+This project showcases Viam’s hardware integration (gantry, gripper, RFID), motion planning for reliable bin handling, data capture and sync for inventory and status, and remote operation for development and monitoring. Optional extensions (bulk return, vision-based quantity or content validation) would further exercise vision and ML pipelines.
 
 ## Viam Capabilities Demonstrated
 
