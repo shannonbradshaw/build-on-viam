@@ -57,35 +57,11 @@ This project naturally exercises the full robotics lifecycle - from prototype th
 
 ---
 
-## MVP Options
+## MVP
 
-Select one for hackathon scope:
+Track temperature, humidity, and soil moisture and display on Teleop dashboard in at least one tent. Fan runs when temperature rises above a configurable threshold.
 
-### Option A: Monitor + Dashboard
-Sensors track temp/humidity/soil moisture, display on web dashboard.
-- **Complexity:** Low
-- **Demo Appeal:** Medium
-- **Scope:** Sensor integration, data capture, basic visualization
-
-### Option B: Monitor + Auto-Water (Recommended)
-Above plus automated watering based on soil moisture thresholds.
-- **Complexity:** Low-Medium
-- **Demo Appeal:** Medium-High
-- **Scope:** Adds actuation, threshold logic, closed-loop control
-
-### Option C: Monitor + Water + Lights
-Full environment control including grow lights on schedule.
-- **Complexity:** Medium
-- **Demo Appeal:** High
-- **Scope:** Multiple actuators, scheduling, light cycles
-
-### Option D: Single Plant Pod
-Small self-contained unit (like AeroGarden) with full monitoring.
-- **Complexity:** Low-Medium
-- **Demo Appeal:** High
-- **Scope:** Compact, portable, good for demos
-
-**Selected MVP:** _______________
+**Stretch:** Automated watering controlled through Viam teleop, on a timer, or triggered by soil moisture.
 
 ---
 

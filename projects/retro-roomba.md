@@ -58,23 +58,9 @@ No computer vision—just serial communication, bump sensors, and clean abstract
 
 ---
 
-## MVP Options
+## MVP
 
-Select one for hackathon scope:
-
-### Option A: Basic Drive Control (Recommended)
-Drive Roomba from Viam app, read sensors.
-- **Complexity:** Medium
-- **Demo Appeal:** Medium
-- **Scope:** Serial protocol, base API, basic sensors
-
-### Option B: Full Sensor Suite
-All Roomba sensors exposed through Viam.
-- **Complexity:** Medium-High
-- **Demo Appeal:** Medium
-- **Scope:** Complete sensor implementation
-
-**Selected MVP:** _______________
+Drive Roomba from Viam app; read sensors; run vacuum; clean an area following control logic written by the team — pay attention to bumper sensors and boundary markers; clean for a fixed duration. MVP is to just clean for a given duration without getting stuck or going out of bounds.
 
 ---
 

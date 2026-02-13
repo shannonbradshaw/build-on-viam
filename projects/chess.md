@@ -109,57 +109,14 @@ The following is already implemented in viam chess:
 
 ---
 
-## MVP Options
+## MVP
 
-These options build on the existing implementation:
+Pick from these items:
 
-### Option A: Polish Existing Gameplay (Reliability)
-Make what exists work better and more reliably.
-- **Scope:**
-  - Placement verification — confirm piece is actually in correct position
-  - Error recovery for failed grabs
-  - Graveyard expansion (24 → 32+ positions)
-  - Graveyard management improvements
-  - Board finding v1 — tolerate position within 100mm, slight angle changes
-  - Reset improvements
-- **Complexity:** Medium
-- **Demo Appeal:** High (fewer failures, longer games work)
-- **Why:** Current system works but is fragile; this makes it demo-ready
-
-### Option B: Complete Game Rules (Missing Features)
-Implement the chess rules that are currently missing.
-- **Scope:**
-  - En passant — AI vs AI and Human vs AI
-  - Promotion — AI vs AI and Human vs AI
-- **Complexity:** Medium
-- **Demo Appeal:** Medium (correctness matters to chess players)
-- **Why:** Cannot claim "plays chess" without these rules; long games will encounter them
-
-### Option C: Piece Type Recognition (ML)
-Enable the system to identify which piece is which, not just presence + color.
-- **Scope:**
-  - Train ML model to classify piece types (king, queen, rook, bishop, knight, pawn)
-  - Data pipeline: capture → label → train → deploy
-  - Board finding v2 — full dynamic detection with orientation (A1/H8)
-- **Complexity:** High
-- **Demo Appeal:** High (enables new capabilities)
-- **Why:** Prerequisite for arbitrary position setup, better error recovery, more robust reset
-- **Unlocks:**
-  - Set up game from any position (not just standard start)
-  - Detect if wrong piece placed
-  - Recovery when board state gets out of sync
-
-### Option D: App & Player Experience
-Add user-facing features for a polished experience.
-- **Scope:**
-  - Mode selection (AI vs AI, Human plays White, Human plays Black)
-  - Chess clock
-  - Teaching mode — replay famous games with commentary (stretch)
-- **Complexity:** Medium
-- **Demo Appeal:** Very High (visitor-friendly)
-- **Why:** Makes the demo accessible and engaging for non-technical audiences
-
-**Suggested order:** A → B → D → C (reliability first, then rules, then UX, then advanced ML)
+- **Placement verification** — confirm piece is actually in correct position
+- **Error recovery for failed grabs**
+- **Reset improvements**
+- **Graveyard management improvements**
 
 ---
 

@@ -63,42 +63,11 @@ This project demonstrates advanced manipulation with dual-arm coordination, visi
 
 ---
 
-## MVP Options
+## MVP
 
-Suggested MVPs for consideration. 
+Right arm picks up a bowl from a known pose and moves the bowl to a known pose. Left arm assembles a salad from a simple 3 ingredient recipe.
 
-### Option A: First Ingredient (Recommended for start)
-Pick one ingredient from one pan, place it in a bowl. Use pre-defined poses.
-- **Complexity:** Low-Medium
-- **Demo Appeal:** Low
-- **Scope:** Arm + gripper setup, motion service, frame system, single pick-and-place
-- **Viam focus:** Component configuration, motion service, named positions
-
-### Option B: Single Arm, Fixed Recipe
-One arm builds a single preset salad recipe into a pre-placed bowl. No portion control necessary. Use pre-defined poses for ingredient pans and bowl positions.
-- **Complexity:** Medium
-- **Demo Appeal:** Medium-High
-- **Scope:** Single arm, fixed bowl position, 3-4 ingredients, sequenced motion
-
-### Option C: Dual Arm, Fixed Recipe
-Both arms coordinate to build a preset salad faster. No portion control necessary.
-- **Complexity:** High
-- **Demo Appeal:** High
-- **Scope:** Dual-arm coordination, collision avoidance, fixed recipe
-
-### Option D: Single Arm, Custom Orders
-One arm builds custom salads from app orders.
-- **Complexity:** Medium-High
-- **Demo Appeal:** High
-- **Scope:** Ordering interface, ingredient selection, event-driven automation, single arm
-
-### Option E: Full System
-Dual arms, custom orders, bowl dispenser, handoff station.
-- **Complexity:** Very High
-- **Demo Appeal:** Very High
-- **Scope:** Complete salad service system
-
-**Selected MVP:** _______________
+**Stretch:** Be consistent (within a given range) for the amount of each ingredient. Easiest would be by weight.
 
 ---
 

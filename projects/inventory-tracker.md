@@ -2,7 +2,7 @@
 
 ## Overview
 
-**One-line description:** Track lab equipment with zero-tagging vision - just hold up an item and go
+**One-line description:** Track lab equipment checkout and return using RFID and cameras
 
 **Project Lead:** TBD
 **Team Members:** TBD
@@ -10,28 +10,9 @@
 
 ## Description
 
-Lab Inventory Tracker solves the "where's the RealSense?" problem without requiring barcodes, RFID tags, or any tagging of objects. The core interaction is simple: hold an item up in front of a camera, and the system captures the moment for tracking.
+Lab Inventory Tracker solves the "where's the hex wrench?" problem using RFID readers and cameras at checkout stations near lab doors. Users wave RFID-tagged items near a reader to check them out or return them, and the system captures photos for an audit trail.
 
-**Phase 1 (MVP):**
-Build: Pi, Webcam, RFID reader, RFID tags per station
-
-Detect hex wrench checkout events and capture photos for audit trail. Checkout stations at both doors to the lab. (We can draw the line under the MVP at any line below.)
-
-Checkout Flow                                                                                                                                                           - User waves object close to checkout station with RFID reader and gets confirmation with a beep
-- System captures: tag_id, timestamp, station_id + picture(s)                                                                                                           - Data syncs to Viam cloud                                                                                                                                            --- Item marked as "checked out" in inventory DB                                                                                                                                                                                           
-Return Flow                                                                                                                                                             
-- User returns item, waves it near RFID reader                                                                                                                          
-- RFID reader detects tag at return location                                                                                                                            - Item status updated to “in lab”
-- Optionally, capture a picture
-
-Late notice:
-Items that have been checked out too long trigger a message in a Slack channel with the item name, picture of person who carried it out and request to return the item
-
-**Phase 2:** Train the system to recognize common lab items from the captured images, automatically identifying WHAT was taken.
-
-**Phase 3:** Add face recognition to identify WHO took the item, enabling fully automatic checkout logging.
-
-This approach is pragmatic - it works on day one with zero training, builds its own training data through normal use, and evolves toward full automation incrementally.
+The system tracks item status (checked out / in lab), syncs data to Viam cloud, and sends Slack notifications when items are overdue — providing accountability and visibility into lab equipment usage.
 
 ## Viam Capabilities Demonstrated
 
@@ -65,77 +46,35 @@ This approach is pragmatic - it works on day one with zero training, builds its 
 
 | Component | Description | Options |
 |-----------|-------------|---------|
-| Compute | Checkout station controller | Raspberry Pi 5 |
-| Camera | Capture person + item | USB webcam, Pi Camera |
-| Display (optional) | Feedback to user | Small LCD or status LEDs |
-| Mounting | Camera position | Shelf-mounted, wall-mounted, or freestanding kiosk |
+| Compute | Checkout station controller | Raspberry Pi |
+| Camera | Capture person + item for audit trail | USB webcam, Pi Camera |
+| RFID Reader | Detect tagged items | RFID reader |
+| RFID Tags | Applied to tracked items | RFID tags |
 
-**Estimated Cost per Station:** ~$100-150
+**Stations:** Checkout stations at both doors to the lab
 
 **Remote-Friendly:** Yes - ML training fully remote, app development remote, physical setup minimal
 
 ---
 
-## MVP Options
+## MVP
 
-### Phase 1: Capture the Moment (Recommended MVP)
+Detect hex wrench checkout events and capture photos for audit trail. Checkout stations at both doors to the lab.
 
-Detect checkout events and capture photos for audit trail.
+### Checkout Flow
+- User waves object close to checkout station with RFID reader and gets confirmation with a beep
+- System captures: tag_id, timestamp, station_id + picture(s)
+- Data syncs to Viam cloud
+- Item marked as "checked out" in inventory DB
 
-**Flow:**
-1. Person approaches checkout station
-2. Holds item up in front of camera (in designated "checkout zone")
-3. System detects the gesture/motion and captures photo
-4. Photo saved to cloud with timestamp
-5. Notification sent to Slack with image: "Checkout at 10:32am - [photo]"
-6. Human review if needed - photo serves as audit trail
+### Return Flow
+- User returns item, waves it near RFID reader
+- RFID reader detects tag at return location
+- Item status updated to "in lab"
+- Optionally, capture a picture
 
-**Detection options:**
-- Motion detection in designated zone
-- "Person holding object" pose detection
-- Physical button press (simplest)
-- Continuous monitoring with ML detecting checkout gesture
-
-- **Complexity:** Low-Medium
-- **Demo Appeal:** Medium-High
-- **Scope:** Vision-based detection, data capture, notifications, basic dashboard
-
-### Phase 2: Item Recognition
-
-Add ML to identify WHAT was taken.
-
-- Train model on captured images from Phase 1
-- System auto-labels checkout with item name
-- "Checkout at 10:32am - Intel RealSense D435 - [photo]"
-- Unknown items flagged for manual labeling (feeds training)
-
-- **Complexity:** Medium
-- **Demo Appeal:** High
-- **Scope:** ML training pipeline, model deployment, item database
-
-### Phase 3: Face Recognition
-
-Add ML to identify WHO took the item.
-
-- Build face database from Phase 1/2 photos (with consent)
-- System auto-identifies person
-- "Shannon checked out Intel RealSense D435 at 10:32am"
-- Full automatic checkout - no human review needed
-
-- **Complexity:** Medium-High
-- **Demo Appeal:** Very High
-- **Scope:** Face recognition model, user database, privacy controls
-
-### Phase 4: Full Automation
-
-Complete hands-free tracking.
-
-- Automatic checkout logging (item + person + time)
-- Return detection (item appears back on shelf)
-- Overdue reminders sent to the right person
-- Usage analytics and trends
-
-**Selected MVP:** Phase 1 - Capture the Moment
+### Late Notice
+- Items that have been checked out too long trigger a message in a Slack channel with the item name, picture of person who carried it out, and request to return the item
 
 ---
 

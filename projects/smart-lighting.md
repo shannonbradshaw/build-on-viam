@@ -56,35 +56,11 @@ This project demonstrates event-driven automation, scheduled tasks, IoT integrat
 
 ---
 
-## MVP Options
+## MVP
 
-Select one for hackathon scope:
+Control lights from Viam Teleop dashboard; implement presets for lighting in different areas of the office.
 
-### Option A: Basic Control + Scenes (Recommended)
-Control lights from Viam, implement scene presets.
-- **Complexity:** Medium
-- **Demo Appeal:** Medium
-- **Scope:** Telnet module, zone control, scenes
-
-### Option B: Occupancy Response
-Lights respond to Lutron motion sensors.
-- **Complexity:** Medium
-- **Demo Appeal:** Medium-High
-- **Scope:** Adds sensor integration, automatic control
-
-### Option C: Daylight Harvesting
-Automatically adjust artificial lighting based on ambient light levels.
-- **Complexity:** Medium-High
-- **Demo Appeal:** High
-- **Scope:** Light sensor integration, continuous adjustment loop
-
-### Option D: Full Smart Office
-Occupancy + daylight + schedules.
-- **Complexity:** High
-- **Demo Appeal:** Very High
-- **Scope:** Complete intelligent lighting system
-
-**Selected MVP:** _______________
+**Stretch:** Automatically adjust office lighting in an area based on ambient light levels.
 
 ---
 

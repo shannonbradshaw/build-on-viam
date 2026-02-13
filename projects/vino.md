@@ -53,35 +53,15 @@ This project demonstrates manipulation capabilities, vision-based detection, and
 
 ---
 
-## MVP Options
+## MVP
 
-Select one for hackathon scope:
-
-### Option A: Pour on Demand (Recommended)
-Arm picks bottle from rack, pours measured amount into glass at fixed location.
-- **Complexity:** Medium
-- **Demo Appeal:** High
-- **Scope:** Single bottle type, fixed glass position, timed pour
-
-### Option B: Glass Detection Pour
-Vision detects glass placement, arm pours into detected glass.
-- **Complexity:** Medium-High
-- **Demo Appeal:** High
-- **Scope:** Adds vision requirement, flexible glass positioning
-
-### Option C: Wine Selector
-User selects wine via app/voice, arm retrieves correct bottle from rack.
-- **Complexity:** Medium
-- **Demo Appeal:** Medium
-- **Scope:** Multiple bottles, selection interface, retrieval logic
-
-### Option D: Sommelier Display
-Camera reads wine label, displays pairing suggestions and tasting notes.
-- **Complexity:** Low-Medium
-- **Demo Appeal:** Medium
-- **Scope:** Vision + ML for label reading, database integration
-
-**Selected MVP:** _______________
+- Far less dead space on the cart for glass placement
+- Better point cloud segmentation
+- Separate surface segmentation and object segmentation into two modules
+- Better logic to overcome most cases of multiple objects being detected when it's really just one glass
+- Monitoring and alerting for when the production cart requires human intervention
+- Automatically finding the bottle
+- Self-diagnosis and user guidance when the pour cycle won't start
 
 ---
 

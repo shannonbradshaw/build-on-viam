@@ -52,8 +52,7 @@ This project combines manipulation complexity (multi-step beverage preparation),
 | Grinder | Portafilter-activated, 60mm flat burrs | Eureka Atom |
 | Wrist Camera | Close-up detection | Intel RealSense D405 |
 | Overview Camera | Workspace monitoring | USB webcam |
-| Tablet | Order interface | Android tablet |
-| Cup Dispenser | Cup staging | Gravity dispenser |
+| Tablet | Order interface | TBD |
 | Knockbox | Puck disposal | Standard knockbox |
 | Milk Pitcher | Steaming vessel | Standard 12oz pitcher |
 | Compute | Main controller | System76 Meerkat |
@@ -62,35 +61,9 @@ This project combines manipulation complexity (multi-step beverage preparation),
 
 ---
 
-## MVP Options
+## MVP
 
-Select one for hackathon scope:
-
-### Option A: Espresso Only (Recommended)
-Pull espresso shots - grind, tamp, brew, serve.
-- **Complexity:** Medium
-- **Demo Appeal:** High
-- **Scope:** Full portafilter workflow, no milk
-
-### Option B: Espresso + Americano
-Espresso plus hot water addition.
-- **Complexity:** Medium
-- **Demo Appeal:** High
-- **Scope:** Adds water dispensing step
-
-### Option C: Full Milk Drinks
-Espresso, Latte, Cappuccino with steamed milk.
-- **Complexity:** High
-- **Demo Appeal:** Very High
-- **Scope:** Adds milk steaming with pitcher handling
-
-### Option D: Order Interface Focus
-Simple espresso + polished ordering experience.
-- **Complexity:** Medium
-- **Demo Appeal:** High
-- **Scope:** Focus on customer experience
-
-**Selected MVP:** _______________
+Brew a shot of espresso. Robot can place an empty portafilter under the grinder, wait for the grind to finish, and withdraw it; move the portafilter to the tamper, get a tamp, and withdraw it; insert the portafilter into the espresso machine and lock into place.
 
 ---
 
