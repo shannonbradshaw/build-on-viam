@@ -14,6 +14,14 @@ Retro Roomba Revival integrates a Roomba 650/655 with Viam by building a custom 
 
 No computer vision—just serial communication, bump sensors, and clean abstractions.
 
+---
+
+## MVP
+
+Drive Roomba from Viam app; read sensors; run vacuum; clean an area following control logic written by the team — pay attention to bumper sensors and boundary markers; clean for a fixed duration. MVP is to just clean for a given duration without getting stuck or going out of bounds.
+
+---
+
 ## Viam Capabilities Demonstrated
 
 ### Core Capabilities
@@ -55,12 +63,6 @@ No computer vision—just serial communication, bump sensors, and clean abstract
 | Serial Adapter | Connect Pi to Roomba | Mini-DIN cable + logic level converter |
 
 **Remote-Friendly:** Partially - protocol/module development remote, physical testing requires hardware
-
----
-
-## MVP
-
-Drive Roomba from Viam app; read sensors; run vacuum; clean an area following control logic written by the team — pay attention to bumper sensors and boundary markers; clean for a fixed duration. MVP is to just clean for a given duration without getting stuck or going out of bounds.
 
 ---
 

@@ -14,6 +14,20 @@ Vino is a robotic wine service system using an arm and gripper to handle bottles
 
 This project demonstrates manipulation capabilities, vision-based detection, and creates a highly engaging demo suitable for events and visitors.
 
+---
+
+## MVP
+
+- Far less dead space on the cart for glass placement
+- Better point cloud segmentation
+- Separate surface segmentation and object segmentation into two modules
+- Better logic to overcome most cases of multiple objects being detected when it's really just one glass
+- Monitoring and alerting for when the production cart requires human intervention
+- Automatically finding the bottle
+- Self-diagnosis and user guidance when the pour cycle won't start
+
+---
+
 ## Viam Capabilities Demonstrated
 
 ### Core Capabilities
@@ -50,18 +64,6 @@ This project demonstrates manipulation capabilities, vision-based detection, and
 | Compute | Main controller | Raspberry Pi 4, Intel NUC |
 
 **Remote-Friendly:** Partially - can develop control logic remotely, physical testing requires hardware
-
----
-
-## MVP
-
-- Far less dead space on the cart for glass placement
-- Better point cloud segmentation
-- Separate surface segmentation and object segmentation into two modules
-- Better logic to overcome most cases of multiple objects being detected when it's really just one glass
-- Monitoring and alerting for when the production cart requires human intervention
-- Automatically finding the bottle
-- Self-diagnosis and user guidance when the pour cycle won't start
 
 ---
 

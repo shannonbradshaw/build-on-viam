@@ -16,6 +16,14 @@ Unlike systems that use fully-automatic espresso machines, this project uses a s
 
 This project combines manipulation complexity (multi-step beverage preparation), customer-facing interaction (ordering interface), and operational features (inventory tracking, scheduling, quality monitoring).
 
+---
+
+## MVP
+
+Brew a shot of espresso. Robot can place an empty portafilter under the grinder, wait for the grind to finish, and withdraw it; move the portafilter to the tamper, get a tamp, and withdraw it; insert the portafilter into the espresso machine and lock into place.
+
+---
+
 ## Viam Capabilities Demonstrated
 
 ### Core Capabilities
@@ -58,12 +66,6 @@ This project combines manipulation complexity (multi-step beverage preparation),
 | Compute | Main controller | System76 Meerkat |
 
 **Remote-Friendly:** Partially - control logic can be developed remotely, physical testing requires hardware
-
----
-
-## MVP
-
-Brew a shot of espresso. Robot can place an empty portafilter under the grinder, wait for the grind to finish, and withdraw it; move the portafilter to the tamper, get a tamp, and withdraw it; insert the portafilter into the espresso machine and lock into place.
 
 ---
 

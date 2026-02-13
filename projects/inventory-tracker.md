@@ -14,47 +14,6 @@ Lab Inventory Tracker solves the "where's the hex wrench?" problem using RFID re
 
 The system tracks item status (checked out / in lab), syncs data to Viam cloud, and sends Slack notifications when items are overdue — providing accountability and visibility into lab equipment usage.
 
-## Viam Capabilities Demonstrated
-
-### Core Capabilities
-- [ ] **Hardware Integration** — Camera, optional button, display
-- [ ] **Motion Planning** — Not applicable
-- [x] **Vision / ML Inference** — Item recognition, face recognition (phased)
-- [x] **Data Capture & Sync** — Checkout images synced to cloud with offline resilience
-- [x] **Remote Operation** — Full remote monitoring and development
-- [x] **Module Development** — Checkout station module
-- [x] **Fragments** — Checkout station configuration as reusable fragment
-
-### Scale & Fleet Capabilities
-- [x] **Fleet Management** — Multiple checkout stations with centralized view
-- [x] **OTA Updates** — Module and configuration updates via Registry
-- [x] **Provisioning** — Fragment-based configuration reuse
-
-### Operational Capabilities
-- [x] **Scheduled Tasks** — Daily summaries, weekly utilization reports
-- [ ] **Monitoring & Alerting** — Backlog: station health, low activity alerts
-- [x] **Data Pipeline (ML Training)** — Primary: captured images → labeling → item/face models → deploy
-
-### Customer-Facing Capabilities
-- [x] **Customer Delivery** — Dashboard for viewing checkouts and audit trail
-- [x] **Web/Mobile Apps** — Web dashboard, mobile-friendly checkout status
-
-### Multi-Machine Coordination
-- [x] **Stations report to central system** — Centralized view across all locations
-
-## Hardware Requirements
-
-| Component | Description | Options |
-|-----------|-------------|---------|
-| Compute | Checkout station controller | Raspberry Pi |
-| Camera | Capture person + item for audit trail | USB webcam, Pi Camera |
-| RFID Reader | Detect tagged items | RFID reader |
-| RFID Tags | Applied to tracked items | RFID tags |
-
-**Stations:** Checkout stations at both doors to the lab
-
-**Remote-Friendly:** Yes - ML training fully remote, app development remote, physical setup minimal
-
 ---
 
 ## MVP
@@ -78,16 +37,59 @@ Detect hex wrench checkout events and capture photos for audit trail. Checkout s
 
 ---
 
+## Viam Capabilities Demonstrated
+
+### Core Capabilities
+- [x] **Hardware Integration** — RFID reader, camera, Raspberry Pi
+- [ ] **Motion Planning** — Not applicable
+- [ ] **Vision / ML Inference** — Stretch: item recognition from captured images
+- [x] **Data Capture & Sync** — Checkout images synced to cloud with offline resilience
+- [x] **Remote Operation** — Full remote monitoring and development
+- [x] **Module Development** — Checkout station module
+- [x] **Fragments** — Checkout station configuration as reusable fragment
+
+### Scale & Fleet Capabilities
+- [x] **Fleet Management** — Multiple checkout stations with centralized view
+- [x] **OTA Updates** — Module and configuration updates via Registry
+- [x] **Provisioning** — Fragment-based configuration reuse
+
+### Operational Capabilities
+- [x] **Scheduled Tasks** — Daily summaries, weekly utilization reports
+- [ ] **Monitoring & Alerting** — Backlog: station health, low activity alerts
+- [ ] **Data Pipeline (ML Training)** — Stretch: captured images → labeling → item models → deploy
+
+### Customer-Facing Capabilities
+- [x] **Customer Delivery** — Dashboard for viewing checkouts and audit trail
+- [x] **Web/Mobile Apps** — Web dashboard, mobile-friendly checkout status
+
+### Multi-Machine Coordination
+- [x] **Stations report to central system** — Centralized view across all locations
+
+## Hardware Requirements
+
+| Component | Description | Options |
+|-----------|-------------|---------|
+| Compute | Checkout station controller | Raspberry Pi |
+| Camera | Capture person + item for audit trail | USB webcam, Pi Camera |
+| RFID Reader | Detect tagged items | RFID reader |
+| RFID Tags | Applied to tracked items | RFID tags |
+
+**Stations:** Checkout stations at both doors to the lab
+
+**Remote-Friendly:** Yes - app development remote, physical setup minimal
+
+---
+
 ## Backlog
 
-### Phase 1: Capture & Notify
-- [ ] **Checkout zone detection** - Define camera FOV region for checkout gestures
-- [ ] **Motion/gesture detection** - Detect when someone holds up an item
-- [ ] **Photo capture** - High-quality image of person + item together
-- [ ] **Cloud storage** - Save images with timestamps to Viam data management
-- [ ] **Slack notification** - Send photo + timestamp to channel on each checkout
-- [ ] **Basic dashboard** - View recent checkouts with images
-- [ ] **Manual labeling UI** - Add item name and person to captured checkouts
+### Phase 1: RFID Checkout & Notify
+- [ ] **RFID reader integration** - Read RFID tags at checkout stations
+- [ ] **Checkout confirmation** - Audible beep on successful tag read
+- [ ] **Photo capture** - Capture image on checkout/return event
+- [ ] **Cloud storage** - Save tag_id, timestamp, station_id, and images to Viam data management
+- [ ] **Inventory DB** - Track item status (checked out / in lab)
+- [ ] **Slack notification** - Send photo + item info to channel on each checkout
+- [ ] **Late notice** - Alert in Slack when items are overdue with photo of person who checked it out
 
 ### Phase 2: Item Recognition
 - [ ] **Training data export** - Export labeled images for model training
@@ -105,10 +107,10 @@ Detect hex wrench checkout events and capture photos for audit trail. Checkout s
 - [ ] **Unknown person handling** - Prompt for identification or flag for review
 
 ### Event-Driven Automation (Gap Feature)
-- [ ] **Checkout detected** - Capture + notification on gesture detection
-- [ ] **Overdue reminder** - Item not returned after N days, notify (requires Phase 3)
+- [ ] **Checkout detected** - Capture + notification on RFID tag read
+- [ ] **Overdue reminder** - Item not returned after N days, notify via Slack
 - [ ] **Escalating alerts** - 3 days, 7 days, then notify manager
-- [ ] **Return detected** - Item reappears on shelf camera (stretch)
+- [ ] **Return detected** - RFID tag read at return station
 
 ### Scheduled Tasks (Gap Feature)
 - [ ] **Daily summary** - Morning report of previous day's checkouts
@@ -157,120 +159,93 @@ Detect hex wrench checkout events and capture photos for audit trail. Checkout s
 
 ## Technical Details
 
-### Checkout Detection
+### Checkout Flow
 
-**Approach 1: Motion + Pose Detection**
 ```
-1. Camera monitors checkout zone continuously
-2. Motion detected → start analyzing frames
-3. Detect "person holding object" pose
-4. Capture high-res frame
-5. Save + notify
-```
-
-**Approach 2: Simple Button**
-```
-1. Person holds up item
-2. Presses physical button
-3. Camera captures frame
-4. Save + notify
+1. User waves RFID-tagged item near checkout station reader
+2. RFID reader detects tag, system emits confirmation beep
+3. Camera captures photo of person + item
+4. System records: tag_id, timestamp, station_id, image
+5. Data syncs to Viam cloud
+6. Item marked as "checked out" in inventory DB
 ```
 
-**Approach 3: Dwell Time**
-```
-1. Camera monitors checkout zone
-2. Person + object detected in zone
-3. If stable for 2 seconds → capture
-4. Save + notify
-```
+### Return Flow
 
-Recommendation: Start with Approach 2 (button) for reliability, evolve to Approach 1 or 3.
+```
+1. User waves item near RFID reader at return station
+2. RFID reader detects tag
+3. Item status updated to "in lab"
+4. Optionally capture return photo
+```
 
 ### Data Schema
 
 ```
 checkouts:
   - id: string (uuid)
+  - tag_id: string (RFID tag identifier)
   - timestamp: datetime
   - image_url: string (cloud storage path)
-  - item_name: string (nullable - manual or ML)
-  - item_confidence: float (nullable - ML confidence)
-  - person_name: string (nullable - manual or ML)
-  - person_confidence: float (nullable - ML confidence)
   - station_id: string
-  - status: enum (pending_review, labeled, auto_labeled)
+  - event_type: enum (checkout, return)
+  - status: enum (checked_out, in_lab)
 
 items:
   - id: string
+  - tag_id: string (RFID tag)
   - name: string
   - category: string
   - location: string (home station)
-  - image_urls: array (reference images for training)
 
-users:
+stations:
   - id: string
   - name: string
-  - email: string
-  - team: string
-  - face_enrolled: boolean
-  - face_embedding: blob (nullable)
+  - location: string (e.g., "east door", "west door")
 ```
 
 ### Notification Format
 
-**Slack message:**
+**Slack checkout message:**
 ```
-📦 Checkout detected
-📍 Hardware Lab Station
-🕐 10:32 AM
+Checkout detected
+Hardware Lab - East Door
+10:32 AM
 
-[Embedded photo of person holding item]
+[Photo of person with item]
 
-Item: [Unknown - click to label] or [Intel RealSense D435]
-Person: [Unknown - click to label] or [Shannon]
+Item: Hex Wrench Set #3 (tag: RF-0042)
 ```
 
-### ML Pipeline
+**Slack late notice:**
+```
+Overdue item - please return
+Hex Wrench Set #3 checked out 3 days ago
 
-**Item Recognition:**
-1. Export labeled checkout images
-2. Crop to item region (manual or detected)
-3. Train classifier (transfer learning from ImageNet)
-4. Deploy to checkout stations
-5. Monitor accuracy, retrain as needed
+[Photo from checkout]
 
-**Face Recognition:**
-1. Collect face images during enrollment (multiple angles)
-2. Generate face embeddings (e.g., using face_recognition library)
-3. Store embeddings in user database
-4. On checkout, extract face → find nearest embedding
-5. Apply confidence threshold for match
+Please return to any checkout station.
+```
 
 ---
 
 ## Notes
 
-**Why no tagging:**
-- Zero friction for users - just hold up and go
-- No inventory of tags to manage
-- Works with any item immediately
-- System improves over time through use
+**Why RFID:**
+- Reliable, deterministic identification — no ML required for core functionality
+- Low friction for users — just wave and go
+- Works immediately with tagged items
+- Photo capture provides audit trail and supports late notices
 
 **Gap Features This Project Addresses:**
-- **Event-Driven Automation** - Checkout detection, overdue alerts
-- **Data Pipeline** - Images → labels → training → deployment
+- **Event-Driven Automation** - RFID checkout detection, overdue alerts
+- **Data Pipeline** - Stretch: captured images → labeling → item recognition
 - **Scheduled Tasks** - Daily summaries, weekly reports
 - **Customer Delivery** - Dashboard with audit trail
 
-**Privacy Considerations:**
-- Face recognition requires explicit opt-in
-- Users can view and delete their data
-- Option to use system without face recognition (photo audit only)
-- Clear signage at checkout stations
-
 **Why this approach is valuable:**
-- Works on day one with zero ML training
-- Builds its own training data through normal use
-- Each phase adds value incrementally
-- Solves real problem the team faces
+- Works on day one with zero training
+- Deterministic item identification via RFID tags
+- Photo audit trail adds accountability
+- Slack integration for overdue items solves a real team problem
 - System will actually be used after hackathon

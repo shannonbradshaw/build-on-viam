@@ -16,6 +16,16 @@ The dual-arm configuration enables parallel ingredient handling and bimanual coo
 
 This project demonstrates advanced manipulation with dual-arm coordination, vision-based ingredient detection, customer-facing ordering, and real-time order fulfillment.
 
+---
+
+## MVP
+
+Right arm picks up a bowl from a known pose and moves the bowl to a known pose. Left arm assembles a salad from a simple 3 ingredient recipe.
+
+**Stretch:** Be consistent (within a given range) for the amount of each ingredient. Easiest would be by weight.
+
+---
+
 ## Viam Capabilities Demonstrated
 
 ### Core Capabilities
@@ -60,14 +70,6 @@ This project demonstrates advanced manipulation with dual-arm coordination, visi
 | Mounting | Arm mounting structure | Custom gantry or dual pedestals |
 
 **Remote-Friendly:** Partially - dual-arm coordination logic can be developed in simulation, physical testing requires full setup
-
----
-
-## MVP
-
-Right arm picks up a bowl from a known pose and moves the bowl to a known pose. Left arm assembles a salad from a simple 3 ingredient recipe.
-
-**Stretch:** Be consistent (within a given range) for the amount of each ingredient. Easiest would be by weight.
 
 ---
 

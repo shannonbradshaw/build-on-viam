@@ -14,6 +14,16 @@ Greenhouse is an automated plant growing system that monitors environmental cond
 
 This project naturally exercises the full robotics lifecycle - from prototype through fleet deployment - as it can scale from a single plant pod to multiple grow stations with centralized monitoring.
 
+---
+
+## MVP
+
+Track temperature, humidity, and soil moisture and display on Teleop dashboard in at least one tent. Fan runs when temperature rises above a configurable threshold.
+
+**Stretch:** Automated watering controlled through Viam teleop, on a timer, or triggered by soil moisture.
+
+---
+
 ## Viam Capabilities Demonstrated
 
 ### Core Capabilities
@@ -54,14 +64,6 @@ This project naturally exercises the full robotics lifecycle - from prototype th
 | Growing medium | Plant support | Soil pots, hydroponics, AeroGarden-style |
 
 **Remote-Friendly:** Yes - sensors can be monitored from anywhere, development can be fully remote
-
----
-
-## MVP
-
-Track temperature, humidity, and soil moisture and display on Teleop dashboard in at least one tent. Fan runs when temperature rises above a configurable threshold.
-
-**Stretch:** Automated watering controlled through Viam teleop, on a timer, or triggered by soil moisture.
 
 ---
 

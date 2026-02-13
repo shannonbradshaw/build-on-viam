@@ -21,6 +21,40 @@ It combines demo appeal through interactive gameplay, utility as a showcase piec
 **What Viam capabilities does it showcase?**  
 The project demonstrates hardware integration, vision processing, motion planning, fleet management, and module development in a fun, interactive format.
 
+---
+
+## MVP Options
+
+Select one for hackathon scope:
+
+### Option A: Single Player (Already Done)
+
+Create a single player that can score a puck
+
+- **Scope:** A single rig (two stepper motors), camera & vision detection, motion planning
+- **Complexity:** Medium - High
+- **Demo Appeal:** High
+
+### Option B: Two Players (In Progress)
+
+Create two players that can pass to each other
+
+- **Scope:** Two rigs, camera & vision detection, motion planning
+- **Complexity:** Medium
+- **Demo Appeal:** Medium
+
+### Option C: 3-5 Players
+
+Full game implementation with multiple players
+
+- **Scope:** 3-5 rigs, camera, motion planning
+- **Complexity:** High
+- **Demo Appeal:** Very High
+
+**Selected MVP:** **\*\***Option B**\*\***
+
+---
+
 ## Viam Capabilities Demonstrated
 
 ### Core Capabilities
@@ -60,38 +94,6 @@ The project demonstrates hardware integration, vision processing, motion plannin
 | Player Rigs      | Control player movement (stepper motors, cable system, mounting hardware) | Custom rigs with stepper motor components |
 
 **Remote-Friendly:** Partially - Can work on motion planning remotely. But need to be at the board to test
-
----
-
-## MVP Options
-
-Select one for hackathon scope:
-
-### Option A: Single Player (Already Done)
-
-Create a single player that can score a puck
-
-- **Scope:** A single rig (two stepper motors), camera & vision detection, motion planning
-- **Complexity:** Medium - High
-- **Demo Appeal:** High
-
-### Option B: Two Players (In Progress)
-
-Create two players that can pass to each other
-
-- **Scope:** Two rigs, camera & vision detection, motion planning
-- **Complexity:** Medium
-- **Demo Appeal:** Medium
-
-### Option C: 3-5 Players
-
-Full game implementation with multiple players
-
-- **Scope:** 3-5 rigs, camera, motion planning
-- **Complexity:** High
-- **Demo Appeal:** Very High
-
-**Selected MVP:** **\*\***Option B**\*\***
 
 ---
 

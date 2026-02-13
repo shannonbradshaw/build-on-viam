@@ -16,7 +16,41 @@ Automated Storage and Retrieval System is a modular lab storage solution that wo
 
 The system addresses real pain for lab managers—who today manually maintain inventory and reorder—and for lab users—who often don’t know if an item exists, where it is, or who has it. It keeps an automatic digital twin of inventory, a searchable database with up-to-date bin status (stored vs. in use), content snapshots on each return, and optional tracking of who retrieved which bin. That combination of physical automation and data visibility makes it compelling both as a utility and as a demo.
 
-This project showcases Viam’s hardware integration (gantry, RFID reader, camera, screen, ultrasonic distance sensor), motion planning for reliable bin handling, data capture and sync for inventory and status, and remote operation for development and monitoring. Optional extensions (bulk return, vision-based quantity or content validation) would further exercise vision and ML pipelines.
+This project showcases Viam's hardware integration (gantry, RFID reader, camera, screen, ultrasonic distance sensor), motion planning for reliable bin handling, data capture and sync for inventory and status, and remote operation for development and monitoring. Optional extensions (bulk return, vision-based quantity or content validation) would further exercise vision and ML pipelines.
+
+---
+
+## MVP Options
+
+Select one for hackathon scope:
+
+### Option A: 2-Axis Retrieve & Return (Recommended)
+
+2-axis gantry (X + Z) retrieves and returns bins from a single column of slots. User selects a bin on the touchscreen, the gantry fetches it to a pickup window. Return works in reverse. RFID identifies bins on pickup and return. All state is local.
+
+- **Scope:** 2-axis gantry control, RFID identification, ultrasonic distance sensor for bin empty/full status, touchscreen UI for bin selection, local state tracking
+- **Complexity:** Medium
+- **Demo Appeal:** High
+
+### Option B: 3-Axis Full Grid + Database
+
+3-axis gantry (X + Y + Z) serves a full grid of bins. Adds a remote searchable inventory database so users can check bin status and contents from their laptop or phone. Bin status (stored / in use) syncs to the cloud.
+
+- **Scope:** 3-axis gantry control, RFID, touchscreen UI, cloud-synced inventory database, web dashboard
+- **Complexity:** Medium-High
+- **Demo Appeal:** Very High
+
+### Option C: 3-Axis + User Tracking + Vision
+
+Everything in Option B, plus a camera captures a photo of the user on each retrieval (for audit trail / who-has-what tracking), and bin contents are photographed on every return for a visual inventory log.
+
+- **Scope:** 3-axis gantry, RFID, touchscreen UI, cloud database, web dashboard, user photo capture, bin content snapshots, bin contents parsing
+- **Complexity:** High
+- **Demo Appeal:** Very High
+
+**Selected MVP:** **\*\***\_\_\_**\*\***
+
+---
 
 ## Viam Capabilities Demonstrated
 
@@ -58,38 +92,6 @@ This project showcases Viam’s hardware integration (gantry, RFID reader, camer
 | Touchscreen Display      | User item selection interface | [Official Raspberry Pi 7" Touch Display](https://www.pishop.us/product/official-raspberry-pi-7-touch-screen-display-with-10-finger-capacitive-touch/) |
 
 **Remote-Friendly:** Partially - Touchscreen app and web app can be developed remotely.
-
----
-
-## MVP Options
-
-Select one for hackathon scope:
-
-### Option A: 2-Axis Retrieve & Return (Recommended)
-
-2-axis gantry (X + Z) retrieves and returns bins from a single column of slots. User selects a bin on the touchscreen, the gantry fetches it to a pickup window. Return works in reverse. RFID identifies bins on pickup and return. All state is local.
-
-- **Scope:** 2-axis gantry control, RFID identification, ultrasonic distance sensor for bin empty/full status, touchscreen UI for bin selection, local state tracking
-- **Complexity:** Medium
-- **Demo Appeal:** High
-
-### Option B: 3-Axis Full Grid + Database
-
-3-axis gantry (X + Y + Z) serves a full grid of bins. Adds a remote searchable inventory database so users can check bin status and contents from their laptop or phone. Bin status (stored / in use) syncs to the cloud.
-
-- **Scope:** 3-axis gantry control, RFID, touchscreen UI, cloud-synced inventory database, web dashboard
-- **Complexity:** Medium-High
-- **Demo Appeal:** Very High
-
-### Option C: 3-Axis + User Tracking + Vision
-
-Everything in Option B, plus a camera captures a photo of the user on each retrieval (for audit trail / who-has-what tracking), and bin contents are photographed on every return for a visual inventory log.
-
-- **Scope:** 3-axis gantry, RFID, touchscreen UI, cloud database, web dashboard, user photo capture, bin content snapshots, bin contents parsing
-- **Complexity:** High
-- **Demo Appeal:** Very High
-
-**Selected MVP:** **\*\***\_\_\_**\*\***
 
 ---
 

@@ -14,6 +14,16 @@ Smart Office Lighting integrates Lutron Caseta lighting controls with Viam, crea
 
 This project demonstrates event-driven automation, scheduled tasks, IoT integration, and custom module development - capabilities that manipulation-heavy projects don't emphasize.
 
+---
+
+## MVP
+
+Control lights from Viam Teleop dashboard; implement presets for lighting in different areas of the office.
+
+**Stretch:** Automatically adjust office lighting in an area based on ambient light levels.
+
+---
+
 ## Viam Capabilities Demonstrated
 
 ### Core Capabilities
@@ -53,14 +63,6 @@ This project demonstrates event-driven automation, scheduled tasks, IoT integrat
 | Light Sensor | Daylight harvesting | BH1750 |
 
 **Remote-Friendly:** Yes - module development fully remote, physical install minimal
-
----
-
-## MVP
-
-Control lights from Viam Teleop dashboard; implement presets for lighting in different areas of the office.
-
-**Stretch:** Automatically adjust office lighting in an area based on ambient light levels.
 
 ---
 

@@ -16,6 +16,29 @@ Coring is done by locating the stem and calyx of the apple, ensuring the apple i
 
 This project combines manipulation complexity (multi-step processing workflow), vision/ML (apple detection and orientation), and operational features (throughput tracking, quality monitoring).
 
+---
+
+## MVP Options
+
+Select one for hackathon scope:
+
+### Option A: Peel and core apples
+Recognize, grasp, correctly core, and peel apples
+- **Complexity:** Medium
+- **Demo Appeal:** High
+- **Scope:** Place a basket of apples in a defined part of the arm's workspace. Hit "go". Wind up with a bin of apple cores, a bin of apple peels, and a bin of cored, peeled apples.
+
+
+### Option B: Full Processing + Slicing
+Recognize, grasp, core, peel, and slice apples into segments
+- **Complexity:** High
+- **Demo Appeal:** Deliciously high
+- **Scope:** Adds slicing mechanism and additional manipulation step
+
+**Selected MVP:** _______________
+
+---
+
 ## Viam Capabilities Demonstrated
 
 ### Core Capabilities
@@ -53,27 +76,6 @@ This project combines manipulation complexity (multi-step processing workflow), 
 | Compute | Main controller | TBD |
 
 **Remote-Friendly:** Partially - control logic can be developed remotely, physical testing requires hardware. All needed hardware exists with Peter in the Bend office, but it would be neat to build a twin in NYC
-
----
-
-## MVP Options
-
-Select one for hackathon scope:
-
-### Option A: Peel and core apples
-Recognize, grasp, correctly core, and peel apples
-- **Complexity:** Medium
-- **Demo Appeal:** High
-- **Scope:** Place a basket of apples in a defined part of the arm's workspace. Hit "go". Wind up with a bin of apple cores, a bin of apple peels, and a bin of cored, peeled apples.
-
-
-### Option B: Full Processing + Slicing
-Recognize, grasp, core, peel, and slice apples into segments
-- **Complexity:** High
-- **Demo Appeal:** Deliciously high
-- **Scope:** Adds slicing mechanism and additional manipulation step
-
-**Selected MVP:** _______________
 
 ---
 

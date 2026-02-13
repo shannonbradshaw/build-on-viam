@@ -16,6 +16,28 @@ The demo is compelling because it showcases a natural, intuitive human-robot int
 
 This project showcases Viam's end-to-end robotics platform capabilities: hardware integration with commercial robot platforms (Unitree SDK), real-time vision processing and ML inference for person detection/tracking, motion planning for dynamic following behavior, data capture for improving model performance, and remote monitoring/control. It demonstrates how Viam can rapidly prototype sophisticated behaviors on complex hardware platforms.
 
+---
+
+## MVP Options
+
+Select one for hackathon scope:
+
+### Option A: Basic Visual Following (Recommended)
+Simple person detection and following in controlled indoor environment
+- **Scope:** Detect single person using pre-trained model, maintain 2m following distance, basic forward/backward/turning motion, stop when person stops
+- **Complexity:** Medium
+- **Demo Appeal:** High - immediately impressive and easy to demonstrate
+
+### Option B: Interactive Following with Gestures
+Following behavior with basic gesture recognition for commands
+- **Scope:** Option A + recognize stop/go/follow hand gestures, respond to wave for attention, acknowledge commands with robot motion (head nod, sit)
+- **Complexity:** High
+- **Demo Appeal:** Very High - strong audience interaction element
+
+**Selected MVP:** Option A (Basic Visual Following)
+
+---
+
 ## Viam Capabilities Demonstrated
 
 ### Core Capabilities
@@ -52,26 +74,6 @@ This project showcases Viam's end-to-end robotics platform capabilities: hardwar
 | Battery | Runtime extension (optional) | Extended battery pack for >45min runtime |
 
 **Remote-Friendly:** Partially - Core vision and tracking algorithms can be developed and tested with recorded datasets or simulator. Unitree SDK integration and motion control tuning require hardware access. 
-
----
-
-## MVP Options
-
-Select one for hackathon scope:
-
-### Option A: Basic Visual Following (Recommended)
-Simple person detection and following in controlled indoor environment
-- **Scope:** Detect single person using pre-trained model, maintain 2m following distance, basic forward/backward/turning motion, stop when person stops
-- **Complexity:** Medium
-- **Demo Appeal:** High - immediately impressive and easy to demonstrate
-
-### Option B: Interactive Following with Gestures
-Following behavior with basic gesture recognition for commands
-- **Scope:** Option A + recognize stop/go/follow hand gestures, respond to wave for attention, acknowledge commands with robot motion (head nod, sit)
-- **Complexity:** High
-- **Demo Appeal:** Very High - strong audience interaction element
-
-**Selected MVP:** Option A (Basic Visual Following)
 
 ---
 

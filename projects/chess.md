@@ -16,6 +16,19 @@ The system detects **piece presence** (is there a piece?) and **piece color** (w
 
 This project demonstrates vision-based detection, precise manipulation, game engine integration, and creates an extremely engaging interactive demo.
 
+---
+
+## MVP
+
+Pick from these items:
+
+- **Placement verification** — confirm piece is actually in correct position
+- **Error recovery for failed grabs**
+- **Reset improvements**
+- **Graveyard management improvements**
+
+---
+
 ## Viam Capabilities Demonstrated
 
 ### Core Capabilities
@@ -106,17 +119,6 @@ The following is already implemented in viam chess:
 | **Promotion** | Not implemented | Rules-complete chess |
 | **Board finding** | Hard-coded positions (v0) | Tolerant setup, dynamic detection |
 | **App features** | No mode selection or chess clock | Player experience |
-
----
-
-## MVP
-
-Pick from these items:
-
-- **Placement verification** — confirm piece is actually in correct position
-- **Error recovery for failed grabs**
-- **Reset improvements**
-- **Graveyard management improvements**
 
 ---
 
