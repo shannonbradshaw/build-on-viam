@@ -18,7 +18,7 @@ Build on Viam is an internal program where Viam engineers build real robotics pr
 | [Retro Roomba](./retro-roomba.md) | Bring a Roomba 650/655 into the Viam ecosystem with a custom driver module and new capabilities |
 | [Rod Hockey Robot](./rod-hockey-robot.md) | A robot controlled rod hockey game that plays against humans |
 | [Salad Maker](./salad-maker.md) | Dual-arm robot that assembles custom salads from a refrigerated prep station |
-| [Smart Lighting](./smart-lighting.md) | Intelligent lighting that responds to occupancy, daylight, and schedules ([Lutron BACnet Reference](./lutron-bacnet-reference.md)) |
+| [Smart Lighting](./smart-lighting.md) | Intelligent lighting that responds to occupancy, daylight, and schedules |
 | [Vino](./vino.md) | Wine service robot that pours and serves wine on demand |
 
 ## Viam Platform Capabilities

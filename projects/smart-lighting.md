@@ -24,33 +24,6 @@ Control lights from Viam Teleop dashboard; implement presets for lighting in dif
 
 **Stretch:** Automatically adjust office lighting in an area based on ambient light levels.
 
----
-
-## Viam Capabilities Demonstrated
-
-### Core Capabilities
-- [x] **Hardware Integration** — Lutron commercial lighting system via BACnet protocol
-- [ ] **Motion Planning** — Not applicable
-- [ ] **Vision / ML Inference** — Not applicable
-- [x] **Data Capture & Sync** — Lighting levels, occupancy, energy usage synced to cloud (configured at 0.003 Hz)
-- [x] **Remote Operation** — Full remote control and development
-- [x] **Module Development** — Primary: improve and extend the lutron-bacnet Python module
-- [x] **Fragments** — Zone configurations as reusable fragments
-
-### Scale & Fleet Capabilities
-- [x] **Fleet Management** — Multiple light zones managed as fleet
-- [x] **OTA Updates** — Module and configuration updates via Registry
-- [x] **Provisioning** — Fragment-based configuration reuse
-
-### Operational Capabilities
-- [x] **Scheduled Tasks** — Primary: time-based scenes, daylight harvesting loop
-- [ ] **Monitoring & Alerting** — Backlog: zone status dashboard
-- [ ] **Data Pipeline (ML Training)** — Not applicable
-
-### Customer-Facing Capabilities
-- [ ] **Customer Delivery** — Not applicable
-- [ ] **Web/Mobile Apps** — Backlog: lighting control dashboard
-
 ## Hardware Requirements
 
 | Component | Description | Notes |
@@ -238,7 +211,35 @@ The machine currently has:
 - Occupancy and daylight data is already available via BACnet objects — no additional sensors required for basic automation
 
 **References:**
+- [Lutron BACnet Reference](./lutron-bacnet-reference.md) — BACnet protocol, Lutron product lines, network addressing, the Python stack, and how the module uses it all
 - [BACnet Protocol (Wikipedia)](https://en.wikipedia.org/wiki/BACnet)
 - [BAC0 Python Library](https://bac0.readthedocs.io/)
 - [BACpypes3 Documentation](https://bacpypes3.readthedocs.io/)
 - [Viam Module Registry](https://app.viam.com/registry)
+
+---
+
+## Viam Capabilities Demonstrated
+
+### Core Capabilities
+- [x] **Hardware Integration** — Lutron commercial lighting system via BACnet protocol
+- [ ] **Motion Planning** — Not applicable
+- [ ] **Vision / ML Inference** — Not applicable
+- [x] **Data Capture & Sync** — Lighting levels, occupancy, energy usage synced to cloud (configured at 0.003 Hz)
+- [x] **Remote Operation** — Full remote control and development
+- [x] **Module Development** — Primary: improve and extend the lutron-bacnet Python module
+- [x] **Fragments** — Zone configurations as reusable fragments
+
+### Scale & Fleet Capabilities
+- [x] **Fleet Management** — Multiple light zones managed as fleet
+- [x] **OTA Updates** — Module and configuration updates via Registry
+- [x] **Provisioning** — Fragment-based configuration reuse
+
+### Operational Capabilities
+- [x] **Scheduled Tasks** — Primary: time-based scenes, daylight harvesting loop
+- [ ] **Monitoring & Alerting** — Backlog: zone status dashboard
+- [ ] **Data Pipeline (ML Training)** — Not applicable
+
+### Customer-Facing Capabilities
+- [ ] **Customer Delivery** — Not applicable
+- [ ] **Web/Mobile Apps** — Backlog: lighting control dashboard
