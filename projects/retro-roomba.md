@@ -52,7 +52,9 @@ No computer vision—just serial communication, bump sensors, and clean abstract
 |-----------|-------------|---------|
 | Roomba | 600 series base | Roomba 650 or 655 |
 | Compute | Main controller | Raspberry Pi 5 |
-| Serial Adapter | Connect Pi to Roomba | Mini-DIN cable + logic level converter |
+| Mini-DIN Cable | Roomba serial connection | [Adafruit #2438](https://www.adafruit.com/product/2438) |
+| USB-to-TTL Adapter | Serial communication | USB serial adapter for Pi |
+| Voltage Regulator | Power Pi from Roomba battery | Steps down Roomba battery voltage to 5V |
 
 **Remote-Friendly:** Partially - protocol/module development remote, physical testing requires hardware
 
@@ -254,10 +256,10 @@ Connect with other Build on Viam projects.
 ### Roomba Open Interface
 
 **Connection:**
-- Mini-DIN connector on Roomba
-- TXD, RXD, GND, battery power
-- 5V logic (needs level shifter for 3.3V Pi)
-- Default baud: 115200 (Roomba 650/655)
+- Adafruit Mini-DIN cable ([#2438](https://www.adafruit.com/product/2438)) plugs into Roomba
+- TXD, RXD connect to USB-to-TTL adapter → Pi USB port
+- Battery + GND → Voltage regulator → Pi power (5V)
+- USB-to-TTL handles serial communication at 115200 baud (Roomba 650/655)
 
 **Key commands:**
 
