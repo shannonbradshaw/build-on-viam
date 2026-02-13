@@ -9,11 +9,14 @@ Build on Viam is an internal program where Viam engineers build real robotics pr
 | Project | Summary |
 |---------|---------|
 | [Apples](./applesauce.md) | Robotic system that picks, cores, and peels apples from a basket |
+| [Automated Storage](./automated-storage.md) | Modular lab storage system that retrieves and returns bins on demand via a 3-axis gantry, with RFID identification and a searchable inventory |
 | [Barista](./barista.md) | Single-arm robot that operates an espresso station like a human barista |
 | [Chess](./chess.md) | Robot that plays chess against humans, physically moving pieces on a real board |
+| [Dog](./dog.md) | Autonomous quadruped robot that uses computer vision to detect and follow a designated human operator |
 | [Greenhouse](./greenhouse.md) | Automated growing environment with sensing, environmental control, and growth tracking |
-| [Inventory Tracker](./inventory-tracker.md) | Track lab equipment with zero-tagging vision - just hold up an item and go
+| [Inventory Tracker](./inventory-tracker.md) | Track lab equipment checkout and return using RFID and cameras |
 | [Retro Roomba](./retro-roomba.md) | Bring a Roomba 650/655 into the Viam ecosystem with a custom driver module and new capabilities |
+| [Rod Hockey Robot](./rod-hockey-robot.md) | A robot controlled rod hockey game that plays against humans |
 | [Salad Maker](./salad-maker.md) | Dual-arm robot that assembles custom salads from a refrigerated prep station |
 | [Smart Lighting](./smart-lighting.md) | Intelligent lighting that responds to occupancy, daylight, and schedules |
 | [Vino](./vino.md) | Wine service robot that pours and serves wine on demand |
