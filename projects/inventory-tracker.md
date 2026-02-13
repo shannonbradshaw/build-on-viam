@@ -12,7 +12,20 @@
 
 Lab Inventory Tracker solves the "where's the RealSense?" problem without requiring barcodes, RFID tags, or any tagging of objects. The core interaction is simple: hold an item up in front of a camera, and the system captures the moment for tracking.
 
-**Phase 1 (MVP):** Detect checkout events and capture a photo of who took what. Notifications go to Slack with the image - providing an immediate audit trail even before any ML is trained.
+**Phase 1 (MVP):**
+Build: Pi, Webcam, RFID reader, RFID tags per station
+
+Detect hex wrench checkout events and capture photos for audit trail. Checkout stations at both doors to the lab. (We can draw the line under the MVP at any line below.)
+
+Checkout Flow                                                                                                                                                           - User waves object close to checkout station with RFID reader and gets confirmation with a beep
+- System captures: tag_id, timestamp, station_id + picture(s)                                                                                                           - Data syncs to Viam cloud                                                                                                                                            --- Item marked as "checked out" in inventory DB                                                                                                                                                                                           
+Return Flow                                                                                                                                                             
+- User returns item, waves it near RFID reader                                                                                                                          
+- RFID reader detects tag at return location                                                                                                                            - Item status updated to “in lab”
+- Optionally, capture a picture
+
+Late notice:
+Items that have been checked out too long trigger a message in a Slack channel with the item name, picture of person who carried it out and request to return the item
 
 **Phase 2:** Train the system to recognize common lab items from the captured images, automatically identifying WHAT was taken.
 
