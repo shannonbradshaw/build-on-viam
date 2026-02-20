@@ -20,9 +20,13 @@ This project demonstrates event-driven automation, scheduled tasks, IoT integrat
 
 ## MVP
 
-Control lights from Viam Teleop dashboard; implement presets for lighting in different areas of the office.
+- More user-friendly light control app
+- Implement presets for lighting in different areas of the office
+- Automatically adjust office lighting in an area based on ambient light levels
+- Some scheduled tasks (morning/evening)
+- Motion-sensing to override.
 
-**Stretch:** Automatically adjust office lighting in an area based on ambient light levels.
+Stretch: Enable individuals to personalize light settings for meeting rooms. 
 
 ## Hardware Requirements
 
