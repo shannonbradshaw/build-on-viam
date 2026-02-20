@@ -13,7 +13,7 @@ Complete guide for connecting a Raspberry Pi to a Roomba 650/655 using direct ba
 | Roomba 650/655 (Pre-wired) | 600 series with Open Interface, battery connection installed | iRobot Roomba 650 or 655 |
 | Raspberry Pi | Pi 4 or Pi 5 | Raspberry Pi 5 recommended |
 | Mini-DIN Cable | 7-pin for Roomba (serial communication only) | [Adafruit #2438](https://www.adafruit.com/product/2438) |
-| USB-to-TTL Adapter | 5V tolerant serial adapter | FTDI, CP2102, or CH340-based |
+| USB-to-TTL Adapter | 5V tolerant serial adapter with genuine FTDI FT232RL | [DSD TECH SH-U09C2](https://www.amazon.com/DSD-TECH-SH-U09C2-Debugging-Programming/dp/B07TXVRQ7V) |
 | Jumper Wires | For UBEC output and serial connections | Male-to-female recommended |
 
 **Note:** The Roomba comes pre-wired with direct battery connection and UBEC already installed.
@@ -81,8 +81,8 @@ The 3-pin female servo connector has:
 **⚠️ CRITICAL:** The Roomba uses 5V logic on TXD/RXD. Direct connection to Pi GPIO (3.3V) may damage the Pi. Use a USB-to-TTL adapter instead, which handles voltage differences safely.
 
 1. **Configure USB-to-TTL adapter**:
-   - Set the voltage jumper to 5V mode
-   - This ensures the adapter can properly read the Roomba's 5V signals
+   - Set the voltage jumper to **5V mode** by placing the jumper on the two pins closest to the "5V0" label — the lone exposed pin will be on the opposite end
+   - This ensures the adapter's signal pins are 5V tolerant and can properly read the Roomba's 5V logic
 
 2. **Wire connections** (cross TX/RX):
    ```
@@ -94,6 +94,10 @@ The 3-pin female servo connector has:
 3. **Connect USB-to-TTL to Pi**:
    - Plug USB-to-TTL adapter into any Pi USB port
    - No GPIO pins needed for serial communication
+
+4. **Secure the connections**:
+   - Ensure the Mini-DIN connector is fully clicked into the Roomba — a half-seated connector will cause intermittent contact during movement, causing the module to reconnect repeatedly and the Roomba to play the startup chime each time
+   - Secure the USB-to-TTL adapter and wires so they can't vibrate loose during operation
 
 ---
 
@@ -160,7 +164,7 @@ Before powering on, verify:
 - Run `lsusb` to verify USB-to-TTL is recognized
 - Try different USB port on Pi
 - Verify USB-to-TTL voltage jumper set to 5V
-- Check for driver installation requirements
+- Check FTDI driver is loaded: `lsmod | grep ftdi`
 
 **Problem:** No response from Roomba
 - Press Clean button to wake Roomba
@@ -168,6 +172,11 @@ Before powering on, verify:
 - Check baud rate is 115200
 - Ensure Mini-DIN cable fully inserted
 - Try sending Start command (byte 128) multiple times
+
+**Problem:** Roomba keeps playing the startup chime / light stays off
+- TX and RX are likely swapped — verify: Roomba Pin 3 (RXD) → adapter TX, Roomba Pin 4 (TXD) → adapter RX
+- Check the Mini-DIN connector is fully seated; a half-inserted connector makes intermittent contact and causes the module to reconnect repeatedly, triggering the chime each time
+- Check that no pin is accidentally touching Pin 1 or 2 (Vpwr — raw battery voltage)
 
 **Problem:** Roomba sleeps after 5 minutes
 - Normal OI behavior - not a bug

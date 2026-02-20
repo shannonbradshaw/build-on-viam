@@ -2,32 +2,16 @@
 
 This directory contains wiring tutorials and test scripts for connecting a Raspberry Pi to a Roomba 650/655.
 
-## Wiring Tutorials
+## Wiring Tutorial
 
-Choose the tutorial based on your power setup:
-
-### Option 1: Battery-Powered (Recommended for Integration)
 **File:** `roomba-wiring-tutorial-battery-powered.md`
 
-- Pi powered directly from Roomba battery via UBEC voltage regulator
-- Single power source for entire system
-- Pre-wired direct battery connection (bypasses 200mA Mini-DIN fuse)
-- ~35% reduction in Roomba battery runtime
-- Best for fully integrated robotic applications
+Pi powered directly from Roomba battery via UBEC voltage regulator. Single power source for the entire system. Pre-wired direct battery connection bypasses the 200mA Mini-DIN fuse limitation.
 
-### Option 2: External Power (Simpler Setup)
-**File:** `roomba-wiring-tutorial-external-power.md`
-
-- Pi powered by separate USB-C power bank
-- No impact on Roomba battery runtime
-- Simpler wiring (no GPIO connections for power)
-- Requires managing two batteries
-- Best for testing and development
-
-Both tutorials include:
+Includes:
 - Step-by-step wiring instructions
-- Safety checklists
-- Troubleshooting guides
+- Safety checklist
+- Troubleshooting guide
 - Component requirements for Pi 4 and Pi 5
 
 ## Connection Test Scripts
@@ -95,12 +79,12 @@ python3 debug_roomba_serial.py /dev/ttyUSB0
 - Check USB-to-TTL adapter is plugged into Pi USB port
 - Run `ls /dev/ttyUSB* /dev/ttyACM*` to see available ports
 - Try `lsusb` to verify USB device is detected
-- Check CH340 driver: `lsmod | grep ch34`
+- Check FTDI driver: `lsmod | grep ftdi`
 
 **Serial connection error:**
 - Verify TX/RX wires are crossed (Roomba Pin 3 → TTL TX, Roomba Pin 4 → TTL RX)
 - Check Mini-DIN cable is fully inserted
-- Ensure USB-to-TTL voltage jumper is set to 5V mode
+- Ensure USB-to-TTL voltage jumper is set to 5V mode (jumper on the two pins closest to "5V0" label)
 - Test continuity with multimeter on crimped connections
 
 **No sensor data received:**
