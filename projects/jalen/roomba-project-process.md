@@ -10,7 +10,7 @@ Complete workflow for integrating a Roomba 650/655 with Viam platform.
 - [ ] Roomba 650 or 655
 - [ ] Raspberry Pi 5 (or Pi 4)
 - [ ] Adafruit Mini-DIN cable (#2438)
-- [ ] USB-to-TTL adapter (CH340 or FTDI)
+- [ ] USB-to-TTL adapter with genuine FTDI FT232RL — [DSD TECH SH-U09C2](https://www.amazon.com/DSD-TECH-SH-U09C2-Debugging-Programming/dp/B07TXVRQ7V) recommended (avoid CH340/CP2102)
 - [ ] UBEC voltage regulator (Adafruit #1385) - for battery-powered option
 - [ ] Jumper wires (male-to-female)
 - [ ] Tools: Soldering iron, multimeter, crimping tool, drill
@@ -26,11 +26,12 @@ Complete workflow for integrating a Roomba 650/655 with Viam platform.
 - [ ] Test UBEC output voltage (should be 5.0-5.2V)
 
 ### 1.3 Serial Communication Wiring
-- [ ] Mini-DIN cable wires (Pin 3 and Pin 4) come pre-stripped and exposed
-- [ ] Crimp DuPont connectors to Pin 3 and Pin 4 wires
-- [ ] Set USB-to-TTL voltage jumper to 5V mode
-- [ ] Connect wires (crossed): Roomba Pin 3 → TTL TX, Roomba Pin 4 → TTL RX
+- [ ] Mini-DIN cable wires (Pin 3, Pin 4, and Pin 6/7) come pre-stripped and exposed
+- [ ] Crimp DuPont connectors to Pin 3, Pin 4, and GND wires
+- [ ] Set USB-to-TTL voltage jumper to **5V mode**: place jumper on the two pins closest to the "5V0" label
+- [ ] Connect wires (crossed): Roomba Pin 3 (RXD) → TTL TX, Roomba Pin 4 (TXD) → TTL RX, Roomba Pin 6 or 7 (GND) → TTL GND
 - [ ] Test continuity with multimeter
+- [ ] Secure Mini-DIN connector and adapter wires so they can't vibrate loose during operation
 
 ### 1.4 Physical Integration
 - [ ] Drill small hole in Roomba body for battery wires (from internal pads to external UBEC)
@@ -69,8 +70,7 @@ Complete workflow for integrating a Roomba 650/655 with Viam platform.
 ## Appendix: Key Resources
 
 **Documentation:**
-- Battery-powered wiring tutorial: `roomba-wiring-tutorial-battery-powered.md`
-- External power wiring tutorial: `roomba-wiring-tutorial-external-power.md`
+- Wiring tutorial: `roomba-wiring-tutorial-battery-powered.md`
 - Connection test script: `debug_roomba_serial.py`
 - Main README: `README.md`
 
