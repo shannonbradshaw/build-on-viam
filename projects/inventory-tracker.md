@@ -21,7 +21,7 @@ The system tracks item status (checked out / in lab), syncs data to Viam cloud, 
 Detect hex wrench checkout events and capture photos for audit trail. Checkout stations at both doors to the lab.
 
 ### Checkout Flow
-- User waves object close to checkout station with RFID reader and gets confirmation with a beep
+- User waves object close to checkout station with NFC reader and gets confirmation with a beep
 - System captures: tag_id, timestamp, station_id + picture(s)
 - Data syncs to Viam cloud
 - Item marked as "checked out" in inventory DB
