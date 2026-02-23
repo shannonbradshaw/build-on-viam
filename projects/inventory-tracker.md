@@ -37,8 +37,7 @@ Detect hex wrench checkout events and capture photos for audit trail. Checkout s
 
 ## To get you started
 
-NFC reader library: [https://github.com/ashitaka1/viam-pn532](https://github.com/ashitaka1/viam-pn532)
-Viam module wrapping go-pn532 NFC reader as rdk:component:sensor
+Viam module wrapping go-pn532 NFC reader as rdk:component:sensor: [https://github.com/ashitaka1/viam-pn532](https://github.com/ashitaka1/viam-pn532)
 
 ---
 
