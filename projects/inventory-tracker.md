@@ -44,7 +44,7 @@ Viam module wrapping go-pn532 NFC reader as rdk:component:sensor: [https://githu
 ## Viam Capabilities Demonstrated
 
 ### Core Capabilities
-- [x] **Hardware Integration** — RFID reader, camera, Raspberry Pi
+- [x] **Hardware Integration** — NFC reader, camera, Raspberry Pi
 - [ ] **Motion Planning** — Not applicable
 - [ ] **Vision / ML Inference** — Stretch: item recognition from captured images
 - [x] **Data Capture & Sync** — Checkout images synced to cloud with offline resilience
