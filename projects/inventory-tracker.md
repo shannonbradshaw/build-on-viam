@@ -2,7 +2,7 @@
 
 ## Overview
 
-**One-line description:** Track lab equipment checkout and return using RFID and cameras
+**One-line description:** Track lab equipment checkout and return using NFC and cameras
 
 **Project Lead:** TBD
 **Team Members:** TBD
@@ -10,7 +10,7 @@
 
 ## Description
 
-Lab Inventory Tracker solves the "where's the hex wrench?" problem using RFID readers and cameras at checkout stations near lab doors. Users wave RFID-tagged items near a reader to check them out or return them, and the system captures photos for an audit trail.
+Lab Inventory Tracker solves the "where's the hex wrench?" problem using NFC readers and cameras at checkout stations near lab doors. Users wave NFC-tagged items near a reader to check them out or return them, and the system captures photos for an audit trail.
 
 The system tracks item status (checked out / in lab), syncs data to Viam cloud, and sends Slack notifications when items are overdue — providing accountability and visibility into lab equipment usage.
 
@@ -27,13 +27,18 @@ Detect hex wrench checkout events and capture photos for audit trail. Checkout s
 - Item marked as "checked out" in inventory DB
 
 ### Return Flow
-- User returns item, waves it near RFID reader
-- RFID reader detects tag at return location
+- User returns item, waves it near NFC reader
+- NFC reader detects tag at return location
 - Item status updated to "in lab"
 - Optionally, capture a picture
 
 ### Late Notice
 - Items that have been checked out too long trigger a message in a Slack channel with the item name, picture of person who carried it out, and request to return the item
+
+## To get you started
+
+NFC reader library: [https://github.com/ashitaka1/viam-pn532](https://github.com/ashitaka1/viam-pn532)
+Viam module wrapping go-pn532 NFC reader as rdk:component:sensor
 
 ---
 
