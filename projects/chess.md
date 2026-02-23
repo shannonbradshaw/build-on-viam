@@ -26,6 +26,9 @@ Pick from these items:
 - **Error recovery for failed grabs**
 - **Reset improvements**
 - **Graveyard management improvements**
+- **Shake the piece when capturing**
+- **Arm hits the chess clock**
+- **Do reinforcement learning with some joints on the arm**
 
 ---
 
